@@ -21,6 +21,6 @@
 
     <p>Don't have account?<a href="signup.php">Sign up</a></p>
     </form>
-   
+   สวัสดี เราทำเอง
 </body>
 </html>

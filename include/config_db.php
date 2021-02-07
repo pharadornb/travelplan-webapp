@@ -6,12 +6,13 @@
     $password = "jYtKQ2Y1VZz1";
     $database = "TravelPlan2021";
 
-    //Connect
-    $con = new mysqli($hostname, $username, $password, $database);
+    //Connect dB
+    $conn = new mysqli($hostname, $username, $password, $database);
+    $conn->query("SET NAMES UTF8");
 
-    //Check connect
-    if($con -> connect_errno){
-        echo "Failed to connect dB" . $con -> connect_errno;
-        exit();
+    //Check dB die
+    if ($conn->connect_error) {
+        die('Could not connect: ' . $conn->connect_error);
     }
+
 ?>

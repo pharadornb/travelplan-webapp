@@ -1,5 +1,7 @@
 
 <?php SESSION_START(); ?>
+
+<body>
 <?php 
    include 'include/config_db.php';
 
@@ -35,8 +37,9 @@
               }      
           }
   } else{
-      header("location:login_error.php");
-      }
-  
+    
+      header("location:login.php");
+     
+  }
   mysqli_close($conn);
   ?>

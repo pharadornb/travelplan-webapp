@@ -1,5 +1,5 @@
 
-
+<?php SESSION_START(); ?>
 <?php 
    include 'include/config_db.php';
 
@@ -24,13 +24,13 @@
   if (mysqli_num_rows($result) > 0) {
           while($row = mysqli_fetch_assoc($result)) {
               if($row['user_type_id'] == 1) { 
-                  //$_SESSION['Username']=$row["cus_name"];
-                  //$_SESSION['customer_id']=$row["cus_id"];
+                  $_SESSION['Username']=$row["username"];
+                  $_SESSION['user_id']=$row["id"];
                   header("location:admin.php");
                   
               } else if($row['user_type_id'] == 2) {
-                 // $_SESSION['Username']=$row["cus_name"];
-                 // $_SESSION['customer_id']=$row["cus_id"];
+                $_SESSION['Username']=$row["username"];
+                $_SESSION['user_id']=$row["id"];
                   header("location:index.php");
               }      
           }
@@ -38,5 +38,5 @@
       header("location:login_error.php");
       }
   
-  mysqli_close($con);
+  mysqli_close($conn);
   ?>

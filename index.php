@@ -2,9 +2,7 @@
 <html lang="en">
 <head>
 
-  <title>TravelPlaning</title>
-
-  <?php include 'header.php';?>
+  <title>[หน้าแรก]-ระบบวางแผนท่องเที่ยว</title>
 
 
   <meta charset="utf-8">
@@ -12,6 +10,24 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <!-- bom add -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Prata&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../beta/css/open-iconic-bootstrap.min.css">
+  <link rel="stylesheet" href="../beta/css/animate.css">
+  <link rel="stylesheet" href="../beta/css/owl.carousel.min.css">
+  <link rel="stylesheet" href="../beta/css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="../beta/css/magnific-popup.css">
+  <link rel="stylesheet" href="../beta/css/aos.css">
+  <link rel="stylesheet" href="../beta/css/ionicons.min.css">
+  <link rel="stylesheet" href="../beta/css/bootstrap-datetimepicker.min.css">
+  <link rel="stylesheet" href="../beta/css/nouislider.css">
+  <link rel="stylesheet" href="../beta/css/flaticon.css">
+  <link rel="stylesheet" href="../beta/css/icomoon.css">
+  <link rel="stylesheet" href="../beta/css/style.css">
+
+
   <style>
    
 
@@ -37,7 +53,6 @@
   </style>
 </head>
 <body>
-<?php include 'navbar.php';?>
 
 
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -145,3 +160,19 @@
 
 </body>
 </html>
+
+<nav>
+        <input type="checkbox" name="" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <label class="logo">วางแผนท่องเที่ยว</label>
+        <ul>
+            <li><a href="#">หน้าแรก</a></li>
+            <li><a href="#">สถานที่</a></li>
+            <li><a href="#">ทริป</a></li>
+            <li><a href="#">ติดต่อเรา</a></li>
+            <li><a class="active" href="#">เข้าสู๋ระบบ</a></li>
+        </ul>
+    </nav>
+    <section></section>

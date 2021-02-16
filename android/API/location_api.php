@@ -22,7 +22,7 @@
             $i++;
         }
 
-        echo json_encode($response, JSON_UNESCAPED_UNICODE);
+        echo json_encode(['TravelPlan' => $response], JSON_UNESCAPED_UNICODE);
     } else {
         echo "0 results";
     }

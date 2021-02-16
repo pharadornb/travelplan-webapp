@@ -1,7 +1,4 @@
-
 <?php SESSION_START(); ?>
-
-<body>
 <?php 
    include 'include/config_db.php';
     
@@ -25,11 +22,13 @@
       $result = mysqli_query($conn, $sql);
     //echo $sql;
     // echo $result;
-  
+ 
 
 
-      header("location:login.php");
+     header("location:signup_success.php");
      
  
   mysqli_close($conn);
   ?>
+
+

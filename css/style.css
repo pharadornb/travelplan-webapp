@@ -72,19 +72,19 @@ menu {
     display: block;
 }
 
-/*tabletmenu*/
+/*tablet menu*/
 @media all and (min-width: 600px){
     .menu{
         justify-content: center;
     }
     .logo{
-        flex: 1;
+        flex: 1;  /*ขยายโลโก้*/
     }
     .toggle{
         flex: 1;
         text-align: right;
     }
-    .item.button{
+    .item.button{  /*ปุ่มlog in*/
         width: auto;
         order: 1;
         display: block;
@@ -92,7 +92,56 @@ menu {
     .toggle{
         order: 2;
     }
-
+    .button-secondary{
+        border: 0;
+    }
+    .button a{
+        padding: 7px 15px;
+        background: teal;
+        border: 1px solid #006d6d;
+    }
+    .button-secondary a{
+        background: transparent;
+    }
+    .button a:hover{
+        text-decoration: none;
+    }
+    .button:not(.secondary) a:hover{
+        background: #006d6d;
+        border-color: #005959;
+    }
+    .button-secondary a:hover{
+        color: #ddd;  /*สีบางลงเวลาโดนปุ่ม*/
+    }
 }
+
+/*desktop*/
+@media all and (min-width: 900px){
+    .item{
+        display: block;
+        width: auto;
+    }
+    .toggle{
+        display: none;
+    }
+    .logo{
+        order: 0;
+    }
+    .item{
+        order: 1;
+    }
+    .button{
+        order: 2;
+    }
+    .menu li{
+        padding: 15px 10px;
+    }
+    .menu li button{
+        padding-right: 0px ;
+    }
+    
+}
+
+
 
 

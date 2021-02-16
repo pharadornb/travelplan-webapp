@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1.0"> <!-- корректное отображение на мобильных устройствах, отмена масштабирования -->
     <meta name="description" content=""/>
     <meta name="author" content=""/>
+    
     <title>TravelPlaning</title>
 
 

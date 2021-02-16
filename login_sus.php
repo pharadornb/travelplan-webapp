@@ -1,6 +1,14 @@
 
 <?php SESSION_START(); ?>
-
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
+    </head>
 <body>
 <?php 
    include 'include/config_db.php';
@@ -28,17 +36,44 @@
               if($row['user_type_id'] == 1) { 
                   $_SESSION['Username']=$row["username"];
                   $_SESSION['user_id']=$row["id"];
+
+                  
                   header("location:admin.php");
                   
               } else if($row['user_type_id'] == 2) {
                 $_SESSION['Username']=$row["username"];
                 $_SESSION['user_id']=$row["id"];
-                  header("location:index.php");
+                echo  "<script>" ;
+                echo "setTimeout(function(){
+                  swal({
+                      title:'Login สำเร็จ!!',
+                      text:'ระบบวางแผนการท่องเที่ยว',
+                      type:'success'
+                  },function(){
+                      window.location = 'index.php';
+                  }) ; 
+                },1000) ;" ;
+            
+                echo  "</script>" ;
+                  //header("location:index.php");
               }      
           }
   } else{
-    
-      header("location:login.php");
+
+
+    echo  "<script>" ;
+    echo "setTimeout(function(){
+      swal({
+          title:'Username หรือ Password ไม่ถูกต้อง!!',
+          text:'ระบบวางแผนการท่องเที่ยว',
+          type:'error'
+      },function(){
+          window.location = 'login.php';
+      }) ; 
+    },1000) ;" ;
+
+    echo  "</script>" ;
+
      
   }
   mysqli_close($conn);

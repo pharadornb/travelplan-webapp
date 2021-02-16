@@ -23,24 +23,24 @@
       <div class="container">
         <div class="row">
         
-            <form action="***.php" class="register" >
+            <form action="signup_sus.php" class="register" method="POST">
               <h1>Sign Up</h1>
               <div class="error" id="mail-error">
               <i id="logo" class="far fa-user-circle"></i>
                 Incorrect Username
               </div>
               <div class="form-row">
-                <input type="text" class="form-control"  id="fullname"  placeholder="FullName" required>
+                <input type="text" class="form-control"  id="fullname" name="fullname" placeholder="FullName" required>
               </div>
               <div class="form-row">
-                <input type="text" class="form-control" id="username" placeholder="UserName" required>
+                <input type="text" class="form-control" id="username" name="username" placeholder="UserName" required>
               </div>
             
               <div class="form-row">
-                <input type="password" class="form-control" id="password" placeholder="Password" required>
+                <input type="password" class="form-control" id="password"  name="password"placeholder="Password" required>
               </div>
               <div class="form-row">
-                <input type="email" class="form-control" id="email" placeholder="Email" required>
+                <input type="email" class="form-control" id="email"  name="email"placeholder="Email" required>
               </div>
             
 

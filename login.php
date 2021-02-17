@@ -10,8 +10,8 @@
 </head>
 <body>
 
-    <form action="login_sus.php" class="card" method="post" >
-    
+    <form action="login_sus.php" class="card" method="post" target="iframe_target" >
+    <iframe id="iframe_target" name="iframe_target" src="#" style="width:0;height:0;border:0px solid #fff;"></iframe>
     <h2>Sign in</h2> 
     <i id="logo" class="far fa-user-circle"></i>
     <br /> <br /> 

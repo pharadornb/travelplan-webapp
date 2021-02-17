@@ -1,6 +1,6 @@
 /*travel_login-css*/
 .ct{
-    background-color: #b9b5b546;
+    background-color: #f3f3f3b6;
     width: 600px;
     height: 680px;
     margin-top: 50px;
@@ -8,7 +8,10 @@
     box-shadow: 0px 0px 5px;
 }
 .bg-lg{
-    background-image: ;
+    background-image: url('../img/bg-001.jpg');
+    background-repeat: no-repeat;
+     background-attachment: fixed;
+     background-size: 100% 100%;
 }
 .bt-lg{
     width: 250px;
@@ -17,6 +20,10 @@
     border: 2px solid;
     border-color: aqua;
     background-color: rgb(238, 237, 237);
+}
+
+.bt-lg:hover{
+    background-color: darkturquoise;
 }
 
 #username,#password{

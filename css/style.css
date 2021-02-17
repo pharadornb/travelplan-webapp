@@ -3,22 +3,22 @@
     padding: 0;
     box-sizing: border-box;
   }
-
-  body{
+  body
+  {
       font-family: Arial, Helvetica, sans-serif;
-      background: #ffffff;
+      background: #f1f1f1;
   }
-
-  nav{
-      background: #000058;
+  nav
+  {
+      background: #2222;
       padding: 5px 20px;
   }
-
-  ul{
+  ul
+  {
       list-style-type: none;
   }
-
-  a{
+  a
+  {
       color: white;
   }
   a:hover 
@@ -42,11 +42,14 @@
      font-size: 20px;   
 }
 
-
+.button-secondary
+{
+    border-bottom: 1px solid #444;
+}
 
 /*mobile menu*/
 
-.menu {
+menu {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -75,13 +78,13 @@
         justify-content: center;
     }
     .logo{
-        flex: 1;  
+        flex: 1;  /*ขยายโลโก้*/
     }
     .toggle{
         flex: 1;
         text-align: right;
     }
-    .item.button{  
+    .item.button{  /*ปุ่มlog in*/
         width: auto;
         order: 1;
         display: block;
@@ -94,8 +97,8 @@
     }
     .button a{
         padding: 7px 15px;
-        background: pink;
-        border: 1px solid pink;
+        background: teal;
+        border: 1px solid #006d6d;
     }
     .button-secondary a{
         background: transparent;
@@ -104,11 +107,11 @@
         text-decoration: none;
     }
     .button:not(.secondary) a:hover{
-        background: white;
-        border-color: white;
+        background: #006d6d;
+        border-color: #005959;
     }
     .button-secondary a:hover{
-        color: #ddd; 
+        color: #ddd;  /*สีบางลงเวลาโดนปุ่ม*/
     }
 }
 
@@ -137,45 +140,6 @@
         padding-right: 0px ;
     }
     
-}
-
-/*travel_login-css*/
-.ct{
-    background-color: #b9b5b546;
-    width: 600px;
-    height: 600px;
-    margin-top: 50px;
-    border-radius: 10px;
-}
-.bg-lg{
-    background: #c3f5f9;
-}
-.bt-lg{
-    width: 150px;
-    height: 40px;
-    border-radius: 15px;
-    border-color: aqua;
-    background-color: rgb(238, 237, 237);
-}
-
-/*register-design-css*/
-.rg-div-1{
-    background-color: rgba(136, 207, 209, 0.548);
-    width: 600px;
-    height: 550px;
-    margin-top: 100px;
-    border-radius: 10px;
-}
-
-#day{
-    width: 50px;
-}
-
-#bt-rg1{
-    width: 120px;
-    height: 45px;
-    border-radius: 25px;
-    border-color: coral;
 }
 
 

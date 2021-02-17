@@ -1,0 +1,47 @@
+/*travel_login-css*/
+.ct{
+    background-color: #b9b5b546;
+    width: 600px;
+    height: 680px;
+    margin-top: 50px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px;
+}
+.bg-lg{
+    background-image: ;
+}
+.bt-lg{
+    width: 250px;
+    height: 40px;
+    border-radius: 20px;
+    border: 2px solid;
+    border-color: aqua;
+    background-color: rgb(238, 237, 237);
+}
+
+#username,#password{
+    width: 250px;
+    height: 40px;
+    border: 0px;
+    border-radius: 20px;
+    text-align: center;
+}
+/*register-design-css*/
+.rg-div-1{
+    background-color: rgba(136, 207, 209, 0.548);
+    width: 600px;
+    height: 550px;
+    margin-top: 100px;
+    border-radius: 10px;
+}
+
+#day{
+    width: 50px;
+}
+
+#bt-rg1{
+    width: 120px;
+    height: 45px;
+    border-radius: 25px;
+    border-color: coral;
+}

@@ -7,15 +7,12 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
-<body>
-
-    <!--script cdn-->
-    <script href="script/script.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-
-    <div>
+<body class="bg-rg">
     <center>
-        <img src="img/logo-application.png" alt="" width="120px" height="150px">
+    <div class="ct">
+        <img src="img/logo-application.png" alt="" width="120px" height="150px" style="margin-top: 40px;">
+
+        <form action="#" method="POST">
         <table style="margin-top: 10%;">
             <tr>
                 <td><h4>+เข้าสู่ระบบวางแผนท่องเที่ยว+</h4></td>
@@ -23,24 +20,29 @@
             <tr>
                 <table style="margin-top: 10%;">
                     <tr>
-                        <td><p name="use">ชื่อผู้ใช้</p></td>
+                        <td><p name="lb-username">ชื่อผู้ใช้</p></td>
                         <td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
-                        <td><input type="text"></td>
+                        <td><input type="text" name="username" ></td>
                     </tr>
                     <tr><td>&nbsp</td></tr>
                     <tr>
-                        <td><p name="use">รหัสผ่าน</p></td>
+                        <td><p name="lb-password">รหัสผ่าน</p></td>
                         <td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
-                        <td><input type="password"></td>
+                        <td><input type="password" name="password"></td>
                     </tr>
                 </table>
             </tr>
         </table>
         <br>
-        <input type="submit" value="เข้าสู่ระบบ" name="bt-login"><br><br>
+        <input type="submit" value="เข้าสู่ระบบ" name="bt-login" class="bt-rg"><br><br>
         <a href="#">ยังไม่มีชื่อบัญชีผู้ใช้?</a>
-
-    </center>
+    </form>
     </div>
+    </center>
+    
+
+    <!--script cdn-->
+    <script href="script/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 </body>
 </html>

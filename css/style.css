@@ -142,6 +142,24 @@ menu {
     
 }
 
+/*register-css*/
+.ct{
+    background-color: #b9b5b546;
+    width: 600px;
+    height: 600px;
+    margin-top: 50px;
+    border-radius: 10px;
+}
+.bg-rg{
+    background: #c3f5f9;
+}
+.bt-rg{
+    width: 150px;
+    height: 40px;
+    border-radius: 15px;
+    border-color: aqua;
+    background-color: rgb(238, 237, 237);
+}
 
 
 

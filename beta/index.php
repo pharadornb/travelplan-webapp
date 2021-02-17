@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>[หน้าแรก]-ระบบวางแผนท่องเที่ยว</title>
     <!-- style internal -->
-
+    <link rel="stylesheet" href="css/style.css">
     <!-- style external_cdn -->
 
 </head>
 <body>
-    
-    <!-- javascript internal -->
 
+    <!-- javascript internal -->
+    <script src="javascript/script.js"></script>
     <!-- javascript external_cdn -->
 
 </body>

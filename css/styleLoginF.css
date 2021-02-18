@@ -2,8 +2,8 @@
 .ct{
     background-color: #f3f3f3b6;
     width: 600px;
-    height: 680px;
     margin-top: 50px;
+    margin-bottom: 50px;
     border-radius: 10px;
     box-shadow: 0px 0px 5px;
 }
@@ -26,7 +26,7 @@
     background-color: darkturquoise;
 }
 
-#username,#password{
+#username,#password,#email,#fullname{
     width: 250px;
     height: 40px;
     border: 0px;
@@ -35,11 +35,11 @@
 }
 /*register-design-css*/
 .rg-div-1{
-    background-color: rgba(136, 207, 209, 0.548);
+    background-color: rgba(226, 225, 225, 0.74);
     width: 600px;
-    height: 550px;
     margin-top: 100px;
     border-radius: 10px;
+    margin-bottom: 100px;
 }
 
 #day{
@@ -49,6 +49,18 @@
 #bt-rg1{
     width: 120px;
     height: 45px;
+    border: 2px solid;
     border-radius: 25px;
     border-color: coral;
+}
+
+#bt-rg1:hover{
+    background-color: rgb(253, 101, 46);
+}
+
+#day,#mo,#year{
+    height: 40px;
+    border-radius: 20px;
+    border: 0px solid;
+    text-align: center;
 }

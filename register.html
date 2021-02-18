@@ -4,76 +4,46 @@
     <meta charset="UTF-8">
     <title>[สมัครสมาชิก]-ระบบวางแผนท่องเที่ยว</title>
     <!--css cdn-->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/styleLoginF.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body class="bg-lg"> 
     <center>
         <div class="rg-div-1">
+            <img src="img/logo-application.png" alt="" width="120px" height="150px" style="margin-top: 40px;">
             <br><br><h3>+ สมัครสมาชิกระบบวางแผนท่องเที่ยว +</h3><br><br>
             <form action="">
-            <table>
-                <tr>
-                    <td class="tb-r">ชื่อ-สกุล:</td>
-                    <td>&nbsp&nbsp&nbsp&nbsp</td>
-                    <td><input type="text" name="fullname" id="fullname" required></td>
-                </tr>
-                <tr><td>&nbsp;</td></tr>
-                <tr>
-                    <td class="tb-r">วัน:</td>
-                    <td>&nbsp</td>
-                    <td>
-                        <table>
-                            <tr>
-                                <td>
-                                    <input type="number" name="day" id="day" maxlength="2" min="1" max="31" placeholder="  --" required>
-                                </td>
-                                <td>&nbsp&nbsp&nbsp&nbsp</td>
-                                <td>เดือน:&nbsp&nbsp&nbsp&nbsp</td>
-                                <td>
-                                    <input type="number" name="mo" id="mo" maxlength="2" min="1" max="12" placeholder="  --" required>
-                                </td>
-                                <td>&nbsp&nbsp&nbsp&nbsp</td>
-                                <td>ปีเกิด:&nbsp&nbsp&nbsp&nbsp</td>
-                                <td>
-                                    <input type="number" name="year" id="year" min="1921" max="2121" maxlength="4" placeholder="  --" required>
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-                <tr><td>&nbsp;</td></tr>
-                <tr>
-                    <td class="tb-r">ชื่อผู้ใช้:</td>
-                    <td>&nbsp;</td>
-                    <td><input type="text" name="username" id="username" required></td>
-                </tr>
-                <tr><td>&nbsp;</td></tr>
-                <tr>
-                    <td class="tb-r">รหัสผ่าน:</td>
-                    <td>&nbsp;</td>
-                    <td><input type="password" name="password" id="password" required></td>
-                </tr>
-                <tr><td>&nbsp;</td></tr>
-                <tr>
-                    <td class="tb-r">E-mail:</td>
-                    <td>&nbsp;</td>
-                    <td><input type="email" name="email" id="email" required></td>
-                </tr>
-                <tr><td>&nbsp;</td></tr>
-                <tr>
-                    <td class="tb-r">รูปภาพ:</td>
-                    <td>&nbsp;</td>
-                    <td><input type="file" name="photo" id="photo"></td>
-                </tr>
-            </table>
-            <br><br>
-            <input type="submit" value="สมัครสมาชิก" name="bt-rg1" id="bt-rg1">
+                <p>ชื่อ-สกุล:</p>
+                <input type="text" name="fullname" id="fullname" required>
+                <br><br><br>
+                วัน:
+                <input type="number" name="day" id="day" maxlength="2" min="1" max="31" placeholder="  --" required>
+                เดือน:
+                <input type="number" name="mo" id="mo" maxlength="2" min="1" max="12" placeholder="  --" required>
+                ปีเกิด:
+                <input type="number" name="year" id="year" min="1921" max="2121" maxlength="4" placeholder="  --" required>
+                <br><br>
+                ชื่อผู้ใช้:
+                <br><br>
+                <input type="text" name="username" id="username" required>
+                <br><br>
+                รหัสผ่าน:
+                <br><br>
+                <input type="password" name="password" id="password" required>
+                <br><br>
+                Email:
+                <br><br>
+                <input type="email" name="email" id="email" required>
+                <br><br>
+                <input type="file" name="photo" id="photo">
+                <br><br>
+                <input type="submit" value="สมัครสมาชิก" name="bt-rg1" id="bt-rg1">
+                <br><br>
         </form>
         </div>
     </center>
     <!--script cdn-->
-    <script href="script/script.js"></script>
+    <script href="script/script-regtter.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 </body>
 </html>

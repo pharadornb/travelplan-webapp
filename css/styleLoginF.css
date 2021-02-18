@@ -58,9 +58,25 @@
     background-color: rgb(253, 101, 46);
 }
 
-#day,#mo,#year{
+#birthday{
     height: 40px;
     border-radius: 20px;
     border: 0px solid;
     text-align: center;
+}
+
+#nf{
+    width: 150px; 
+    height: 30; 
+    border: 2px solid; 
+    border-color: rgb(255, 0, 0); 
+    background-color: rgb(250, 118, 118);
+}
+
+#np{
+    width: 250px; 
+    height: 30; 
+    border: 2px solid; 
+    border-color: rgb(255, 0, 0); 
+    background-color: rgb(250, 118, 118);
 }

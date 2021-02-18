@@ -12,28 +12,29 @@
         <div class="rg-div-1">
             <img src="img/logo-application.png" alt="" width="120px" height="150px" style="margin-top: 40px;">
             <br><br><h3>+ สมัครสมาชิกระบบวางแผนท่องเที่ยว +</h3><br><br>
-            <form action="">
+            <form action="<?php echo $_SERVER['PHP_SELF'];?>" id="formR" onsubmit="check()">
                 <p>ชื่อ-สกุล:</p>
-                <input type="text" name="fullname" id="fullname" required>
-                <br><br><br>
-                วัน:
-                <input type="number" name="day" id="day" maxlength="2" min="1" max="31" placeholder="  --" required>
-                เดือน:
-                <input type="number" name="mo" id="mo" maxlength="2" min="1" max="12" placeholder="  --" required>
-                ปีเกิด:
-                <input type="number" name="year" id="year" min="1921" max="2121" maxlength="4" placeholder="  --" required>
+                <input type="text" name="fullname" id="fullname" placeholder="Fullname"  onkeypress="showHint(event)" required> 
+                <br>
+                <p id="fn"></p>
+                <p>วัน/เดือน/ปีเกิด:</p>
+                <input type="date" name="birthday" id="birthday" required>
                 <br><br>
                 ชื่อผู้ใช้:
                 <br><br>
-                <input type="text" name="username" id="username" required>
+                <input type="text" name="username" id="username" placeholder="Username"  required>
                 <br><br>
                 รหัสผ่าน:
                 <br><br>
-                <input type="password" name="password" id="password" required>
+                <input type="password" name="password" id="password" placeholder="Password" required>
+                <p id="fp"></p>
+                ยืนยันรหัสผ่าน:
                 <br><br>
+                <input type="password" name="password" id="password" placeholder="Confrim Password" required>
+                <p id="fpc"></p>
                 Email:
                 <br><br>
-                <input type="email" name="email" id="email" required>
+                <input type="email" name="email" placeholder="E-mail" id="email" maxlength="25" required>
                 <br><br>
                 <input type="file" name="photo" id="photo">
                 <br><br>
@@ -42,8 +43,10 @@
         </form>
         </div>
     </center>
+    
     <!--script cdn-->
-    <script href="script/script-regtter.js"></script>
+    <script src="script/scriptregister.js"></script>
+    <script href="script/script.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 </body>
 </html>

@@ -1,3 +1,4 @@
+<!-- dashboard for tourist and admin -->
 <!DOCTYPE html>
 <html lang="en">
 <head>

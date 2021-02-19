@@ -1,178 +1,275 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <meta charset="UTF-8">
+    <title>[หน้าแรก]-ระบบวางแผนท่องเที่ยว</title>
+    <!--style css-->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Kanit', sans-serif;
+        }
 
-  <title>[หน้าแรก]-ระบบวางแผนท่องเที่ยว</title>
-
-
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
-  <!-- bom add -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Prata&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../beta/css/open-iconic-bootstrap.min.css">
-  <link rel="stylesheet" href="../beta/css/animate.css">
-  <link rel="stylesheet" href="../beta/css/owl.carousel.min.css">
-  <link rel="stylesheet" href="../beta/css/owl.theme.default.min.css">
-  <link rel="stylesheet" href="../beta/css/magnific-popup.css">
-  <link rel="stylesheet" href="../beta/css/aos.css">
-  <link rel="stylesheet" href="../beta/css/ionicons.min.css">
-  <link rel="stylesheet" href="../beta/css/bootstrap-datetimepicker.min.css">
-  <link rel="stylesheet" href="../beta/css/nouislider.css">
-  <link rel="stylesheet" href="../beta/css/flaticon.css">
-  <link rel="stylesheet" href="../beta/css/icomoon.css">
-  <link rel="stylesheet" href="../beta/css/style.css">
-
-
-  <style>
-   
-
-    
-    /* Add a gray background color and some padding to the footer */
-    footer {
-      background-color: #f2f2f2;
-      padding: 25px;
-    }
-    
-  .carousel-inner img {
-      width: 100%; /* Set width to 100% */
-      margin: auto;
-      min-height:200px;
-  }
-
-  /* Hide the carousel text when the screen is less than 600 pixels wide */
-  @media (max-width: 600px) {
-    .carousel-caption {
-      display: none; 
-    }
-  }
-  </style>
+        nav #topic_bold {
+            font-weight: bold;
+        }
+    </style>
 </head>
+
 <body>
 
-
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-    </ol>
-
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner" role="listbox">
-      <div class="item active">
-        <img src="img/B1.png" alt="Image">
-         
-      </div>
-
-      <div class="item">
-        <img src="img/B2.png" alt="Image">
-        
-      </div>
-      <div class="item">
-        <img src="img/B3.png" alt="Image">
-        
-      </div>
-      <div class="item">
-        <img src="img/B4.png" alt="Image">
-        
-      </div>
-      <div class="item">
-        <img src="img/B5.png" alt="Image">
-        
-      </div>
-      <div class="item">
-        <img src="img/B6.png" alt="Image">
-        
-      </div>
-      <div class="item">
-        <img src="img/B7.png" alt="Image">
-        
-      </div>
-    </div>
-
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-   
-
-</div>
-  
-<div class="container text-center">    
-  <h3>TravelPlaning</h3><br>
-
-  <div class="container">    
-  <div class="row">
-    <?php  include 'include/config_db.php';
-    
-    
-
-     $sql = "SELECT * FROM tourist_attractions ORDER BY id ";
-      $result = mysqli_query($conn, $sql);
-
-    
-      while($row = mysqli_fetch_array($result)) {
-        echo "<tr>";
-    
-       
-
-       
-        echo "<div class='col-sm-4'>";
-        echo "<div class='panel panel-primary'>";
-        echo "<div class='panel-heading'>".$row['name']."</div>";
-        echo "<div class='panel-body'><img src='img/" .$row['image_thumbnail']. 
-        "'width='300' height='250' ></div>" ;
-    
-
-        echo "<div class='panel-footer'>".$row['location']."</div>";
-        echo "<button class='btn btn-primary my-2 my-sm-0' type='submit'>Detail</button>";
-         echo"</div> </div>";
-
-        
-    
-        
-        echo "</td>";
-        
-        echo "</tr>";
-         }
-       ?>
-
-
-
-    
-       
-
- 
-
-<footer class="container-fluid text-center">
-  <p>Footer Text</p>
-</footer>
-
-</body>
-</html>
-
-<nav>
-        <input type="checkbox" name="" id="check">
-        <label for="check" class="checkbtn">
-            <i class="fas fa-bars"></i>
-        </label>
-        <label class="logo">วางแผนท่องเที่ยว</label>
-        <ul>
-            <li><a href="#">หน้าแรก</a></li>
-            <li><a href="#">สถานที่</a></li>
-            <li><a href="#">ทริป</a></li>
-            <li><a href="#">ติดต่อเรา</a></li>
-            <li><a class="active" href="#">เข้าสู๋ระบบ</a></li>
+    <!--navbar-->
+    <nav>
+        <ul class="menu">
+            <a href="index.html"><img src="img/logo-application.png" width="35px"></a>
+            <li class="logo" id="topic_bold"><a href="index.html">
+                    <font color="white">ระบบวางแผนการท่องเที่ยว | Travel Planing System</font>
+                </a></li>
+            <li class="item"><a href="#">
+                    <font color="white">หน้าแรก</font>
+                </a></li>
+            <li class="item"><a href="#">
+                    <font color="white">สถานที่ท่องเที่ยวน่าสนใจ</font>
+                </a></li>
+            <li class="item"><a href="#">
+                    <font color="white">สื่อประชาสัมพันธ์</font>
+                </a></li>
+            <li class="item"><a href="#">
+                    <font color="white">ติดต่อเรา</font>
+                </a></li>
+            <li class="item button secondary"><a href="#">
+                    <font color="white">เข้าสู่ระบบ</font>
+                </a></li>
+            <li class="toggle"><a href="#">
+                    <font color="white"><i class="fas fa-bars"></font></i>
+                </a></li>
         </ul>
     </nav>
-    <section></section>
+
+    <!-- img slide -->
+    <div id="carousel1" class="carousel slide px-0" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="d-block w-100" src="img/B1.png" alt="" class="img-fluid">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="img/B2.png" alt="" class="img-fluid">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="img/B3.png" alt="" class="img-fluid">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="img/B4.png" alt="" class="img-fluid">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="img/B5.png" alt="" class="img-fluid">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="img/B6.png" alt="" class="img-fluid">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="img/B7.png" alt="" class="img-fluid">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carousel1" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carousel1" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+        <ol class="carousel-indicators">
+            <li data-target="#carousel1" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel1" data-slide-to="1"></li>
+            <li data-target="#carousel1" data-slide-to="2"></li>
+            <li data-target="#carousel1" data-slide-to="3"></li>
+            <li data-target="#carousel1" data-slide-to="4"></li>
+            <li data-target="#carousel1" data-slide-to="5"></li>
+            <li data-target="#carousel1" data-slide-to="6"></li>
+        </ol>
+    </div>
+
+    <!-- search -->
+    <br/>
+    <div class="container" style="width:1980px;">
+        <div align="center">
+            <input type="text" name="search" id="search" placeholder="Search" class="form-control" />
+        </div>
+        <ul class="list-group" id="result"></ul>
+    </div>
+    <br/>
+
+
+    <!--interest of tourist-->
+    <h4>
+        <center><b>สถานที่ท่องเที่ยวที่น่าสนใจ</b></center>
+    </h4><BR></BR>
+
+    <!--card1-->
+    <div class="container">
+        <div class="row">
+            <div class="col col-sm-4">
+                <div class="card" style="width: 100%">
+                    <img class="card-img-top" src="img/KohChang.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">เกาะช้าง</h5>
+                        <h6><b>ชลบุรี ประเทศไทย</b></h6>
+                        <p class="card-text">ในช่วงฤดูที่เป็นต้นฝนปลายร้อนแบบนี้ อากาศก็เหมาะเป็นอย่างมากในการเดินทางไปตากลมชมวิวไกลสุดลูกหูลูกตาที่ทะเล</p>
+                        <a href="#" class="btn btn-primary">เพิ่มเติม</a>
+                    </div>
+                </div>
+            </div>
+            <!--card2-->
+            <div class="col col-sm-4">
+                <div class="card" style="width: 100%">
+                    <img class="card-img-top" src="img/Khaoyai.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">อุทยานแห่งชาติเขาใหญ่</h5>
+                        <h6><b>นครราชสีมา ประเทศไทย</b></h6>
+                        <p class="card-text">อุทยานแห่งชาติเขาใหญ่หรือถนนธนะรัชต์ เป็นเส้นทางแห่งความสุขมีเสน่ห์ดึงดูดใจ</p>
+                        <a href="#" class="btn btn-primary">เพิ่มเติม</a>
+                    </div>
+                </div>
+            </div>
+            <!--card3-->
+            <div class="col col-sm-4">
+                <div class="card" style="width: 100%">
+                    <img class="card-img-top" src="img/DoiInthanon.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">อุทยานแห่งชาติดอยอินทนนท์</h5>
+                        <h6><b>เชียงใหม่ ประเทศไทย</b></h6>
+                        <p class="card-text">ดอยอินทนนท์ อยู่ในจังหวัดเชียงใหม่ เป็นยอดเขาที่สูงที่สุดของประเทศไทย</p>
+                        <a href="#" class="btn btn-primary">เพิ่มเติม</a>
+                    </div>
+                </div>
+            </div>
+            <!--card4-->
+            <div class="col col-sm-4">
+                <div class="card" style="width: 100%">
+                    <img class="card-img-top" src="img/Kohlarn.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">เกาะล้าน</h5>
+                        <h6><b>พัทยา ชลบุรี ประเทศไทย</b></h6>
+                        <p class="card-text">ทะเลแสนสวยน้ำใสแห่งพัทยา ที่อยู่ใกล้กรุงเทพเพียง 2 ชั่วโมง เป็นเกาะยอดนิยมของนักท่องเที่ยวที่ชื่นชอบ</p>
+                        <a href="#" class="btn btn-primary">เพิ่มเติม</a>
+                    </div>
+                </div>
+            </div>
+            <!--card5-->
+            <div class="col col-sm-4">
+                <div class="card" style="width: 100%">
+                    <img class="card-img-top" src="img/KohChang.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">อุทยานแห่งชาติภูกระดึง</h5>
+                        <h6><b>เลย ประเทศไทย</b></h6>
+                        <p class="card-text">ภูกระดึง เป็นอุทยานแห่งชาติลำดับที่ 2 ของประเทศไทย ตั้งอยู่ในท้องที่ตำบลศรีฐาน อำเภอภูกระดึง จังหวัดเลย</p>
+                        <a href="#" class="btn btn-primary">เพิ่มเติม</a>
+                    </div>
+                </div>
+            </div>
+            <!--card6-->
+            <div class="col col-sm-4">
+                <div class="card" style="width: 100%">
+                    <img class="card-img-top" src="img/Lamsingh.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">หาดแหลมสิงห์</h5>
+                        <h6><b>จันทบุรี ประเทศไทย</b></h6>
+                        <p class="card-text">ชายหาดเงียบสงบของจันทบุรีที่เต็มไปด้วยโรงแรมรีสอร์ตน่าพักและร้านอาหารริมทะเล</p>
+                        <a href="#" class="btn btn-primary">เพิ่มเติม</a>
+                    </div>
+                </div>
+            </div>
+            <!--card7-->
+        <div class="col col-sm-4">
+            <div class="card" style="width: 100%">
+                <img class="card-img-top" src="img/Doisuthep.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">อุทยานแหงชาติดอยสุเทพ</h5>
+                  <h6><b>เชียงใหม่ ประเทศไทย</b></h6>
+                  <p class="card-text">วัดพระธาตุดอยสุเทพราชวรวิหาร เป็นวัดที่มีความสำคัญมากที่สุดของจังหวัดเชียงใหม่ ตั้งอยู่บนดอยสุเทพ ใกล้กับตัวเมืองเชียงใหม่  </p>
+                  <a href="#" class="btn btn-primary">อ่านรายละเอียด</a>
+                </div>
+            </div>
+        </div> 
+        <!--card8-->
+        <div class="col col-sm-4">
+            <div class="card" style="width: 100%">
+                <img class="card-img-top" src="img/Kohkood.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">เกาะกูด</h5>
+                  <h6><b>ตราด ประเทศไทย</b></h6>
+                  <p class="card-text">เกาะกูด มีขนาดใหญ่เป็นอันดับสองในตราด รองจากเกาะช้าง ได้รับการ ขนานนามว่า "อันดามันแห่งทะเลตะวันออก" </p>
+                  <a href="#" class="btn btn-primary">อ่านรายละเอียด</a>
+                </div>
+            </div>
+        </div>   
+          <!--card9-->
+        <div class="col col-sm-4">
+            <div class="card" style="width: 100%">
+                <img class="card-img-top" src="img/Chiangkan.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">เชียงคาน</h5>
+                  <h6><b>เลย ประเทศไทย</b></h6>
+                  <p class="card-text">เชียงคาน เมืองเล็กๆริมแม่น้ำโขงสุดชายแดนไทยเป็นอำเภอหนึ่งในจังหวัดเลย ที่คงยังคงไว้ซึ่งวัฒนธรรม ขนบประเพณี </p>
+                  <a href="#" class="btn btn-primary">อ่านรายละเอียด</a>
+                </div>
+            </div>
+        </div>  
+        </div>
+    </div>
+
+    <BR><BR>
+
+        <center>
+            <iframe width="800" height="400"
+                src="https://www.youtube.com/embed/sxXcudQKU64"></iframe>
+        </center></BR></BR>  
+        
+        
+        <h2><center>ติดต่อเรา</center></h2>
+        
+        
+            <table style="width: 100%" align="center" com-md-3>
+        <tr>
+            <th><br><img src ="img/C3.png"  width="100 px"></th>
+            <th><br><img src ="img/C3.png"  width="100 px"></th>
+            <th><br><img src ="img/C4.png"  width="100 px"></th>
+            <th><br><img src ="img/C4.png"  width="100 px"></th>
+            
+         </tr>
+        
+         <tr>
+            <th><h5>นายภราดร บุญร่วม</h5>นักพัฒนา</th>
+            <th><h5>นายชิดชันษา วรชิน</h5>นักพัฒนา</th>
+            <th><h5>นางสาววราพรรณ วัฒนศิริสุวรรณ</h5>นักพัฒนา</th>
+            <th><h5>นางสาวณัชชา พิทักษ์ธีรังกูร</h5>นักพัฒนา</th>
+        
+         </tr>
+        </table>
+        
+        
+        <footer class="footer">
+            <div class="container">
+                <div class ="row">
+                    <div class="footer-col">
+        
+                       <h4><center>TravelPlan2563</h4></center>
+                
+                    </div>
+        </footer>
+        
+
+    <!--javascript-->
+    <script href="script/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>

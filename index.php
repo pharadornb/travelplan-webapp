@@ -23,64 +23,16 @@
 </head>
 <body>
 
-    <!--navbar-->
-    <?php include 'php/navbar.php' ?> 
+    <!-- navbar -->
+    <?php include 'php/navbar.php'?>
 
-    <!-- img slide -->
-    <div id="carousel1" class="carousel slide px-0" data-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img class="d-block w-100" src="images/slide-img/B1.png" alt="" class="img-fluid">
-            </div>
-            <div class="carousel-item">
-                <img class="d-block w-100" src="images/slide-img/B2.png" alt="" class="img-fluid">
-            </div>
-            <div class="carousel-item">
-                <img class="d-block w-100" src="images/slide-img/B3.png" alt="" class="img-fluid">
-            </div>
-            <div class="carousel-item">
-                <img class="d-block w-100" src="images/slide-img/B4.png" alt="" class="img-fluid">
-            </div>
-            <div class="carousel-item">
-                <img class="d-block w-100" src="images/slide-img/B5.png" alt="" class="img-fluid">
-            </div>
-            <div class="carousel-item">
-                <img class="d-block w-100" src="images/slide-img/B6.png" alt="" class="img-fluid">
-            </div>
-            <div class="carousel-item">
-                <img class="d-block w-100" src="images/slide-img/B7.png" alt="" class="img-fluid">
-            </div>
-        </div>
-        <a class="carousel-control-prev" href="#carousel1" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carousel1" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-        <ol class="carousel-indicators">
-            <li data-target="#carousel1" data-slide-to="0" class="active"></li>
-            <li data-target="#carousel1" data-slide-to="1"></li>
-            <li data-target="#carousel1" data-slide-to="2"></li>
-            <li data-target="#carousel1" data-slide-to="3"></li>
-            <li data-target="#carousel1" data-slide-to="4"></li>
-            <li data-target="#carousel1" data-slide-to="5"></li>
-            <li data-target="#carousel1" data-slide-to="6"></li>
-        </ol>
-    </div>
+    <!-- carousel -->
+    <?php include 'php/carousel.php'?>
 
     <!-- search -->
-    <br/>
-    <div class="container" style="width:1980px;">
-        <div align="center">
-            <input type="text" name="search" id="search" placeholder="Search" class="form-control" />
-        </div>
-        <ul class="list-group" id="result"></ul>
+    <div class="container mt-4 mb-4">
+        <?php include 'php/search.php'?>
     </div>
-    <br/>
-    <br/>
-
 
     <!--interest of tourist-->
     <h4>
@@ -92,7 +44,7 @@
         <div class="row">
             <div class="col col-sm-4">
                 <div class="card" style="width: 100%">
-                    <img class="card-img-top" src="img/KohChang.jpg" alt="Card image cap">
+                    <img class="card-img-top" src="images/tourist/KohChang.jpg" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">เกาะช้าง</h5>
                         <h6><b>ชลบุรี ประเทศไทย</b></h6>
@@ -104,7 +56,7 @@
             <!--card2-->
             <div class="col col-sm-4">
                 <div class="card" style="width: 100%">
-                    <img class="card-img-top" src="img/Khaoyai.jpg" alt="Card image cap">
+                    <img class="card-img-top" src="images/tourist/Khaoyai.jpg" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">อุทยานแห่งชาติเขาใหญ่</h5>
                         <h6><b>นครราชสีมา ประเทศไทย</b></h6>
@@ -116,7 +68,7 @@
             <!--card3-->
             <div class="col col-sm-4">
                 <div class="card" style="width: 100%">
-                    <img class="card-img-top" src="img/DoiInthanon.jpg" alt="Card image cap">
+                    <img class="card-img-top" src="images/tourist/DoiInthanon.jpg" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">อุทยานแห่งชาติดอยอินทนนท์</h5>
                         <h6><b>เชียงใหม่ ประเทศไทย</b></h6>
@@ -128,7 +80,7 @@
             <!--card4-->
             <div class="col col-sm-4">
                 <div class="card" style="width: 100%">
-                    <img class="card-img-top" src="img/Kohlarn.jpg" alt="Card image cap">
+                    <img class="card-img-top" src="images/tourist/Kohlarn.jpg" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">เกาะล้าน</h5>
                         <h6><b>พัทยา ชลบุรี ประเทศไทย</b></h6>
@@ -140,7 +92,7 @@
             <!--card5-->
             <div class="col col-sm-4">
                 <div class="card" style="width: 100%">
-                    <img class="card-img-top" src="img/KohChang.jpg" alt="Card image cap">
+                    <img class="card-img-top" src="images/tourist/KohChang.jpg" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">อุทยานแห่งชาติภูกระดึง</h5>
                         <h6><b>เลย ประเทศไทย</b></h6>
@@ -152,7 +104,7 @@
             <!--card6-->
             <div class="col col-sm-4">
                 <div class="card" style="width: 100%">
-                    <img class="card-img-top" src="img/Lamsingh.jpg" alt="Card image cap">
+                    <img class="card-img-top" src="images/tourist/Lamsingh.jpg" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">หาดแหลมสิงห์</h5>
                         <h6><b>จันทบุรี ประเทศไทย</b></h6>
@@ -164,7 +116,7 @@
             <!--card7-->
         <div class="col col-sm-4">
             <div class="card" style="width: 100%">
-                <img class="card-img-top" src="img/Doisuthep.jpg" alt="Card image cap">
+                <img class="card-img-top" src="images/tourist/Doisuthep.jpg" alt="Card image cap">
                 <div class="card-body">
                   <h5 class="card-title">อุทยานแหงชาติดอยสุเทพ</h5>
                   <h6><b>เชียงใหม่ ประเทศไทย</b></h6>
@@ -176,7 +128,7 @@
         <!--card8-->
         <div class="col col-sm-4">
             <div class="card" style="width: 100%">
-                <img class="card-img-top" src="img/Kohkood.jpg" alt="Card image cap">
+                <img class="card-img-top" src="images/tourist/Kohkood.jpg" alt="Card image cap">
                 <div class="card-body">
                   <h5 class="card-title">เกาะกูด</h5>
                   <h6><b>ตราด ประเทศไทย</b></h6>
@@ -188,7 +140,7 @@
           <!--card9-->
         <div class="col col-sm-4">
             <div class="card" style="width: 100%">
-                <img class="card-img-top" src="img/Chiangkan.jpg" alt="Card image cap">
+                <img class="card-img-top" src="images/tourist/Chiangkan.jpg" alt="Card image cap">
                 <div class="card-body">
                   <h5 class="card-title">เชียงคาน</h5>
                   <h6><b>เลย ประเทศไทย</b></h6>

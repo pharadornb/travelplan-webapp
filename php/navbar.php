@@ -1,8 +1,8 @@
 <nav>
     <ul class="menu">
-        <a href="index.html"><img src="images/logo-application.png" width="35px"></a>
+        <a href="index.html"><img src="images/logo/logo-application.png" width="35px"></a>
         <li class="logo" id="topic_bold"><a href="index.html">
-                <font color="white">ระบบวางแผนการท่องเที่ยว | Travel Planing System</font>
+                <font color="white">ระบบวางแผนการท่องเที่ยว(Travel Planing)</font>
             </a></li>
         <li class="item"><a href="#">
                 <font color="white">หน้าแรก</font>

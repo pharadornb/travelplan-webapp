@@ -1,16 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <title>[หน้าแรก]-ระบบวางแผนท่องเที่ยว</title>
 
-    <!--style css-->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200&display=swap" rel="stylesheet">
-    <style>
+    <!-- css -->
+    <?php include 'php/header.php'?>
+
+    <style type="text/css">
         body {
             font-family: 'Kanit', sans-serif;
         }
@@ -30,23 +27,20 @@
     <?php include 'php/carousel.php'?>
 
     <!-- search -->
-    <div class="container mt-4 mb-4">
+    <div class="container mt-5">
         <?php include 'php/search.php'?>
     </div>
 
-    <!-- topic -->
-    <div class="container mt-4 mb-2">
-        <h4><center><b>+ สถานที่ท่องเที่ยวที่น่าสนใจ +</b></center></h4>
+    <!-- topic card -->
+    <div class="container mt-5">
+        <h3 class="d-flex justify-content-center font-weight-bold">+ สถานที่ท่องเที่ยวที่น่าสนใจ +</h3>
     </div>
 
-    <div class="container mt-4 mb-2">
+    <!-- card -->
+    <div class="container-fluid mt-3 mb-5">
         <?php include 'php/card.php'?>
     </div>
 
-
-
-
-    <BR><BR>
 
         <center>
             <iframe width="800" height="400"
@@ -85,14 +79,23 @@
                 
                     </div>
         </footer>
-        
 
-    <!--javascript-->
-    <script href="script/script.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- script -->
+    <?php include 'php/footer.php'?>
+
+    <script type="text/javascript">
+        //card hover
+        $(document).ready(function() {
+            console.log("document is ready");
+            $(".card").hover(
+                function() {
+                    $(this).addClass('shadow-lg').css('cursor', 'pointer');
+                }, function() {
+                    $(this).removeClass('shadow-lg');
+                }
+            );
+        });
+    </script>
 
 </body>
 </html>

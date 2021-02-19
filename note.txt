@@ -1,3 +1,18 @@
+mysql-19614-0.cloudclusters.net:19614
+
+1. Yamo
+2. N-Seoul-tower
+3. Khaoyai
+4. Phanomrung
+5. Ban
+6. KhaoPrawihan
+7. Phatam
+8. Watbanrai
+9. Watrongkun
+10. Hua-Hin
+11. KoenPasak
+12. BuengNokpednam
+
 <!--navbar-->
     <nav>
         <ul class="menu">

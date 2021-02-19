@@ -9,7 +9,7 @@
   }
   nav
   {
-        
+
       background: #000058;
       padding: 5px 20px;
       height: 65px;
@@ -22,7 +22,7 @@
   {
       color: white;
   }
-  a:hover 
+  a:hover
   {
       text-decoration: underline;
   }
@@ -40,7 +40,7 @@
 .logo a,
 .toggle a
 {
-     font-size: 20px;   
+     font-size: 20px;
 }
 
 .button-secondary
@@ -79,13 +79,13 @@
         justify-content: center;
     }
     .logo{
-        flex: 1; 
+        flex: 1;
     }
     .toggle{
         flex: 1;
         text-align: right;
     }
-    .item.button{  
+    .item.button{
         width: auto;
         order: 1;
         display: block;
@@ -112,7 +112,7 @@
         border-color: rgb(250, 193, 231);
     }
     .button-secondary a:hover{
-        color: rgb(255, 221, 244);  
+        color: rgb(255, 221, 244);
     }
 }
 
@@ -143,7 +143,7 @@
         padding-right: 0px ;
         /* display: none; */
     }
-    
+
 }
 
 /*search*/
@@ -191,4 +191,12 @@ ul{
     color:white;
     text-transform: capitalize;
     margin-bottom: 30px;
+}
+
+.text-desc-truncate {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
 }

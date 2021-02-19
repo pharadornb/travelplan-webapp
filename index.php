@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>[หน้าแรก]-ระบบวางแผนท่องเที่ยว</title>
 
+
     <!-- css -->
     <?php include 'php/header.php'?>
 
@@ -14,6 +15,14 @@
 
         nav #topic_bold {
             font-weight: bold;
+        }
+
+        .col-example {
+            padding: 1rem;
+            background-color: #33b5e5;
+            border: 2px solid #fff;
+            color: #fff;
+            text-align: center;
         }
     </style>
 
@@ -31,57 +40,55 @@
         <?php include 'php/search.php'?>
     </div>
 
-    <!-- topic card -->
+    <!-- card -->
     <div class="container mt-5">
         <h3 class="d-flex justify-content-center font-weight-bold">+ สถานที่ท่องเที่ยวที่น่าสนใจ +</h3>
     </div>
 
-    <!-- card -->
     <div class="container-fluid mt-3 mb-5">
         <?php include 'php/card.php'?>
     </div>
 
+    <!-- youtube -->
+    <div class="container-fluid mt-5">
+        <?php include 'php/youtude.php'?>
+    </div>
 
-        <center>
-            <iframe width="800" height="400"
-                src="https://www.youtube.com/embed/sxXcudQKU64"></iframe>
-        </center></BR></BR>  
-        
-        
-        <h2><center>ติดต่อเรา</center></h2>
-        
-        
-            <table style="width: 100%" align="center" com-md-3>
-        <tr>
-            <th><br><img src ="img/C3.png"  width="100 px"></th>
-            <th><br><img src ="img/C3.png"  width="100 px"></th>
-            <th><br><img src ="img/C4.png"  width="100 px"></th>
-            <th><br><img src ="img/C4.png"  width="100 px"></th>
-            
-         </tr>
-        
-         <tr>
-            <th><h5>นายภราดร บุญร่วม</h5>นักพัฒนา</th>
-            <th><h5>นายชิดชันษา วรชิน</h5>นักพัฒนา</th>
-            <th><h5>นางสาววราพรรณ วัฒนศิริสุวรรณ</h5>นักพัฒนา</th>
-            <th><h5>นางสาวณัชชา พิทักษ์ธีรังกูร</h5>นักพัฒนา</th>
-        
-         </tr>
-        </table>
-        
-        
-        <footer class="footer">
-            <div class="container">
-                <div class ="row">
-                    <div class="footer-col">
-        
-                       <h4><center>TravelPlan2563</h4></center>
-                
-                    </div>
-        </footer>
+    <!-- contact -->
+    <div class="container-fluid mt-5" >
+        <center><h3 class="font-weight-bold">+ ติดต่อเรา +</h3></center>
+    </div>
 
-    <!-- script -->
-    <?php include 'php/footer.php'?>
+    <div class="container-fluid mt-5" >
+        <?php include 'php/dev.php'?>
+    </div>
+
+    <!-- footer -->
+    <div class="mt-4">
+        <?php include 'php/footer.php'?>
+    </div>
+
+    <script src="javascript/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+        //toggle
+        $(function(){
+            $(".toggle").on("click", function(){
+
+                if($(".item").hasClass("active")){
+                    $(".item").removeClass("active");
+                    $(this).find("a").html("<i class='fas fa-bars'></i>");
+                }else{
+                    $(".item").addClass("active");
+                    $(this).find("a").html("<i class='fas fa-times'></i>");
+                }
+            })
+        });
+    </script>
 
     <script type="text/javascript">
         //card hover

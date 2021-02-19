@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>[หน้าแรก]-ระบบวางแผนท่องเที่ยว</title>
+
     <!--style css-->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -18,14 +19,14 @@
             font-weight: bold;
         }
     </style>
-</head>
 
+</head>
 <body>
 
     <!--navbar-->
     <nav>
         <ul class="menu">
-            <a href="index.html"><img src="img/logo-application.png" width="35px"></a>
+            <a href="index.html"><img src="images/logo-application.png" width="35px"></a>
             <li class="logo" id="topic_bold"><a href="index.html">
                     <font color="white">ระบบวางแผนการท่องเที่ยว | Travel Planing System</font>
                 </a></li>
@@ -54,25 +55,25 @@
     <div id="carousel1" class="carousel slide px-0" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="d-block w-100" src="img/B1.png" alt="" class="img-fluid">
+                <img class="d-block w-100" src="images/slide-img/B1.png" alt="" class="img-fluid">
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="img/B2.png" alt="" class="img-fluid">
+                <img class="d-block w-100" src="images/slide-img/B2.png" alt="" class="img-fluid">
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="img/B3.png" alt="" class="img-fluid">
+                <img class="d-block w-100" src="images/slide-img/B3.png" alt="" class="img-fluid">
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="img/B4.png" alt="" class="img-fluid">
+                <img class="d-block w-100" src="images/slide-img/B4.png" alt="" class="img-fluid">
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="img/B5.png" alt="" class="img-fluid">
+                <img class="d-block w-100" src="images/slide-img/B5.png" alt="" class="img-fluid">
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="img/B6.png" alt="" class="img-fluid">
+                <img class="d-block w-100" src="images/slide-img/B6.png" alt="" class="img-fluid">
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="img/B7.png" alt="" class="img-fluid">
+                <img class="d-block w-100" src="images/slide-img/B7.png" alt="" class="img-fluid">
             </div>
         </div>
         <a class="carousel-control-prev" href="#carousel1" role="button" data-slide="prev">
@@ -102,6 +103,7 @@
         </div>
         <ul class="list-group" id="result"></ul>
     </div>
+    <br/>
     <br/>
 
 
@@ -270,6 +272,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-</body>
 
+</body>
 </html>

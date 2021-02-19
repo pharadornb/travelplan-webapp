@@ -1,4 +1,8 @@
-mysql-19614-0.cloudclusters.net:19614
+#Backend phpmyadmin dB
+    link : https://phpmyadmin-c006.cloudclusters.net/index.php
+    Server : mysql-19614-0.cloudclusters.net:19614
+    Username : TravelPlan2021
+    Password : jYtKQ2Y1VZz1
 
 1. Yamo
 2. N-Seoul-tower

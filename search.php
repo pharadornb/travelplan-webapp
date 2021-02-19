@@ -39,7 +39,7 @@ var formData = new FormData()
 formData.append("search", obj.value)
 const response = await
 
-fetch("http://192.168.64.2/TravelPlan2563/get_search.php", {
+fetch("http://localhost/TravelPlan2563/get_search.php", {
 method: 'POST', // *GET, POST, PUT, DELETE, etc.
 mode: 'cors', // no-cors, *cors, same-origin
 

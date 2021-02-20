@@ -62,7 +62,7 @@ data.result.map((item, index) => {
 elem += `<div class="col-12 mb-3">`;
 elem += `<div class="card">`;
 elem += `<div class="card-body">`;
-elem += `<p>${item.name}</p>`;
+elem += `<p>${item.name} | ${item.location} </p>`;
 elem += `<a href="tourist_attractions?id=${item.id}" class="btn
 
 btn-primary" >See detail</a>`;

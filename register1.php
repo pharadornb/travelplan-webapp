@@ -30,7 +30,7 @@
                 <p id="fp"></p>
                 ยืนยันรหัสผ่าน:
                 <br><br>
-                <input type="password" name="password" id="password" placeholder="Confrim Password" required>
+                <input type="password" name="confrimpassword" id="confrimpassword" placeholder="Confrim Password" required>
                 <p id="fpc"></p>
                 Email:
                 <br><br>
@@ -43,7 +43,30 @@
         </form>
         </div>
     </center>
-    
+    <?php
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $fullname = $_REQUEST['fullname'];
+            $birthday = $_REQUEST['birthday'];
+            $username = $_REQUEST['username'];
+            $password = $_REQUEST['password'];
+            $confrimpassword = $_REQUEST['confrimpassword'];
+            $email = $_REQUEST['email'];
+
+
+            if( !ereg("^[ก-์]+$", $fullname ) ){
+
+            }
+            if(preg_match_all('/[A-z]/',  $password) >= 1 || preg_match_all('/[ก-ฮ]/',  $password) >= 1){
+                if(strlen($password) >= 9){
+                    if(strcmp($password, $confrimpassword)==0){
+                        
+                    }
+                }
+            }
+            
+
+        }
+    ?>
     <!--script cdn-->
     <script src="script/scriptregister.js"></script>
     <script href="script/script.js"></script>

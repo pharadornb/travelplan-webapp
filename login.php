@@ -11,11 +11,12 @@ session_start();
     <!--css cdn-->
     <link rel="stylesheet" href="css/styleLoginF.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="javascript/showphoto.js"></script>
 </head>
 <body class="bg-lg">
     <center>
     <div class="ct">
-        <img src="img/logo-application.png" alt="" width="120px" height="150px" style="margin-top: 40px;">
+   <img src="images/logo/logo-application.png" alt="" width="120px" height="150px" style="margin-top: 40px;">
 
         <form action="login_sus.php" method="POST">
             <div style="margin-top: 10%;">

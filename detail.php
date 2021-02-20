@@ -13,7 +13,8 @@
 <body
 style="background-color:Aquamarine;">
 
-      <?php include 'php/navbar.php'?>
+      <!-- navbar -->
+    <?php include 'php/navbar.php'?>
 
     
 <?php

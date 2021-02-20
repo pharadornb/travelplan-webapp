@@ -8,10 +8,14 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
+
+
 <body
+style="background-color:Aquamarine;">
 
-      style="background-color:Aquamarine;">
+      <?php include 'php/navbar.php'?>
 
+    
 <?php
   $id =$_GET["id"];
  $hostname = "mysql-19614-0.cloudclusters.net:19614";
@@ -30,6 +34,8 @@
  $sql = "SELECT * FROM tourist_attractions WHERE id = '$id' ";
  $result = $conn->query($sql);
 
+ 
+
 //echo $sql;
 while($row = mysqli_fetch_assoc($result)) {
  //echo $row["name"].$row["location"].$row["latitude"].$row["logitude"];
@@ -41,7 +47,7 @@ while($row = mysqli_fetch_assoc($result)) {
 
         echo" <div class='container'>";
         
-        echo "<img src='images/tourist/".$row['image_thumbnail']."'class='img-rounded' alt='Cinque Terre' width='700' height='500'> ";
+        echo "<img src='images/tourist/".$row['image_thumbnail']."'class='img-rounded' alt='Cinque Terre' width='700' height='400'> ";
         echo "</div>";
         echo "<br /><br /><br />";
      
@@ -54,8 +60,6 @@ while($row = mysqli_fetch_assoc($result)) {
 
  $conn->close();
  ?>
-
-
 
  </body>
  </html>

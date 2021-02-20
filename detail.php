@@ -8,8 +8,9 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
-<body>
+<body
 
+      style="background-color:Aquamarine;">
 
 <?php
   $id =$_GET["id"];
@@ -33,30 +34,28 @@
 while($row = mysqli_fetch_assoc($result)) {
  //echo $row["name"].$row["location"].$row["latitude"].$row["logitude"];
 
-        echo "<div class='text-center mb-4'>";
-        echo" <h2>".$row['name']."</h2>";
-        echo"<p>".$row['location']."</p> ";      
+        echo "<div class='text-center mb-4'>"."<br />";
+        echo "<h2>".$row['name']."</h2>";
+        echo "<p>"."<b>".$row['location']."<b>"."</p>"."<br />";      
       
 
-      
         echo" <div class='container'>";
         
-        echo "<img src='images/tourist/".$row['image_thumbnail']."'class='img-rounded' alt='Cinque Terre' width='500' height='350'> ";
+        echo "<img src='images/tourist/".$row['image_thumbnail']."'class='img-rounded' alt='Cinque Terre' width='700' height='500'> ";
         echo "</div>";
         echo "<br /><br /><br />";
      
         echo"  <div class='container'>";
-        echo "<h4>".$row['description']."</h4>";
+        echo "<h3 align = 'justify'>".$row['description']."</h3>";
         echo "</div>";
 
-
-        echo "</div>";
-            
+        echo "</div>";        
 }
 
  $conn->close();
-
  ?>
+
+
 
  </body>
  </html>

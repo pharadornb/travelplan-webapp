@@ -23,7 +23,7 @@
                 ชื่อผู้ใช้:
                 <br><br>
                 <input type="text" name="username" id="username" class="ds-01" maxlength="15" placeholder="Username"  required>
-                <br><br>
+                <p id="fun"></p>
                 รหัสผ่าน:
                 <br><br>
                 <input type="password" name="password" id="password" class="ds-01" placeholder="Password" required>
@@ -44,6 +44,9 @@
         </div>
     </center>
     <?php
+    //Connect Databate
+        include('include/config_db.php');
+
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $fullname = $_REQUEST['fullname'];
             $birthday = $_REQUEST['birthday'];
@@ -58,37 +61,47 @@
             $pattern = "/[ก-์\s]/";
             $u = preg_match_all($pattern, $fullname);
 
+
+            $sql = "SELECT (username) FROM user WHERE username = '$username'";
+            $result = mysqli_query($conn, $sql);
+
+
             //Check thai in fullname
             if($n==$u){
-                
+                //Check if the username is in the database or not.
+                if(mysqli_num_rows($result) == 0){
+                    //Check Number of characters > 8
+                    if(strlen($password) >= 9){
+                        //Check Letters in Password
+                        if(preg_match_all('/[A-z]/',  $password) >= 1 || preg_match_all('/[ก-ฮ]/',  $password) >= 1){
+                            //Check password = confrimpassword
+                            if(strcmp($password, $confrimpassword)==0){
+                                //------
+                            }else{
+                                echo "<script>";
+                                echo "document.getElementById('fpc').innerHTML = '<p><div id=\"nf\">รหัสผ่านไม่ตรงกัน</div></p>';";
+                                echo "</script>";
+                            }
+                        }else{
+                            echo "<script>";
+                            echo "document.getElementById('fp').innerHTML = '<p><div id=\"nf\">กรุณาใส่ตัวอักษรผสมเข้าไปด้วย</div></p>';";
+                            echo "</script>";
+                        }
+                    }else{
+                        echo "<script>";
+                        echo "document.getElementById('fp').innerHTML = '<p><div id=\"nf\">กรุณากรอกให้เกิน 8 ตัวอักษร</div></p>';";
+                        echo "</script>";
+                    }
+                }else{
+                    echo "<script>";
+                    echo "document.getElementById('fun').innerHTML = '<p><div id=\"nf\">มีชื่อผู้ใช้อยู่แล้ว</div></p>';";
+                    echo "</script>";
+                }
             }else{    
                 echo "<script>";
                 echo "document.getElementById('fn').innerHTML = '<p><div id=\"nf\">กรุณากรอกภาษาไทย</div></p>';";
                 echo "</script>";
             } 
-
-            //Check Number of characters > 8
-            if(strlen($password) >= 9){
-                //Check Letters in Password
-                if(preg_match_all('/[A-z]/',  $password) >= 1 || preg_match_all('/[ก-ฮ]/',  $password) >= 1){
-                    //Check password = confrimpassword
-                    if(strcmp($password, $confrimpassword)==0){
-                        
-                    }else{
-                        echo "<script>";
-                        echo "document.getElementById('fpc').innerHTML = '<p><div id=\"nf\">รหัสผ่านไม่ตรงกัน</div></p>';";
-                        echo "</script>";
-                    }
-                }else{
-                    echo "<script>";
-                    echo "document.getElementById('fp').innerHTML = '<p><div id=\"nf\">กรุณาใส่ตัวอักษรผสมเข้าไปด้วย</div></p>';";
-                    echo "</script>";
-                }
-            }else{
-                echo "<script>";
-                echo "document.getElementById('fp').innerHTML = '<p><div id=\"nf\">กรุณากรอกให้เกิน 8 ตัวอักษร</div></p>';";
-                echo "</script>";
-            }
 
         }
     ?>

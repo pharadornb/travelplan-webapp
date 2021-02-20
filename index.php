@@ -4,11 +4,10 @@
     <meta charset="UTF-8">
     <title>[หน้าแรก]-ระบบวางแผนท่องเที่ยว</title>
 
-
     <!-- css -->
     <?php include 'php/header.php'?>
 
-    <style type="text/css">
+    <style>
         body {
             font-family: 'Kanit', sans-serif;
         }
@@ -24,6 +23,10 @@
             color: #fff;
             text-align: center;
         }
+
+        html {
+            scroll-behavior: smooth;
+        }
     </style>
 
 </head>
@@ -36,25 +39,28 @@
     <?php include 'php/carousel.php'?>
 
     <!-- search -->
-    <div class="container mt-5">
+    <div class="container mt-2">
         <?php include 'php/search.php'?>
     </div>
 
     <!-- card -->
-    <div class="container mt-5">
+    <div id="travel"></div>
+    <div class="container mt-4">
         <h3 class="d-flex justify-content-center font-weight-bold">+ สถานที่ท่องเที่ยวที่น่าสนใจ +</h3>
     </div>
 
-    <div class="container-fluid mt-3 mb-5">
+    <div class="container-fluid mt-3 mb-4">
         <?php include 'php/card.php'?>
     </div>
 
     <!-- youtube -->
-    <div class="container-fluid mt-5">
+    <div id="media"></div>
+    <div class="container-fluid mt-4">
         <?php include 'php/youtude.php'?>
     </div>
 
     <!-- contact -->
+    <div id="contact"></div>
     <div class="container-fluid mt-5" >
         <center><h3 class="font-weight-bold">+ ติดต่อเรา +</h3></center>
     </div>
@@ -75,23 +81,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
     <script type="text/javascript">
-        //toggle
-        $(function(){
-            $(".toggle").on("click", function(){
-
-                if($(".item").hasClass("active")){
-                    $(".item").removeClass("active");
-                    $(this).find("a").html("<i class='fas fa-bars'></i>");
-                }else{
-                    $(".item").addClass("active");
-                    $(this).find("a").html("<i class='fas fa-times'></i>");
-                }
-            })
-        });
-    </script>
-
-    <script type="text/javascript">
-        //card hover
+        //card hover jquery
         $(document).ready(function() {
             console.log("document is ready");
             $(".card").hover(

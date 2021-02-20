@@ -1,3 +1,4 @@
+<?php SESSION_START(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,7 +32,7 @@
 
 </head>
 <body>
-
+   
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light ">
     <a href="index.php"><img src="images/logo/logo-application.png" width="35px"></a>&nbsp;&nbsp;
@@ -53,6 +54,11 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#contact">&nbsp;ติดต่อเรา</a>
+            </li>
+            <li class="nav-item">
+        
+            <?php echo "<a class='nav-link' href='tourist.php?id=".$_SESSION['user_id']."'> &nbsp;บัญชีผู้ใช้</a>"; ?>
+            
             </li>
             <li class="nav-item ist-group-item-action list-group-item-success mr-1 mb-1">
                 <a class="nav-link" href="login.php">&nbsp;<i class="fas fa-user"></i>&nbsp;ออกจากระบบ</a>

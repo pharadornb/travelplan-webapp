@@ -1,25 +1,37 @@
+
+<?php 
+// Start the session
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TravelPlaning</title>
-    <link rel="stylesheet" href="css/StyleLogin.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
-
+    <title>[เข้าสู่ระบบ]-ระบบวางแผนท่องเที่ยว</title>
+    <!--css cdn-->
+    <link rel="stylesheet" href="css/styleLoginF.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
-<body>
+<body class="bg-lg">
+    <center>
+    <div class="ct">
+        <img src="img/logo-application.png" alt="" width="120px" height="150px" style="margin-top: 40px;">
 
-    <form action="login_sus.php" class="card" method="post" target="iframe_target" >
-    <iframe id="iframe_target" name="iframe_target" src="#" style="width:0;height:0;border:0px solid #fff;"></iframe>
-    <h2>Sign in</h2> 
-    <i id="logo" class="far fa-user-circle"></i>
-    <br /> <br /> 
-    <input class="textbox" type="text" placeholder="Username" name = "username">
-    <input class="textbox" type="password" placeholder="Password" name = "password">
-    <input class="btn-submit" type="submit" value="Login">
-
-    <p>Don't have account?<a href="signup.php">Sign up</a></p>
+        <form action="login_sus.php" method="POST">
+            <div style="margin-top: 10%;">
+                <h4>+เข้าสู่ระบบวางแผนท่องเที่ยว+</h4>
+            </div>
+            <div style="margin-top: 10%;">
+                <p>ชื่อผู่้ใช้</p>
+                <input type="text" name="username" id="username" placeholder="Username" maxlength="15" required>
+                <br><br>
+                <p>รหัสผ่าน</p>
+                <input type="password" name="password" id="password" placeholder="Password" maxlength="20" required>
+                <br><br>
+                <input type="submit" value="Login" name="bt-login" class="bt-lg"><br><br>
+                <a href="register1.php"><u>ยังไม่มีชื่อบัญชีผู้ใช้?</u></a>
+                <br><br><br>
+            </div>
     </form>
-</body>
-</html>
+    </div>
+    </center>

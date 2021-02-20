@@ -65,7 +65,7 @@
                 elem += `<p>${item.name} | ${item.location} </p>`;
                 elem += `<a href="detail.php?id=${item.id}" class="btn
 
-btn-primary" >See detail</a>`;
+btn-primary" >รายละเอียดเพิ่มเติม</a>`;
                 elem += `</div>`;
                 elem += `</div>`;
                 elem += `</div>`;

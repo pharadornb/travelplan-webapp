@@ -36,24 +36,24 @@ while($row = mysqli_fetch_assoc($result)) {
         echo "<div class='text-center mb-4'>";
         echo" <h2>".$row['name']."</h2>";
         echo"<p>".$row['location']."</p> ";      
+      
 
-
-        echo"<div class='row'>";
-        echo" <div class='col-sm-4'>";
-        echo "<img src='images/tourist/".$row['image_thumbnail']."'class='img-rounded' alt='Cinque Terre' width='304' height='236'> ";
-        echo "</div>";
- 
+      
+        echo" <div >";
+        echo "<br /><br />";
      
-        echo"  <div class=' text-center col-sm-8'>";
+        echo "<img src='images/tourist/".$row['image_thumbnail']."'class='img-rounded' alt='Cinque Terre' width='500' height='350'> ";
+        echo "</div>";
+        echo "<br /><br />";
+     
+        echo"  <div>";
         echo "<h4>".$row['description']."</h4>";
         echo "</div>";
 
+
         echo "</div>";
-        echo "</div>";
-
-   
-
-
+       
+    
 
 
 }

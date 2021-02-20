@@ -39,21 +39,25 @@ while($row = mysqli_fetch_assoc($result)) {
       
 
       
-        echo" <div >";
-        echo "<br /><br />";
-     
+        echo" <div class='container'>";
+        
         echo "<img src='images/tourist/".$row['image_thumbnail']."'class='img-rounded' alt='Cinque Terre' width='500' height='350'> ";
         echo "</div>";
-        echo "<br /><br />";
+        echo "<br /><br /><br />";
      
-        echo"  <div>";
+        echo"  <div class='container'>";
         echo "<h4>".$row['description']."</h4>";
         echo "</div>";
 
 
         echo "</div>";
        
-    
+        
+        
+
+   
+
+
 
 
 }
@@ -61,6 +65,8 @@ while($row = mysqli_fetch_assoc($result)) {
  $conn->close();
 
  ?>
+
+ 
 
  </body>
  </html>

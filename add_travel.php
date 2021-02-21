@@ -70,20 +70,17 @@
         <tr> 
     </th>
 
-    <tbody>
+    <body>
 
         <tr>
-            <td>1</td>
-            <td>aa</td>
-            <td>korat</td>
-            <td><img src = "images/tourist/Yamo.jpg" width=300px height=200px></td>
+           
 
-            <td>
-                <button type="button" class="delete btn btn-danger" data-id="<?php echo $row['id']; ?>">ลบ</button>
-                <button type="button" class="edit btn btn-primary" data-toggle="modal" data-target="#Editmodal" data-id="<?php echo $row['id']; ?>">แก้ไข</button> 
-            </td>
+            
+                <a href="add_travel.php" class="btn btn-danger mb-3">ลบ</a>
+                <a href="edit_plan.php" class="btn btn-primary mb-3">แก้ไข</a>
+            
         </tr>
-    </tbody>        
+    </body>        
     
 </table>
 </center>

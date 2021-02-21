@@ -46,11 +46,14 @@
 
 <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
     <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-        <li class="nav-item active">
+        <li class="nav-item ">
             <a class="nav-link" href="index_login.php">&nbsp;หน้าแรก</a>
         </li>
+        <li class="nav-item ">
+            <a class="nav-link" href="add_travel.php">&nbsp;แพลนท่องเที่ยว</a>
+        </li>
         
-        <li class="nav-item">
+        <li class="nav-item active">
             <?php echo "<a class='nav-link' href='tourist.php?id=".$_SESSION['user_id']."'> &nbsp;บัญชีผู้ใช้</a>"; ?>
             
             </li>
@@ -98,25 +101,101 @@
   
    while($row = mysqli_fetch_assoc($result)) {
        $image = $row["image_thumbnail"];
-      // $name  = $row["name"];
-
+       $name  = $row["name"];
+       $email  = $row["email"];
+       $username  = $row["username"];
+       $birth  = $row["birthday"];
+       $pass  = $row["password"];
+       $p = strlen($pass);   //หาความยาวของพาสเวิด
+      
    }
     // echo "<img src='images/userphoto/".$image."'>";
 
-    //<?php echo "<p>ชื่อผู้ใช้  : ".$name."</p>"; 
+    
 ?>
-<div class="container" max-width ="960px" text-center= "mb-4">
+
     <br /><br />
-  <h3>บัญชีผู้ใช้</h3>
+   <center>
+    <div class="col-sm-8" >
+            <div class="card text-center">
   
+                <div class="card-header">
+                    <h3>บัญชีผู้ใช้</h3>
+                 </div>
+                <div class="card-body">
+                <div class="row">
+                <div class="col-sm-4"><?php  echo "<img src='images/userphoto/".$image."'alt='' width='200px' height='250px' style='margin-top: 40px;'>"?> </div>
+                
+                <div class="col-sm-8">
+                <br /><br /><br />
+                <div class="text-center">
+                <div class="row">  
+                   <div class="col-sm-4">        
+                    <th>ชื่อผู้ใช้งาน : </th>
+                    </div>
+                    <div class="col-sm-4">       
+                    <td><?php echo $name?></td> 
+                    </div>  
+                </div>  
+                <div class="row">  
+                    <div class="col-sm-4">        
+                            <th>อีเมล์ : </th>
+                    </div> 
+                    <div class="col-sm-4">       
+                    <td><?php echo $email?></td>
+                    </div> 
+                </div>  
+                <div class="row">  
+                    <div class="col-sm-4">        
+                            <th>Username : </th>
+                    </div> 
+                    <div class="col-sm-4">       
+                    <td><?php echo $username?></td>
+                    </div> 
+                </div>
+                <div class="row">  
+                    <div class="col-sm-4">        
+                            <th>วันเกิด : </th>
+                    </div> 
+                    <div class="col-sm-4">       
+                    <td><?php echo $birth ?></td>
+                    </div>  
+                </div>
+                <div class="row">  
+                    <div class="col-sm-4">        
+                            <th>Username : </th>
+                    </div> 
+                    <div class="col-sm-4">       
+                    <td><?php echo $username?></td>
+                    </div> 
+                </div>
+                <div class="row">  
+                    <div class="col-sm-4">        
+                            <th>Password : </th>
+                    </div> 
+                    <div class="col-sm-4">       
+                    <td><?php for($i=1;$i<=$p;$i++){
+                        echo "*";
+                        }
+                        ?></td>
+                    </div>  
+                </div>                         
+                </div>           
+                </div>
+                        
+                       
+                </div>
+                </div>
+                </div>
 
+                <div class="card-footer text-muted">
+                <a href="edit_user.php" class="btn btn-primary">แก้ไขข้อมูล</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
-  <div class="row">
-  <div class="col-sm-6"> <?php  echo "<img src='images/userphoto/".$image."'alt='' width='120px' height='150px' style='margin-top: 40px;'></div>"?> 
-  <div class="col-sm-6">........เดี๋ยวมาต่อ พรุ่งนี้ 21/2/2564 3.56 น........</div>
-  </div>
-  </div>
- 
+</center>
     <div class="mt-4">
         <?php include 'php/footer.php'?>
     </div>

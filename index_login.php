@@ -44,10 +44,12 @@
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
             <li class="nav-item active">
-                <a class="nav-link" href="index.php">&nbsp;หน้าแรก</a>
+                <a class="nav-link" href="index_login.php">&nbsp;หน้าแรก</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#travel">&nbsp;สถานที่ท่องเที่ยวน่าสนใจ</a>
+            
+            </li>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#media">&nbsp;สื่อประชาสัมพันธ์</a>
@@ -61,7 +63,7 @@
             
             </li>
             <li class="nav-item ist-group-item-action list-group-item-success mr-1 mb-1">
-                <a class="nav-link" href="login.php">&nbsp;<i class="fas fa-user"></i>&nbsp;ออกจากระบบ</a>
+                <a class="nav-link" href="index.php">&nbsp;<i class="fas fa-user"></i>&nbsp;ออกจากระบบ</a>
             </li>
         
         </ul>
@@ -75,6 +77,33 @@
     <div class="container mt-2">
         <?php include 'php/search.php'?>
     </div>
+    
+    <div class="container-fluid mt-3 mb-4">
+    <!-- card -->
+    <div class="container">
+    <div class="row">
+
+       <?php
+
+        include 'php/dBver1.php';
+
+        $sql = "SELECT * FROM tourist_attractions ORDER BY id ";
+        //$conn red tag. don't worry php stupid
+        $result = mysqli_query($conn, $sql);
+
+            while($row = mysqli_fetch_array($result)) {
+
+            echo "<div class='col-12 col-lg-4 col-md-6 mt-3'>";
+                echo "<div class='card' style='width: 100%'>";
+                    echo "<img class='card-img-top img-fluid' src='images/tourist/" .$row['image_thumbnail']. "'/>" ;
+                        echo "<div class='card-body'> <center><h5 class='card-title font-weight-bold'>" .$row['name']. "</h5></center>";
+                        echo "<h6 class='font-weight-bold'><i class='fas fa-thumbtack'></i>&nbsp;&nbsp;" . $row['location']. "</h6>";
+                        echo "<p class='card-text text-desc-truncate'>" . $row['description']. "</p>";
+                        echo "<center><a href='detail.php?id=".$row['id']."'class='btn btn-primary'>เพิ่มเติม</a>&nbsp;&nbsp;&nbsp;<a href='add_travel.php?id=".$row['id']."'class='btn btn-primary'>เพิ่มลงแพลนท่องเที่ยว</a></center><br />";
+                        echo "</div></div></div>";
+                      
+            }
+        ?>
 
     <!-- card -->
     <div id="travel"></div>

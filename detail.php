@@ -35,19 +35,8 @@
             <li class="nav-item active">
                 <a class="nav-link" href="index_login.php">&nbsp;หน้าแรก</a>
             </li>
+           
             <li class="nav-item">
-                <a class="nav-link" href="#travel">&nbsp;สถานที่ท่องเที่ยวน่าสนใจ</a>
-            
-            </li>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#media">&nbsp;สื่อประชาสัมพันธ์</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#contact">&nbsp;ติดต่อเรา</a>
-            </li>
-            <li class="nav-item">
-        
             <?php echo "<a class='nav-link' href='tourist.php?id=".$_SESSION['user_id']."'> &nbsp;บัญชีผู้ใช้</a>"; ?>
             
             </li>

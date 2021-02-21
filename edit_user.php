@@ -30,13 +30,13 @@
             <a class="nav-link" href="add_travel.php">&nbsp;แพลนของฉัน</a>
         </li>
         
-        <li class="nav-item active">
+        <li class="nav-item ">
             <?php echo "<a class='nav-link' href='tourist.php?id=".$_SESSION['user_id']."'> &nbsp;บัญชีผู้ใช้</a>"; ?>
             
             </li>
-        <li class="nav-item ist-group-item-action list-group-item-success mr-1 mb-1">
-            <a class="nav-link" href="index.php">&nbsp;<i class="fas fa-user"></i>&nbsp;ออกจากระบบ</a>
-        </li>
+            <li class="nav-item ist-group-item-action list-group-item-danger mr-1 mb-1">
+                <a class="nav-link" href="index.php" id="logout"><i class="fas fa-sign-out-alt"></i>&nbsp;ออกจากระบบ</a>
+            </li>
     
     </ul>
 </div>

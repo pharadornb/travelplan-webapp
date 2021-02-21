@@ -124,7 +124,7 @@
                  </div>
                 <div class="card-body">
                 <div class="row">
-                <div class="col-sm-4"><?php  echo "<img src='images/userphoto/".$image."'alt='' width='200px' height='250px' style='margin-top: 40px;'>"?> </div>
+                <div class="col-sm-4"><?php  echo "<img src='images/userphoto/".$image."'alt='' width='250px' height='250px' style='margin-top: 40px;'>"?> </div>
                 
                 <div class="col-sm-8">
                 <br /><br /><br />
@@ -139,20 +139,13 @@
                 </div>  
                 <div class="row">  
                     <div class="col-sm-4">        
-                            <th>อีเมล์ : </th>
+                            <th>อีเมลล์ : </th>
                     </div> 
                     <div class="col-sm-4">       
                     <td><?php echo $email?></td>
                     </div> 
                 </div>  
-                <div class="row">  
-                    <div class="col-sm-4">        
-                            <th>Username : </th>
-                    </div> 
-                    <div class="col-sm-4">       
-                    <td><?php echo $username?></td>
-                    </div> 
-                </div>
+            
                 <div class="row">  
                     <div class="col-sm-4">        
                             <th>วันเกิด : </th>

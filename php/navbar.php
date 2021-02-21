@@ -23,7 +23,7 @@
                 <a class="nav-link" href="login.php">&nbsp;<i class="fas fa-user"></i>&nbsp;เข้าสู่ระบบ</a>
             </li>
             <li class="nav-item ist-group-item-action list-group-item-info mr-1 mb-1">
-                <a class="nav-link" href="register.php">&nbsp;<i class="fas fa-user-plus"></i>&nbsp;สมัครสมาชิก</a>
+                <a class="nav-link" href="register1.php">&nbsp;<i class="fas fa-user-plus"></i>&nbsp;สมัครสมาชิก</a>
             </li>
         </ul>
     </div>

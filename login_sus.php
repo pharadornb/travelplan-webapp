@@ -38,7 +38,7 @@
                 $_SESSION['Username'] = $row["username"];
                 $_SESSION['user_id'] = $row["id"];
 
-                header("location:admin/index_admin.php");
+                header("location:admin.php");
 
             } else if ($row['user_type_id'] == 2) {
                 $_SESSION['Username'] = $row["username"];

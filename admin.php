@@ -1,7 +1,5 @@
 <?php
     session_start();
-    //$_SESSION['Username'] = $row["username"];
-    //$_SESSION['user_id'] = $row["id"];
 ?>
 <!doctype html>
 <html lang="en">
@@ -12,19 +10,30 @@
     <title>[ผู้ดูแลระบบ]-ระบบวางแผนท่องเที่ยว</title>
 
     <!-- css -->
-    <?php include '../php/header.php' ?>
+    <?php include 'php/header.php' ?>
 
 </head>
 <body>
 
-    <!-- nav -->
-    <?php include 'nav_login.php' ?>
+    <!-- navbar for admin -->
+    <?php include 'php/nav_login.php' ?>
 
+    <div class="container mt-3 mb-1">
+        <?php include 'php/search.php'?>
+    </div>
+
+    <!-- card -->
+    <div class="container">
+        <h3 class="d-flex justify-content-center font-weight-bold">+ สถิติของระบบ +</h3>
+    </div>
+
+    <?php include 'admin/statistics.php' ?>
 
     <!-- footer -->
-    <?php include 'footer.php' ?>
+    <?php include 'php/footer.php' ?>
+
     <!-- script -->
-    <?php include '../php/script.php' ?>
+    <?php include 'php/script.php' ?>
 
 </body>
 </html>

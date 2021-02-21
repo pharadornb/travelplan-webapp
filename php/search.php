@@ -1,7 +1,7 @@
 <div class="container-fluid py-4">
 	<div class="row mb-4">
 		<div class="col-12">
-			<input type="text" name="search" id="search" style="height: 60px; font-size: 20px;" placeholder="ค้นหาสถานที่ท่องเที่ยว... " class="form-control" onkeyup="search(1);" autocomplete="off">
+			<input type="text" name="search" id="search" style="height: 40px; font-size: 18px;" placeholder="ค้นหาสถานที่ท่องเที่ยว... " class="form-control" onkeyup="search(1);" autocomplete="off">
 		</div>
 	</div>
 	<div class="row" id="result">

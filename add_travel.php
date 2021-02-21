@@ -80,14 +80,15 @@
 
             <td>
                 <button type="button" class="delete btn btn-danger" data-id="<?php echo $row['id']; ?>">ลบ</button>
-                <button type="button" class="edit btn btn-primary" data-toggle="modal" data-target="#Editmodal" data-id="<?php echo $row['id']; ?>">แก้ไข</button>
+                <button type="button" class="edit btn btn-primary" data-toggle="modal" data-target="#Editmodal" data-id="<?php echo $row['id']; ?>">แก้ไข</button> 
             </td>
-
         </tr>
     </tbody>        
-      
+    
 </table>
 </center>
+
+
 </body>
 
 </html>

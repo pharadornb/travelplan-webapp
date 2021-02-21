@@ -77,9 +77,14 @@
     <div class="container mt-2">
         <?php include 'php/search.php'?>
     </div>
-    
     <div class="container-fluid mt-3 mb-4">
     <!-- card -->
+    
+     <div id="travel"></div>
+    <div class="container mt-2">
+        <h3 class="d-flex justify-content-center font-weight-bold">+ สถานที่ท่องเที่ยวที่น่าสนใจ +</h3>
+    </div>
+
     <div class="container">
     <div class="row">
 
@@ -105,14 +110,10 @@
             }
         ?>
 
-    <!-- card -->
-    <div id="travel"></div>
-    <div class="container mt-4">
-        <h3 class="d-flex justify-content-center font-weight-bold">+ สถานที่ท่องเที่ยวที่น่าสนใจ +</h3>
     </div>
+</div>
 
-    <div class="container-fluid mt-3 mb-4">
-        <?php include 'php/card.php'?>
+   
     </div>
 
     <!-- youtube -->
@@ -156,5 +157,7 @@
         });
     </script>
 
+<!-- script -->
+<?php include 'php/script.php'?>
 </body>
 </html>

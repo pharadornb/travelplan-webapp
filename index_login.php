@@ -77,37 +77,15 @@
     <div class="container mt-2">
         <?php include 'php/search.php'?>
     </div>
-    <div class="container-fluid mt-3 mb-4">
+
     <!-- card -->
-    <div class="container">
-    <div class="row">
-
-       <?php
-
-        include 'php/dBver1.php';
-
-        $sql = "SELECT * FROM tourist_attractions ORDER BY id ";
-        //$conn red tag. don't worry php stupid
-        $result = mysqli_query($conn, $sql);
-
-            while($row = mysqli_fetch_array($result)) {
-
-            echo "<div class='col-12 col-lg-4 col-md-6 mt-3'>";
-                echo "<div class='card' style='width: 100%'>";
-                    echo "<img class='card-img-top img-fluid' src='images/tourist/" .$row['image_thumbnail']. "'/>" ;
-                        echo "<div class='card-body'> <center><h5 class='card-title font-weight-bold'>" .$row['name']. "</h5></center>";
-                        echo "<h6 class='font-weight-bold'><i class='fas fa-thumbtack'></i>&nbsp;&nbsp;" . $row['location']. "</h6>";
-                        echo "<p class='card-text text-desc-truncate'>" . $row['description']. "</p>";
-                        echo "<center><a href='detail.php?id=".$row['id']."'class='btn btn-primary'>เพิ่มเติม</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href='add_travel.php?id=".$row['id']."'class='btn btn-primary'>เพิ่มลงแพลนท่องเที่ยว</a></center><br />";
-                        echo "</div></div></div>";
-                      
-            }
-        ?>
-
+    <div id="travel"></div>
+    <div class="container mt-4">
+        <h3 class="d-flex justify-content-center font-weight-bold">+ สถานที่ท่องเที่ยวที่น่าสนใจ +</h3>
     </div>
-</div>
 
-   
+    <div class="container-fluid mt-3 mb-4">
+        <?php include 'php/card.php'?>
     </div>
 
     <!-- youtube -->
@@ -151,7 +129,5 @@
         });
     </script>
 
-<!-- script -->
-<?php include 'php/script.php'?>
 </body>
 </html>

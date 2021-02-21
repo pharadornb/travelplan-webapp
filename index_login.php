@@ -44,10 +44,12 @@
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
             <li class="nav-item active">
-                <a class="nav-link" href="index.php">&nbsp;หน้าแรก</a>
+                <a class="nav-link" href="index_login.php">&nbsp;หน้าแรก</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#travel">&nbsp;สถานที่ท่องเที่ยวน่าสนใจ</a>
+            
+            </li>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#media">&nbsp;สื่อประชาสัมพันธ์</a>
@@ -61,7 +63,7 @@
             
             </li>
             <li class="nav-item ist-group-item-action list-group-item-success mr-1 mb-1">
-                <a class="nav-link" href="login.php">&nbsp;<i class="fas fa-user"></i>&nbsp;ออกจากระบบ</a>
+                <a class="nav-link" href="index.php">&nbsp;<i class="fas fa-user"></i>&nbsp;ออกจากระบบ</a>
             </li>
         
         </ul>

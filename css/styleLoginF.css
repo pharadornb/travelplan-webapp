@@ -10,8 +10,8 @@
 .bg-lg{
     background-image: url('../images/bg/bg-001.jpg');
     background-repeat: no-repeat;
-     background-attachment: fixed;
-     background-size: 100% 100%;
+    background-attachment: fixed;
+    background-size: cover;
 }
 .bt-lg{
     width: 250px;
@@ -81,6 +81,19 @@
     border-radius: 5px;
     border-color: rgb(4, 128, 31); 
     background-color: rgb(151, 250, 142);
+}
+
+.al1{
+    color: red;
+}
+
+.text-all{
+    font-size: 20px;
+    font-family: 'Itim', cursive;
+}
+
+.h-3{
+    font-family: 'Itim', cursive;
 }
 
 #np{

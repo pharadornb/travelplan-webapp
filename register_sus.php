@@ -17,35 +17,25 @@ if(isset($_FILES['image'])){
     $image_tmp = $_FILES["image"]["tmp_name"];
     $target_dir = "images/member/";
     $target_file = $target_dir . $image_name;
-    
+    $upload = 0;
     // Check if file already exists
-    if (!(file_exists($target_file))) {                   
-        $sql = "insert into (name, email, username, password, role, image_thumbnail, created_at, user_type_id)
-                values ('$fullname','$email','$username','$password','tourist','$image_name','$birthday',2)";
-        if($conn->query($sql) === TRUE){
-            move_uploaded_file($image_tmp, $target_file);
-            header("location: login.php");
-        }else{
+    if (file_exists($target_file)) {                   
+        $upload = 1;
+    }
+}
+
+$sql = "INSERT INTO users (name, email, username, password, image_thumbnail, created_at)
+        VALUES ('$fullname','$email','$username','$password','$image_name','$birthday')";
+
+    if($conn->query($sql) === TRUE){
+        move_uploaded_file($image_tmp, $target_file);
+        header("location: login.php");
+    }else{
         echo "<script type='text/javascript'>";
         echo "alert('เพิ่มข้อมูลล้มเหลว1')";
         echo "</script>";
-        }
-    }else{
-        $sql = "insert into (name,email,username,password,role,image_thumbnail,created_at,user_type_id)
-                values ('$fullname','$email','$username','$password','tourist','$image_name','$birthday',2)";
-        if($conn->query($sql) === TRUE){
-            header("location: login.php");
-        }else{
-        echo "<script type='text/javascript'>";
-        echo "alert('เพิ่มข้อมูลล้มเหลว2')";
-        echo "</script>";
-        }
     }
 
-
-
-}
-    
   
 
 

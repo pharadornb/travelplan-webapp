@@ -48,6 +48,7 @@ if($upload == 1){
         echo "<script type='text/javascript'>";
         echo "alert('เพิ่มข้อมูลล้มเหลว1')";
         echo "</script>";
+    }
 }
     
 
@@ -57,7 +58,5 @@ if($upload == 1){
 
 
 $conn->close();
-
-
 
 ?>

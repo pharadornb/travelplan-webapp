@@ -19,6 +19,7 @@
                         echo "<p class='card-text text-desc-truncate'>" . $row['description']. "</p>";
                         echo "<center><a href='detail.php?id=".$row['id']."'class='btn btn-primary'>เพิ่มเติม</a></center></div></div></div>";
                       
+                      
             }
         ?>
 

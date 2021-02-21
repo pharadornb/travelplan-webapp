@@ -50,7 +50,7 @@
             <a class="nav-link" href="index_login.php">&nbsp;หน้าแรก</a>
         </li>
         <li class="nav-item ">
-            <a class="nav-link" href="add_travel.php">&nbsp;แพลนท่องเที่ยว</a>
+            <a class="nav-link" href="add_travel.php">&nbsp;แพลนของฉัน</a>
         </li>
         
         <li class="nav-item active">

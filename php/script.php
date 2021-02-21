@@ -80,4 +80,9 @@
     function pageFunc(page) {
         search(page)
     }
+
+    $("#logout").click(function () {
+        <?php session_destroy(); ?>
+    })
+
 </script>

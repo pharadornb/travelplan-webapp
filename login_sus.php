@@ -43,6 +43,7 @@
             } else if ($row['user_type_id'] == 2) {
                 $_SESSION['Username'] = $row["username"];
                 $_SESSION['user_id'] = $row["id"];
+
                 echo "<script>";
                 echo "setTimeout(function(){
                       swal({

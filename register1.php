@@ -16,68 +16,30 @@ session_start();
         <div class="rg-div-1">
             <img src="images/logo/logo-application.png" alt="" width="120px" height="150px" style="margin-top: 40px;">
             <br><br><h3>+ สมัครสมาชิกระบบวางแผนท่องเที่ยว +</h3><br><br>
-            <form action="register_sus.php" method="POST">
-                <p>ชื่อ-สกุล:</p>
-                <input type="text" name="fullname" id="fullname" placeholder="Fullname" class="ds-01" required> 
+            <form action="register_sus.php" method="POST" enctype="multipart/form-data">
+                <p>ชื่อ-สกุล: (ภาษาไทย)</p>
+                <input type="text" name="fullname" id="fullname" placeholder="Fullname"  pattern="^[ก-๏\s]+$" class="ds-01" title="กรุณาชื่อภาษาไทย" required> 
                 <br>
-                <?php if(isset($_SESSION['error_fullname'])) : ?>
-                    <br>
-                    <div class="nf">
-                            <?php
-                                echo $_SESSION['error_fullname'];
-                                unset($_SESSION['error_fullname']);
-                            ?>
-                    </div>
-                <?php endif ?>
                 <br>
                 <p>วัน/เดือน/ปีเกิด:</p>
-                <input type="date" name="birthday" id="birthday" required>
+                <input type="date" name="birthday" id="birthday" title="กรุณาใส่ข้อมูลวันเกิด" required>
                 <br><br>
                 ชื่อผู้ใช้:
                 <br><br>
-                <input type="text" name="username" id="username" class="ds-01" maxlength="15" placeholder="Username"  required>
+                <input type="text" name="username" id="username" class="ds-01" maxlength="15" placeholder="Username" title="กรุณากรอกชื่อผู้ใช้" onChange="checkUsernameMatch();" required>
                 <br>
-                <?php if(isset($_SESSION['error_username'])):?>
-                    <br>
-                    <div class="nf">
-                            <?php
-                                echo $_SESSION['error_username'];
-                                unset($_SESSION['error_username']);
-                            ?>
-                    </div>
-                <?php endif ?>
                 <br>
                 รหัสผ่าน:
                 <br><br>
-                <input type="password" name="password" id="password" class="ds-01" placeholder="Password" required>
-                <br>
-                <?php if(isset($_SESSION['error_password'])):?>
-                    <br>
-                    <div class="nf">
-                            <?php
-                                echo $_SESSION['error_password'];
-                                unset($_SESSION['error_password']);
-                            ?>
-                    </div>
-                <?php endif ?>
-                <br>
+                <input type="password" name="password" id="password" class="ds-01" pattern="(?=.*\d)(?=.*[A-Za-zก-๏]).{8,}" title="ต้องมีตัวอักษรผสมด้วยและมี 8 ตัวขึ้นไป" placeholder="Password" required>
+                <br><br>
                 ยืนยันรหัสผ่าน:
                 <br><br>
-                <input type="password" name="confrimpassword" id="confrimpassword" class="ds-01" placeholder="Confrim Password" required>
-                <br>
-                <?php if(isset($_SESSION['error_confrimpassword'])):?>
-                    <br>
-                    <div class="nf">
-                            <?php
-                                echo $_SESSION['error_confrimpassword'];
-                                unset($_SESSION['error_confrimpassword']);
-                            ?>
-                    </div>
-                <?php endif ?>
-                <br>
+                <input type="password" name="confrimpassword" id="confrimpassword" pattern="(?=.*\d)(?=.*[A-Za-zก-๏]).{8,}" title="ต้องมีตัวอักษรผสมด้วยและมี 8 ตัวขึ้นไป" class="ds-01" placeholder="Confrim Password" onChange="checkPasswordMatch();" required>
+                <br><p id='message'></p>
                 Email:
                 <br><br>
-                <input type="email" name="email" placeholder="E-mail" class="ds-01" id="email" required>
+                <input type="email" name="email" placeholder="E-mail" class="ds-01" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
                 <br><br>
                 <input type="file" name="image" id="image" accept="image/png, image/jpeg">
                 <br><br>
@@ -87,7 +49,7 @@ session_start();
         </div>
     </center>
     <!--script cdn--> 
-    <!-- <script src="script/scriptregister.js"></script> -->
+    <script src="javascript/scriptregister.js"></script> 
     <script href="script/script.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 </body>

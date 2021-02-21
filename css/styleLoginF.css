@@ -27,10 +27,11 @@
 }
 
 .ds-01{
+    font-family: 'Kanit', sans-serif;
     width: 250px;
     height: 40px;
     border: 0px;
-    border-radius: 20px;
+    border-radius: 2px;
     text-align: center;
 }
 /*register-design-css*/
@@ -47,22 +48,15 @@
 }
 
 #bt-rg1{
-    width: 120px;
-    height: 45px;
+    width: 250px;
     border: 2px solid;
-    border-radius: 25px;
+    border-radius: 5px;
     border-color: coral;
+    font-family: 'Kanit', sans-serif;
 }
 
 #bt-rg1:hover{
     background-color: rgb(253, 101, 46);
-}
-
-#birthday{
-    height: 40px;
-    border-radius: 20px;
-    border: 0px solid;
-    text-align: center;
 }
 
 .nf{
@@ -85,6 +79,7 @@
 
 .al1{
     color: red;
+    font-family: 'Kanit', sans-serif;
 }
 
 .text-all{
@@ -95,10 +90,15 @@
 .h-3{
     font-family: 'Kanit', sans-serif;
 }
+#preview{
+    width: 200px; 
+    height: 200px; 
+    border-radius: 5px;
+}
 
 #np{
     width: 250px; 
-    height: 30; 
+    height: 30px; 
     border: 2px solid; 
     border-color: rgb(255, 0, 0); 
     background-color: rgb(250, 118, 118);

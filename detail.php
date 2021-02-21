@@ -36,8 +36,8 @@
                 <a class="nav-link" href="index_login.php">&nbsp;หน้าแรก</a>
             </li>
             <li class="nav-item ">
-            <a class="nav-link" href="add_travel.php">&nbsp;แพลนของฉัน</a>
-        </li>
+                <a class="nav-link" href="travel_plan.php">&nbsp;แพลนของฉัน</a>
+            </li>
            
             <li class="nav-item">
             <?php echo "<a class='nav-link' href='tourist.php?id=".$_SESSION['user_id']."'> &nbsp;บัญชีผู้ใช้</a>"; ?>
@@ -76,6 +76,34 @@
         $conn->close();
 
     ?>
+
+
+  <!-- The Modal -->
+  <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Modal Heading</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          Modal body..
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
+</div>
 
 </body>
 </html>

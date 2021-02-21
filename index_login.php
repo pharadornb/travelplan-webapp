@@ -2,6 +2,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<head>
+ 
+
+  
+</head>
     <meta charset="UTF-8">
     <title>[หน้าแรก]-ระบบวางแผนท่องเที่ยว</title>
 
@@ -57,7 +62,7 @@
                 <a class="nav-link" href="#contact">&nbsp;ติดต่อเรา</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="add_travel.php">&nbsp;แพลนของฉัน</a>
+                <a class="nav-link" href="travel_plan.php">&nbsp;แพลนของฉัน</a>
             </li>
             <li class="nav-item">
         
@@ -99,6 +104,13 @@
         $result = mysqli_query($conn, $sql);
 
             while($row = mysqli_fetch_array($result)) {
+            
+               // $id = $row['id'];
+               // $name = $row['name'];
+                //$location = $row['location'];
+               // $description = $row['description'];
+               // $images = $row['image_thumbnail'];
+
 
             echo "<div class='col-12 col-lg-4 col-md-6 mt-3'>";
                 echo "<div class='card' style='width: 100%'>";
@@ -106,10 +118,15 @@
                         echo "<div class='card-body'> <center><h5 class='card-title font-weight-bold'>" .$row['name']. "</h5></center>";
                         echo "<h6 class='font-weight-bold'><i class='fas fa-thumbtack'></i>&nbsp;&nbsp;" . $row['location']. "</h6>";
                         echo "<p class='card-text text-desc-truncate'>" . $row['description']. "</p>";
-                        echo "<center><a href='detail.php?id=".$row['id']."'class='btn btn-primary'>เพิ่มเติม</a>&nbsp;&nbsp;&nbsp;<a href='add_travel.php?id=".$row['id']."'class='btn btn-primary'>เพิ่มลงแพลนท่องเที่ยว</a></center><br />";
-                        echo "</div></div></div>";
+                        echo "<center><a href='detail.php?id=".$row['id']."'class='btn btn-primary' >เพิ่มเติม</a>&nbsp;&nbsp;&nbsp;<a href='add_travel_form.php?id=".$row['id']."'class='btn btn-primary'>เพิ่มลงแพลนท่องเที่ยว</a></center><br />";
+                     
+                       //echo "<button type='button' class='btn btn-primary' data-toggle='modal' data-target='#myModal' onclick='show()'> เพิ่มเติม </button>&nbsp;&nbsp;&nbsp;<a href='add_travel_form.php?id=".$row['id']."'class='btn btn-primary'>เพิ่มลงแพลนท่องเที่ยว</a></center>";
+                        
+                      
+                       echo "</div></div></div>";
                       
             }
+          
         ?>
 
     </div>
@@ -117,6 +134,11 @@
 
    
     </div>
+    <script type="text/javascript">
+function detail() {
+ 
+}
+</script>
 
     <!-- youtube -->
     <div id="media"></div>
@@ -158,6 +180,11 @@
             );
         });
     </script>
+
+
+
+
+  
 
 <!-- script -->
 <?php include 'php/script.php'?>

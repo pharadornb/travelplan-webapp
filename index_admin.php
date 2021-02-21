@@ -25,13 +25,17 @@
         <h3 class="d-flex justify-content-center font-weight-bold">+ จัดการสถานที่ท่องเที่ยว +</h3>
     </div>
 
+    <!-- manage tourist_attraction-->
+    <?php include 'php/manage_tourist_atteaction.php' ?>
+
     <div id="manage_users"></div>
     <div class="container mt-4 mb-4">
         <h3 class="d-flex justify-content-center font-weight-bold">+ จัดการผู้ใช้งาน +</h3>
     </div>
 
     <!-- manage tourist_attraction-->
-    <?php include 'php/manage_tourist_atteaction.php' ?>
+    <?php include 'php/manage_users.php' ?>
+
 
     <!-- footer -->
     <?php include 'php/footer.php'?>

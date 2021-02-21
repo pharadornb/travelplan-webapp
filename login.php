@@ -27,7 +27,10 @@
             <a href="register1.php"><u>ยังไม่มีชื่อบัญชีผู้ใช้?</u></a>
         </div>
     </form>
+    <p><i>//ทดสอบระบบของผู้ใช้</i> username: <b>user</b> password: <b>5678</b><br/>
+    <i>//ทดสอบระบบของผู้ดูแลระบบ</i> username: <b>admin</b> password: <b>admin1234</b></p>
 </div>
+
 
 <?php include 'php/script.php'?>
 </body>

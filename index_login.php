@@ -57,6 +57,9 @@
                 <a class="nav-link" href="#contact">&nbsp;ติดต่อเรา</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="add_travel.php">&nbsp;แพลนของฉัน</a>
+            </li>
+            <li class="nav-item">
         
             <?php echo "<a class='nav-link' href='tourist.php?id=".$_SESSION['user_id']."'> &nbsp;บัญชีผู้ใช้</a>"; ?>
             

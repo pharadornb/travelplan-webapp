@@ -19,22 +19,37 @@ if(isset($_FILES['image'])){
     $target_file = $target_dir . $image_name;
     $upload = 0;
     // Check if file already exists
-    if (file_exists($target_file)) {                   
+    if (file_exists($target_file) == 1) {                   
         $upload = 1;
     }
 }
 
-$sql = "INSERT INTO users (name, email, username, password, image_thumbnail, created_at)
+
+
+if($upload == 1){
+    $sql = "INSERT INTO users (name, email, username, password, image_thumbnail, created_at)
         VALUES ('$fullname','$email','$username','$password','$image_name','$birthday')";
 
-    if($conn->query($sql) === TRUE){
-        move_uploaded_file($image_tmp, $target_file);
+    if(mysqli_query($conn, $sql)){
         header("location: login.php");
     }else{
         echo "<script type='text/javascript'>";
         echo "alert('เพิ่มข้อมูลล้มเหลว1')";
         echo "</script>";
     }
+}else{
+    $sql = "INSERT INTO users (name, email, username, password, image_thumbnail, created_at)
+        VALUES ('$fullname','$email','$username','$password','$image_name','$birthday')";
+
+    if(mysqli_query($conn, $sql)){
+        move_uploaded_file($image_tmp, $target_file);
+        header("location: login.php");
+    }else{
+        echo "<script type='text/javascript'>";
+        echo "alert('เพิ่มข้อมูลล้มเหลว1')";
+        echo "</script>";
+}
+    
 
   
 

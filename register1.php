@@ -10,7 +10,7 @@ session_start();
     <!--css cdn-->
     <link rel="stylesheet" href="css/styleLoginF.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Itim&family=Kanit&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200&family=Sarabun:wght@300&display=swap" rel="stylesheet">
 
 </head>
 <body class="bg-lg"> 
@@ -24,7 +24,7 @@ session_start();
                 <input type="text" name="fullname" id="fullname" placeholder="Fullname"  pattern="^[ก-๏\s]+$" class="ds-01" title="กรุณาชื่อภาษาไทย" required> 
                 <br>
                 <br>
-                <label for="" class="text-all">วัน/เดือน/ปีเกิด:</label><label for="" class="al1">(*)</label><
+                <label for="" class="text-all">วัน/เดือน/ปีเกิด:</label><label for="" class="al1">(*)</label>
                 <br><br>
                 <input type="date" name="birthday" id="birthday" title="กรุณาใส่ข้อมูลวันเกิด" required>
                 <br><br>
@@ -32,7 +32,7 @@ session_start();
                 <br><br>
                 <input type="text" name="username" id="username" class="ds-01" maxlength="15" placeholder="Username" title="กรุณากรอกชื่อผู้ใช้" onChange="checkUsernameMatch();" required>
                 <br>
-                <br>
+                <br> 
                 <label for="" class="text-all">รหัสผ่าน:</label><label for="" class="al1">(*)</label>
                 <br><br>
                 <input type="password" name="password" id="password" class="ds-01" pattern="(?=.*\d)(?=.*[A-Za-zก-๏]).{8,}" title="ต้องมีตัวอักษรผสมด้วยและมี 8 ตัวขึ้นไป" placeholder="Password" required>

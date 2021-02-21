@@ -1,5 +1,5 @@
-<?php SESSION_START(); ?>
 <?php
+    SESSION_START();
     $id = $_GET["id"];
     include 'php/dBver2.php';
 
@@ -14,7 +14,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>[รายละเอียดสถานที่ท่องเที่ยว]-ระบบวางแผนท่องเที่ยว</title>
+    <title>[รายละเอียด]-ระบบวางแผนท่องเที่ยว</title>
 
     <!-- css -->
     <?php include 'php/header.php' ?>
@@ -72,6 +72,7 @@
         }
 
         $conn->close();
+
     ?>
 
 </body>

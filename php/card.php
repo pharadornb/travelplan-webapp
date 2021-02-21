@@ -5,7 +5,7 @@
 
         include 'php/dBver1.php';
 
-        $sql = "SELECT * FROM tourist_attractions ORDER BY id ";
+        $sql = "SELECT * FROM tourist_attractions ORDER BY created_at DESC";
         //$conn red tag. don't worry php stupid
         $result = mysqli_query($conn, $sql);
 

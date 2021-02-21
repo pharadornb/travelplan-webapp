@@ -48,7 +48,6 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#travel">&nbsp;สถานที่ท่องเที่ยวน่าสนใจ</a>
-            
             </li>
             </li>
             <li class="nav-item">

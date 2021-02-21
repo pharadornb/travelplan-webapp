@@ -7,6 +7,8 @@
     //$conn red tag. don't worry php stupid
     $result = $conn->query($sql);
 ?>
+
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -43,10 +45,37 @@
             <li class="nav-item ist-group-item-action list-group-item-success mr-1 mb-1">
                 <a class="nav-link" href="index.php">&nbsp;<i class="fas fa-user"></i>&nbsp;ออกจากระบบ</a>
             </li>
-        
         </ul>
     </div>
 </nav>
+
+<body>
+<br /><center><h3>แพลนของฉัน<h3></center><br />
+
+<center>
+<table border="1" width="70%" height="wrap_content">
+    <th>
+        <tr>
+            <th>ลำดับที่</th>
+            <th>ชื่อสถานที่</th>
+            <th>ที่ตั้ง</th>
+            <th>รูปภาพ</th>
+        <tr>
+    </th>
+
+    <tbody>
+
+        <tr>
+            <td>1</td>
+            <td>อนุสาวรีย์ท้าวสุรนารี</td>
+            <td>ในเมือง จ.นครราชสีมา</td>
+            <td><img src=images/tourist/Yamo.jpg width=200px height=150px></td>
+        </tr>
+</table>
+
+
+</center>
+</body>
 
 </body>
 </html>

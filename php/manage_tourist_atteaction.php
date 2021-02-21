@@ -34,8 +34,8 @@
                 <td><?php echo $row['username']; ?></td>
                 <td><?php echo $row['name']; ?></td>
                 <td><?php echo $row['email']; ?></td>
-                <td align="center"><a href="update.php?id=<?php echo $row['id']; ?>" class="btn btn-primary">จัดการบัญชี</a></td>
-                <td align="center"><a href="delete.php?del=<?php echo $row['id']; ?>" class="btn btn-danger">ลบบัญชี</a></td>
+                <td align="center"><a href="manage_user_update.php?id=<?php echo $row['id']; ?>" class="btn btn-primary">จัดการบัญชี</a></td>
+                <td align="center"><a href="manage_user_delete.php?del=<?php echo $row['id']; ?>" class="btn btn-danger">ลบบัญชี</a></td>
             </tr>
 
             <?php

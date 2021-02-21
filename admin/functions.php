@@ -33,7 +33,7 @@ class DB_con {
 
 
     public function fetchonerecord($userid) {
-        $result = mysqli_query($this->dbcon, "SELECT * FROM tblusers WHERE id = '$userid'");
+        $result = mysqli_query($this->dbcon, "SELECT * FROM users WHERE id = '$userid'");
         return $result;
     }
 

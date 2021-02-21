@@ -18,10 +18,7 @@
     <!-- carousel -->
     <?php include 'php/carousel.php'?>
 
-    <!-- search -->
-    <div class="container mt-5">
-        <?php include 'php/search.php'?>
-    </div>
+   
 
     <!-- card -->
     <div id="travel"></div>

@@ -98,7 +98,7 @@
                         echo "<div class='card-body'> <center><h5 class='card-title font-weight-bold'>" .$row['name']. "</h5></center>";
                         echo "<h6 class='font-weight-bold'><i class='fas fa-thumbtack'></i>&nbsp;&nbsp;" . $row['location']. "</h6>";
                         echo "<p class='card-text text-desc-truncate'>" . $row['description']. "</p>";
-                        echo "<center><a href='detail.php?id=".$row['id']."'class='btn btn-primary'>เพิ่มเติม</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href='add_travel.php?id=".$row['id']."'class='btn btn-primary'>เพิ่มลงแพลนท่องเที่ยว</a></center><br />";
+                        echo "<center><a href='detail.php?id=".$row['id']."'class='btn btn-primary'>เพิ่มเติม</a>&nbsp;&nbsp;&nbsp;<a href='add_travel.php?id=".$row['id']."'class='btn btn-primary'>เพิ่มลงแพลนท่องเที่ยว</a></center><br />";
                         echo "</div></div></div>";
                       
             }

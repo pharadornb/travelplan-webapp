@@ -3,15 +3,10 @@
 
        <?php
 
-        $hostname = "mysql-19614-0.cloudclusters.net:19614";
-        $username = "TravelPlan2021";
-        $password = "jYtKQ2Y1VZz1";
-        $database = "TravelPlan2021";
-
-        $conn = mysqli_connect($hostname,$username,$password,$database);
-        $conn->query("SET NAMES UTF8");
+        include 'php/dBver1.php';
 
         $sql = "SELECT * FROM tourist_attractions ORDER BY id ";
+        //$conn red tag. don't worry php stupid
         $result = mysqli_query($conn, $sql);
 
             while($row = mysqli_fetch_array($result)) {

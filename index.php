@@ -1,33 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>[หน้าแรก]-ระบบวางแผนท่องเที่ยว</title>
 
     <!-- css -->
     <?php include 'php/header.php'?>
-
-    <style>
-        body {
-            font-family: 'Kanit', sans-serif;
-        }
-
-        nav #topic_bold {
-            font-weight: bold;
-        }
-
-        .col-example {
-            padding: 1rem;
-            background-color: #33b5e5;
-            border: 2px solid #fff;
-            color: #fff;
-            text-align: center;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-    </style>
 
 </head>
 <body>
@@ -39,13 +19,13 @@
     <?php include 'php/carousel.php'?>
 
     <!-- search -->
-    <div class="container mt-2">
+    <div class="container mt-5">
         <?php include 'php/search.php'?>
     </div>
 
     <!-- card -->
     <div id="travel"></div>
-    <div class="container mt-4">
+    <div class="container mt-2">
         <h3 class="d-flex justify-content-center font-weight-bold">+ สถานที่ท่องเที่ยวที่น่าสนใจ +</h3>
     </div>
 
@@ -62,7 +42,7 @@
     <!-- contact -->
     <div id="contact"></div>
     <div class="container-fluid mt-5" >
-        <center><h3 class="font-weight-bold">+ ติดต่อเรา +</h3></center>
+        <h3 class="font-weight-bold d-flex justify-content-center">+ ติดต่อเรา +</h3>
     </div>
 
     <div class="container-fluid mt-5" >
@@ -74,25 +54,8 @@
         <?php include 'php/footer.php'?>
     </div>
 
-    <script src="javascript/script.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
-    <script type="text/javascript">
-        //card hover jquery
-        $(document).ready(function() {
-            console.log("document is ready");
-            $(".card").hover(
-                function() {
-                    $(this).addClass('shadow-lg').css('cursor', 'pointer');
-                }, function() {
-                    $(this).removeClass('shadow-lg');
-                }
-            );
-        });
-    </script>
+    <!-- script -->
+    <?php include 'php/script.php'?>
 
 </body>
 </html>

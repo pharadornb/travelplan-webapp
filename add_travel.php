@@ -40,7 +40,11 @@
            
             <li class="nav-item">
             <?php echo "<a class='nav-link' href='tourist.php?id=".$_SESSION['user_id']."'> &nbsp;บัญชีผู้ใช้</a>"; ?>
-            
+
+            <li class="nav-item active">
+                <a class="nav-link" href="add_travel.php">&nbsp;แพลนของฉัน</a>
+            </li>
+
             </li>
             <li class="nav-item ist-group-item-action list-group-item-success mr-1 mb-1">
                 <a class="nav-link" href="index.php">&nbsp;<i class="fas fa-user"></i>&nbsp;ออกจากระบบ</a>
@@ -52,30 +56,38 @@
 <body>
 <br /><center><h3>แพลนของฉัน<h3></center><br />
 
-<center>
-<table border="1" width="70%" height="wrap_content">
-    <th>
+<div class="container">
+<a href="index_login.php" class="btn btn-success mb-3">เพิ่ม</a>
+
+
+<table class = "table table-bordered table-stripted">
         <tr>
             <th>ลำดับที่</th>
             <th>ชื่อสถานที่</th>
             <th>ที่ตั้ง</th>
             <th>รูปภาพ</th>
-        <tr>
+            <th>จัดการข้อมูล</th>
+        <tr> 
     </th>
 
     <tbody>
 
         <tr>
             <td>1</td>
-            <td>อนุสาวรีย์ท้าวสุรนารี</td>
-            <td>ในเมือง จ.นครราชสีมา</td>
-            <td><img src=images/tourist/Yamo.jpg width=200px height=150px></td>
+            <td>aa</td>
+            <td>korat</td>
+            <td><img src = "images/tourist/Yamo.jpg" width=300px height=200px></td>
+
+            <td>
+                <button type="button" class="delete btn btn-danger" data-id="<?php echo $row['id']; ?>">ลบ</button>
+                <button type="button" class="edit btn btn-primary" data-toggle="modal" data-target="#Editmodal" data-id="<?php echo $row['id']; ?>">แก้ไข</button>
+            </td>
+
         </tr>
+    </tbody>        
+      
 </table>
-
-
 </center>
 </body>
 
-</body>
 </html>

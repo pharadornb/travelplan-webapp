@@ -17,12 +17,8 @@
             <div class="card">
                 <h5 class="card-header" align="center" style="font-weight: bold">สมาชิกใหม่ล่าสุดของเรา!!</h5>
                 <div class="card-body">
-                    <h4 class="card-title">
-                        ประหยัด จันทร์อังคารพุธ
-                    </h4>
-                    <p class="card-text">
-                        " 21/02/2564 22:27"
-                    </p>
+                    <h1 align="left"><i class="fas fa-user-plus"></i></h1>
+                    <div id="ajax_user_name"></div>
                 </div>
             </div>
         </div>
@@ -42,12 +38,8 @@
             <div class="card">
                 <h5 class="card-header" align="center" style="font-weight: bold">สถานที่ใหม่ล่าสุดของเรา!!</h5>
                 <div class="card-body">
-                    <h4 class="card-title">
-                        อุทยานแห่งชาติวังเวียงวน
-                    </h4>
-                    <p class="card-text">
-                        "นครย่างปลาดุก, อุบลราชสีมา"
-                    </p>
+                    <h1 align="left"><i class="fas fa-route"></i></h1>
+                    <div id="ajax_travel_name"></div>
                 </div>
             </div>
         </div>

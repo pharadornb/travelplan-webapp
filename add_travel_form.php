@@ -84,7 +84,7 @@ $database = "TravelPlan2021";
                  </div>
                 <div class="card-body">
                 <div class="row">
-                <div class="col-sm-4"><?php  echo "<img src='images/tourist/".$_SESSION["image"]."'alt='' width='250px' height='250px' style='margin-top: 40px;'>"?> </div>
+                <div class="col-sm-4"><?php  echo "<img src='images/tourist/".$_SESSION["image"]."'alt='' width='350px' height='250px' style='margin-top: 40px;'>"?> </div>
                 
                 <div class="col-sm-8">
                 <form method="post" action="add_travel.php">  

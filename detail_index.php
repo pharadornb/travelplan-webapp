@@ -24,8 +24,7 @@
 
    <!-- navbar -->
  <!-- navbar -->
- <?php include 'php/navbar.php'?>
-
+ <?php include 'php/nav_login_sys.php'?>
 
     <?php
     
@@ -35,26 +34,32 @@
 
             echo "<div class='text-center mb-4'>" . "<br />";
             echo "<h2>" . $row['name'] . "</h2>";
-            echo "<p>" . "<b>" . $row['location'] . "<b>" . "</p>" . "<br />";
+            echo "<p>" . "<b>" . $row['location'] . "<b>" . "</p>";
 
             echo " <div class='container'>";
 
-            echo "<img src='images/tourist/" . $row['image_thumbnail'] . "'class='img-rounded' alt='Cinque Terre' width='700' height='400'> ";
+            echo "<img  src='images/tourist/" . $row['image_thumbnail'] . "''width='80%'> ";
             echo "</div>";
             echo "<br /><br /><br />";
 
             echo "<div class='container'>";
-            echo "<h4 align = 'justify'>" . $row['description'] . "</h4>";
+            echo  "<h5 align = 'justify'> <b>คำอธิบาย : </b>" . $row['description'] . "</h5>";
             echo "</div>";
 
             echo "</div>";
         }
 
-        $conn->close();
-
-    include 'php/footer.php';
-    include 'php/script.php';
     ?>
+
+   <div class="container mt-5 mb-3" >
+       <h4 class="d-flex-center">+ แผนที่สถานที่ท่องเที่ยว +</h4>
+       <?php include 'php/map_view.php'; ?>
+   </div>
+
+
+    <?php include 'php/footer.php';
+    include 'php/script.php';
+    $conn->close();?>
 
 </body>
 </html>

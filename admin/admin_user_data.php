@@ -27,11 +27,16 @@
 
         while($row = mysqli_fetch_array($sql)) {
             ?>
-
 <!--            date_default_timezone_set("Asia/Bangkok");-->
 <!--            echo date_default_timezone_get();-->
             <tr>
-                <td align="center"><?php echo $row['created_at']; ?></td>
+                <?php
+//                    date_default_timezone_set("Asia/Bangkok");
+//                    set time_zone='+07:00';
+//                date_default_timezone_set('Asia/Bangkok');
+                $date = date_create($row['created_at'], timezone_open('Asia/Bangkok'));
+                ?>
+                <td align="center"><?php echo date_format($date, 'Y-m-d H:i:sP') ?></td>
                 <td><?php echo $row['username']; ?></td>
                 <td><?php echo $row['name']; ?></td>
                 <td><?php echo $row['email']; ?></td>

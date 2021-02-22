@@ -4,6 +4,11 @@
     Username : TravelPlan2021
     Password : jYtKQ2Y1VZz1
 
+
+    $date = date_create($row['created_at'], timezone_open('Asia/Bangkok'));
+                    ?>
+                    <td align="center"><?php echo date_format($date, 'Y-m-d H:i:sP')
+
 1. Yamo
 2. N-Seoul-tower
 3. Khaoyai
@@ -153,5 +158,6 @@ sign-up_sus
 
   </body>
   </html>
+
 
 

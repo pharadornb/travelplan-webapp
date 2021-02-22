@@ -1,4 +1,5 @@
 <?php include '../php/dBver2.php';?>
+<h1 align="left"><i class="fas fa-route"></i></h1>
 <h4 class="card-title" style="font-weight: bold;">
     <?php
     $sql = "SELECT name, location FROM tourist_attractions ORDER BY id DESC LIMIT 1";

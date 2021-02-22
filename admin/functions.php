@@ -8,7 +8,8 @@ define('DB_NAME', 'TravelPlan2021');
 class DB_con {
 
     function __construct() {
-        date_default_timezone_set("Asia/Bangkok");
+//        date_default_timezone_set("Asia/Bangkok");
+//        $date=date('l jS \of F Y h:i:s A');
         $conn = mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
         $conn->set_charset("utf8");
         $this->dbcon = $conn;

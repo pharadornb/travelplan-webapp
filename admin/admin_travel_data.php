@@ -8,7 +8,7 @@
         <th>ละติจูด</th>
         <th>ลองติจูด</th>
         <th>ระงับ</th>
-        <th>โหมด</th>
+<!--        <th>โหมด</th>-->
         <th colspan="2">จัดการ</th>
         </thead>
         <tbody>
@@ -34,13 +34,13 @@
 
             <tr>
                 <td align="center"><?php echo $row['id']; ?></td>
-                <td><?php echo $row['created_at']; ?></td>
+                <td><?php $date = date_create($row['created_at'], timezone_open('Asia/Bangkok')); echo date_format($date, 'Y-m-d H:i:sP'); ?></td>
                 <td><?php echo $row['name']; ?></td>
                 <td><?php echo $row['location']; ?></td>
                 <td><?php echo $row['latitude']; ?></td>
                 <td><?php echo $row['logitude']; ?></td>
                 <td><?php echo $row['allow']; ?></td>
-                <td><?php echo $row['mode']; ?></td>
+<!--                <td>--><?php //echo $row['mode']; ?><!--</td>-->
                 <td align="center"><a href="admin_travel_update.php?id=<?php echo $row['id']; ?>" class="btn btn-primary">แก้ไข</a></td>
                 <td align="center"><a href="admin_travel_delete.php?del=<?php echo $row['id']; ?>" class="btn btn-danger">ลบ</a></td>
             </tr>

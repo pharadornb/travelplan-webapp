@@ -2,6 +2,7 @@
 <!--    45 แห่ง-->
 <!--</h4>-->
 <?php include '../php/dBver2.php';?>
+<h1 align="left"><i class="fas fa-archway"></i></h1>
 <h4 class="card-title" style="font-weight: bold;">
     <?php
     $sql = "SELECT COUNT(*) as total FROM tourist_attractions";
@@ -10,3 +11,6 @@
     echo $data['total'];
     ?>&nbsp;แห่ง
 </h4>
+<p class="card-text">
+    "กว่าๆ ที่มีในคลังระบบของเรา"
+</p>

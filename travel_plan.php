@@ -33,8 +33,7 @@
     }
 </style>
 
-</head>
-<body>
+
 
 <!-- navbar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light ">
@@ -95,20 +94,24 @@ $username = "TravelPlan2021";
 $password = "jYtKQ2Y1VZz1";
 $database = "TravelPlan2021";
 
-//Connect dB
-$conn = new mysqli($hostname, $username, $password, $database);
-$conn->query("SET NAMES UTF8");
-
-//Check dB die
-if ($conn->connect_error) {
-    die('Could not connect: ' . $conn->connect_error);
+try{
+    $conn = new PDO("mysql:host=$hostname;dbname=$database;charset=utf8",$username,$password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+}catch(PDOException $e){
+    echo"Connection faild: ".$e->getMessage();
+    exit;
 }
+
 
  
 //select db
 $sql = "SELECT*FROM myplan" ;
 
-$query=mysqli_query($conn,$sql);
+$stmt = $conn ->query($sql);
+$stmt->execute();
+$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+//print_r($result);
       
 ?>
 
@@ -162,51 +165,115 @@ tr:nth-child(even) {
   </tr>
   
   <tr>  <!--เรียกค่าวนลูป-->
-    <?php foreach($query as $data){ ?>
+  
+  <?php foreach($result as $val) {?>
 
-<!--เรียกค่าที่อยากแสดง-->
-    <tr>
-    <div class = "text-center">
-        <th><?php echo $data["name"] ?></th>
-        <th><?php echo $data["location"] ?></th>
-        <th><?php  echo "<img src='images/tourist/".$data['image_thumbnail']."'alt='' width='140px' height='100px' style='margin-top: 40px;'>"?></th>
-        <th><?php echo $data["date"] ?></th>
-        <th><?php echo $data["budget"] ?></th>
-        <th><?php echo $data["note"] ?></th>
-    </div>
+ <tr><div class = 'text-center'>
+ <th><?php echo $val["name"]?></th>
+ <th><?php echo $val["location"]?></th>
+ <th><?php  echo "<img src='images/tourist/".$val['image_thumbnail']."'alt='' width='140px' height='100px' style='margin-top: 40px;'>";?></th>
+ <th><?php echo $val["date"]?></th>
+ <th><?php echo $val["budget"]?></th>
+ <th><?php echo $val["note"]?></th>
+ </div>
 <th>
-        <a href="edit_travel_form.php?id=<?php echo $data["id"]?>" input type="button" class="btn btn-primary">แก้ไข</a>
-       
-        <button type="button" class="btn btn-danger "  data-toggle="modal" data-target="#myModal">ลบ</button>
-</th>
+
+  
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal<?php echo $val['ID']?>">
+      แก้ไขข้อมูล
+     </button>   
+    
+     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal1<?php echo $val['ID']?>">
+     ลบข้อมูล
+     </button>   
+    
+
+    &nbsp;&nbsp;
+     
+     </th>
+     
     </tr>
- <?php } ?>
 
-</table>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal<?php echo $val['ID'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 style="color:red;"><span class="glyphicon glyphicon-lock"></span>แก้ไขข้อมูล</h4> &nbsp;&nbsp;&nbsp;&nbsp;
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form role="form" action="edit_travel.php?id=<?php echo $val["ID"]?>" method="POST">
+
+            <div class="form-group">
+              <label for="date"><span class="glyphicon glyphicon-user"></span>วันที่เดินทาง :</label>
+              <input type="date" class="form-control" name="date" id="date" value="<?php echo $val["date"]?>">
+            </div>
+
+            <div class="form-group">
+              <label for="budget"><span class="glyphicon glyphicon-user"></span>งบประมาณการเดินทาง :</label>
+              <input type="text" class="form-control" name="budget" id="budget" value="<?php echo $val["budget"]?>">
+            </div>
+
+
+            <div class="form-group">
+              <label for="note"><span class="glyphicon glyphicon-user"></span>NOTE :</label>
+              <input type="text" class="form-control" name="note" id="note" value="<?php echo $val["note"]?>">
+            </div>
+
+
+            
 
 
 
+           
+           
 
 
-<!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Modal Header</h4>
-      </div>
-      <div class="modal-body">
-        <p>Some text in the modal.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary btn-primary btn-block"><span class="glyphicon glyphicon-off"></span>แก้ไข</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-default btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> ยกเลิก</button>
+         
+         
+        </div>
       </div>
     </div>
-
   </div>
 </div>
+<?php } ?>
+
+   <!-- Modal -->
+   <div class="modal fade" id="exampleModal1<?php echo $val['ID'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+       
+      </div>
+      <div class="modal-body">
+                
+          Are you sure to delete  " <?php echo $val["ID"]?>"  ?
+
+
+      </div>
+      <div class="modal-footer">
+      <button type="submit" class="btn btn-secondary btn-secondary pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> ยกเลิก</button>
+      <?php echo '<a href="delete_travel.php?id=' . $val['ID'] .'" input type="button" class="btn btn-danger" onclick="return c('.$val['ID'].')">ลบข้อมูล</a></td>'; ?>
+        
+      </div>
+    </div>
+  </div>
+</div>
+     
+
+</table>
+   
+
+
+    
 </body>
 </html>

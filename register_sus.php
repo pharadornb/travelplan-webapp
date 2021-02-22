@@ -38,8 +38,8 @@ if($upload == 1){
         echo "</script>";
     }
 }else{
-    $sql = "INSERT INTO users (name, email, username, password, image_thumbnail, created_at)
-        VALUES ('$fullname','$email','$username','$password','$image_name','$birthday')";
+    $sql = "INSERT INTO users (name, email, username, password, image_thumbnail, created_at, user_type_id)
+        VALUES ('$fullname','$email','$username','$password','$image_name','$birthday',2)";
 
     if(mysqli_query($conn, $sql)){
         move_uploaded_file($image_tmp, $target_file);

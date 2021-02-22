@@ -17,7 +17,7 @@ session_start();
     <center>
         <div class="rg-div-1">
             <img src="images/logo/logo-application.png" alt="" width="120px" height="150px" style="margin-top: 40px;">
-            <br><br><h3 class="h-3">+ สมัครสมาชิกระบบวางแผนท่องเที่ยว +</h3><br><br>
+            <br><br><h3 class="h-3"><b>+ สมัครสมาชิกระบบวางแผนท่องเที่ยว +</b></h3><br><br>
             <form action="register_sus.php" method="POST" enctype="multipart/form-data">
                 <label for="" class="text-all">ชื่อ-สกุล</label><label for="" class="al1">(ภาษาไทย)</label>
                 <br><br>

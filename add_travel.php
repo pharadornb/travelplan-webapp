@@ -57,11 +57,6 @@ echo "<script>";
                 echo "</script>";
 
 $conn->close();
-
-
-
-
-
 ?>
 
 </body>

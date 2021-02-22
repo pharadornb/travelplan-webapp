@@ -77,9 +77,99 @@
   }
   </style>
 </head>
-<body>
 
-    หน้าแสดงข้อมูลแพลน Travel  ไว้เดี๋ยวมาทำต่อ 22/2/2564 7.07 น
+<?php
+
+$hostname = "mysql-19614-0.cloudclusters.net:19614";
+$username = "TravelPlan2021";
+$password = "jYtKQ2Y1VZz1";
+$database = "TravelPlan2021";
+
+//Connect dB
+$conn = new mysqli($hostname, $username, $password, $database);
+$conn->query("SET NAMES UTF8");
+
+//Check dB die
+if ($conn->connect_error) {
+    die('Could not connect: ' . $conn->connect_error);
+}
+
+// sql to delete a record
+//$sql = "DELETE FROM myplan WHERE id 6"; ไม่ได้
+
+//select db
+$sql = "SELECT*FROM myplan" ;
+
+$query=mysqli_query($conn,$sql);
+      
+?>
+
+<style>
+    body {
+        font-family: 'Kanit', sans-serif;
+    }
+</style>
+
+<center>
+<br />
+    <h3>แพลนของฉัน</h3>
+<br />    
+ </center>
+
+<style>
+
+table {
+  font-family: 'Kanit', sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+
+
+<table> 
+
+    <a href="index_login.php" input type="button" class="btn btn-success" >เพิ่ม</a>
+  <tr>
+    
+    <th>ชื่อสถานที่</th>
+    <th>ตำแหน่งที่ตั้ง</th>
+    <th>ชื่อรูปภาพ</th>
+    <th>วันที่เดินทาง</th>
+    <th>งบประมาณการเดินทาง</th>
+    <th>note</th>
+    <th>จัดการข้อมูล</th>
+  
+  </tr>
+  
+  <tr>  <!--เรียกค่าวนลูป-->
+    <?php foreach($query as $data){ ?>
+
+<!--เรียกค่าที่อยากแสดง-->
+    <tr>
+        <th><?php echo $data["name"] ?></th>
+        <th><?php echo $data["location"] ?></th>
+        <th><?php echo $data["image_thumbnail"] ?></th>
+        <th><?php echo $data["date"] ?></th>
+        <th><?php echo $data["budget"] ?></th>
+        <th><?php echo $data["note"] ?></th>
+<th>
+        <a href="add_travel_form.php" input type="button" class="btn btn-primary">แก้ไข</a>
+        <button type="button" class="btn btn-danger ">ลบ</a>
+</th>
+    </tr>
+ <?php } ?>
+
+</table>
 
 </body>
 </html>

@@ -7,7 +7,7 @@ if (isset($_POST['register'])) {
     $fullname = $_POST['fullname'];
     $birthday = $_POST['birthday'];
     $username = $_POST['username'];
-    $password = $_POST['password'];
+    $password = md5($_POST['password']);
     $email = $_POST['email'];
 
     if (isset($_FILES['image'])) {

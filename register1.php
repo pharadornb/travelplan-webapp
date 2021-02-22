@@ -38,7 +38,7 @@ if (isset($_POST['register'])) {
                       },function(){
                           window.location = 'login.php';
                       }) ; 
-                    },1000) ;";
+                    },50) ;";
 
             echo "</script>";
 
@@ -53,7 +53,7 @@ if (isset($_POST['register'])) {
                       },function(){
                           //window.location = 'register1.php';
                       }) ; 
-                    },1000) ;";
+                    },50) ;";
 
             echo "</script>";
 
@@ -73,7 +73,7 @@ if (isset($_POST['register'])) {
                       },function(){
                           window.location = 'login.php';
                       }) ; 
-                    },1000) ;";
+                    },50) ;";
 
             echo "</script>";
 
@@ -88,7 +88,7 @@ if (isset($_POST['register'])) {
                       },function(){
                           //window.location = 'register1.php';
                       }) ; 
-                    },1000) ;";
+                    },50) ;";
 
             echo "</script>";
 

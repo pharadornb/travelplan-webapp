@@ -18,8 +18,9 @@ class DB_con {
         }
     }
 
-    public function insert($firstname, $lastname, $email, $phonenumber,	$address) {
-        $result = mysqli_query($this->dbcon, "INSERT INTO tblusers(firstname, lastname, email, phonenumber, address) VALUES('$firstname', '$lastname', '$email', '$phonenumber', '$address')");
+    public function insert($fname, $flocation, $flatitude, $flogitude, $fimage_thumbnail, $fdescription, $fallow, $fmode) {
+        $result = mysqli_query($this->dbcon, "INSERT INTO tourist_attractions (name, location, latitude, logitude, image_thumbnail, description, allow, mode) 
+                                                    VALUES('$fname', '$flocation', $flatitude, $flogitude, '$fimage_thumbnail', '$fdescription', '$fallow', '$fmode')");
         return $result;
     }
 

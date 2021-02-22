@@ -7,26 +7,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>[จัดการสถานที่ท่องเที่ยว]-ระบบวางแผนท่องเที่ยว</title>
     <?php include 'php/header.php' ?>
-<!--    <style>-->
-<!--        .text-desc-truncate {-->
-<!--            overflow: hidden;-->
-<!--            display: -webkit-box;-->
-<!--            -webkit-line-clamp: 3;-->
-<!--            -webkit-box-orient: vertical;-->
-<!--            text-overflow: ellipsis;-->
-<!--        }-->
-<!--    </style>-->
 </head>
 <body>
 
-<?php include 'php/nav_login.php' ?>
+<?php include 'admin/nav_login.php' ?>
 
 <div class="container mt-4 mb-4">
     <h3 class="d-flex justify-content-center font-weight-bold">+ จัดการสถานที่ท่องเที่ยว +</h3>
 </div>
 
 <div class="container mt-4 mb-4">
-    <?php include 'php/admin_travel_data.php' ?>
+    <?php include 'admin/admin_travel_data.php' ?>
 </div>
 
 <?php include 'php/footer.php' ?>

@@ -12,6 +12,9 @@
                 <a class="nav-link" href="admin.php">&nbsp;หน้าหลัก </a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="admin_travel_insert.php">&nbsp;เพิ่มสถานที่ท่องเที่ยว </a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="admin_travel.php">&nbsp;จัดการสถานที่ท่องเที่ยว </a>
             </li>
             <li class="nav-item mr-2">

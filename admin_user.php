@@ -10,13 +10,13 @@
 </head>
 <body>
 
-<?php include 'php/nav_login.php' ?>
+<?php include 'admin/nav_login.php' ?>
 
 <div class="container mt-4 mb-4">
     <h3 class="d-flex justify-content-center font-weight-bold">+ ข้อมูลผู้ใช้งาน +</h3>
 </div>
 
-<?php include 'php/admin_user_data.php' ?>
+<?php include 'admin/admin_user_data.php' ?>
 
 <?php include 'php/footer.php' ?>
 <?php include 'php/script.php' ?>

@@ -12,6 +12,9 @@
 
 </head>
 <body>
+
+<?php include 'php/navbar.php' ?>
+
 <div class="mt-5" align="center">
     <img src="images/logo/logo-application.png" alt="" width="120px" height="150px">
 

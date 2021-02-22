@@ -6,7 +6,6 @@
         <th>ชื่อ-สกุล</th>
         <th>อีเมล์</th>
         <th>จัดการ</th>
-        <th>Delete</th>
         </thead>
         <tbody>
         <?php
@@ -29,13 +28,15 @@
         while($row = mysqli_fetch_array($sql)) {
             ?>
 
+<!--            date_default_timezone_set("Asia/Bangkok");-->
+<!--            echo date_default_timezone_get();-->
             <tr>
                 <td align="center"><?php echo $row['created_at']; ?></td>
                 <td><?php echo $row['username']; ?></td>
                 <td><?php echo $row['name']; ?></td>
                 <td><?php echo $row['email']; ?></td>
-                <td align="center"><a href="manage_user_update.php?id=<?php echo $row['id']; ?>" class="btn btn-primary">จัดการบัญชี</a></td>
-                <td align="center"><a href="manage_user_delete.php?del=<?php echo $row['id']; ?>" class="btn btn-danger">ลบบัญชี</a></td>
+<!--                <td align="center"><a href="manage_user_update.php?id=--><?php //echo $row['id']; ?><!--" class="btn btn-primary">จัดการบัญชี</a></td>-->
+                <td align="center"><a href="admin_user_delete.php?del=<?php echo $row['id']; ?>" class="btn btn-danger">ลบบัญชี</a></td>
             </tr>
 
             <?php

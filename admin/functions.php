@@ -8,6 +8,7 @@ define('DB_NAME', 'TravelPlan2021');
 class DB_con {
 
     function __construct() {
+        date_default_timezone_set("Asia/Bangkok");
         $conn = mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
         $conn->set_charset("utf8");
         $this->dbcon = $conn;
@@ -50,8 +51,8 @@ class DB_con {
         return $result;
     }
 
-    public function delete($userid) {
-        $deleterecord = mysqli_query($this->dbcon, "DELETE FROM tblusers WHERE id = '$userid'");
+    public function delete($id) {
+        $deleterecord = mysqli_query($this->dbcon, "DELETE FROM users WHERE id = '$id'");
         return $deleterecord;
     }
 

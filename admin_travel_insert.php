@@ -11,10 +11,9 @@ if (isset($_POST['insert'])) {
     $flogitude = $_POST['lon_value'];
     $fimage_thumbnail = $_POST['image_thumbnail'];
     $fdescription = $_POST['description'];
-    $fallow = $_POST['allow'];
-    $fmode = $_POST['mode'];
 
-    $sql = $insertdata->insert($fname, $flocation, $flatitude, $flogitude, $fimage_thumbnail, $fdescription, $fallow, $fmode);
+
+    $sql = $insertdata->insert($fname, $flocation, $flatitude, $flogitude, $fimage_thumbnail, $fdescription);
 
     if ($sql) {
         echo "<script>alert('เพิ่มข้อมูลสำเร็จ!');</script>";
@@ -34,10 +33,7 @@ if (isset($_POST['insert'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>[เพิ่มสถานที่ท่องเที่ยว]-ระบบวางแผนท่องเที่ยว</title>
-
     <?php include 'php/header.php' ?>
-
-<!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">-->
 </head>
 <body>
 
@@ -61,7 +57,7 @@ if (isset($_POST['insert'])) {
         </div>
         <div class="mb-3">
             <label for="address" class="form-label" style="font-weight: bold">คำอธิบายสถานที่ท่องเที่ยว :</label>
-            <textarea name="address"cols="30" rows="10" class="form-control" required></textarea>
+            <textarea name="description" cols="30" rows="10" class="form-control" required></textarea>
         </div>
 
         <div class="mb-3">

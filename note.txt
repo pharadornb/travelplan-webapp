@@ -9,6 +9,20 @@
                     ?>
                     <td align="center"><?php echo date_format($date, 'Y-m-d H:i:sP')
 
+    public function insert($fname, $flocation, $flatitude, $flogitude, $fimage_thumbnail, $fdescription) {
+            $result = mysqli_query($this->dbcon, "INSERT INTO tourist_attractions(name, location, latitude, logitude, image_thumbnail, description) VALUES('$fname', '$flocation', '$flatitude', '$flogitude', '$fimage_thumbnail', '$fdescription')");
+            return $result;
+        }
+
+     $fname = $_POST['name'];
+     $flocation = $_POST['location'];
+     $flatitude = $_POST['lat_value'];
+     $flogitude = $_POST['lon_value'];
+     $fimage_thumbnail = $_POST['image_thumbnail'];
+     $fdescription = $_POST['description'];
+
+     $sql = $insertdata->insert($fname, $flocation, $flatitude, $flogitude, $fimage_thumbnail, $fdescription);
+
 1. Yamo
 2. N-Seoul-tower
 3. Khaoyai

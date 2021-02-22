@@ -6,7 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>[บัญชีผู้ใช้]-ระบบวางแผนท่องเที่ยว</title>
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
      <!-- css -->
      <?php include 'php/header.php'?>
@@ -94,9 +96,7 @@ if ($conn->connect_error) {
     die('Could not connect: ' . $conn->connect_error);
 }
 
-// sql to delete a record
-//$sql = "DELETE FROM myplan WHERE id 6"; ไม่ได้
-
+ 
 //select db
 $sql = "SELECT*FROM myplan" ;
 
@@ -167,13 +167,52 @@ tr:nth-child(even) {
         <th><?php echo $data["note"] ?></th>
     </div>
 <th>
-        <a href="add_travel_form.php" input type="button" class="btn btn-primary">แก้ไข</a>
+<button type="button" class="btn btn-info " data-toggle="modal" data-target="#myModal">แก้ไข</button>
         <button type="button" class="btn btn-danger ">ลบ</a>
 </th>
     </tr>
  <?php } ?>
 
 </table>
+<div class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Modal body text goes here.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+      <div class="modal-body">
+        <p>Some text in the modal.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
 </body>
 </html>

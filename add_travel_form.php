@@ -68,7 +68,7 @@ $database = "TravelPlan2021";
     $_SESSION["image"] = $row["image_thumbnail"];
        $_SESSION["name"]  = $row["name"];
        $_SESSION["location"]  = $row["location"];
-       $id  = $row["id"];
+       $_SESSION["id"] = $row["id"];
      
     
       

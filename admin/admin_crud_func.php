@@ -18,8 +18,8 @@ class DB_con {
         }
     }
 
-    public function insert($fname, $flocation, $flatitude, $flogitude, $fimage_thumbnail, $fdescription) {
-        $result = mysqli_query($this->dbcon, "INSERT INTO tourist_attractions(name, location, latitude, logitude, image_thumbnail, description) VALUES('$fname', '$flocation', '$flatitude', '$flogitude', '$fimage_thumbnail', '$fdescription')");
+    public function insert($firstname, $lastname, $email, $phonenumber,	$address) {
+        $result = mysqli_query($this->dbcon, "INSERT INTO tblusers(firstname, lastname, email, phonenumber, address) VALUES('$firstname', '$lastname', '$email', '$phonenumber', '$address')");
         return $result;
     }
 

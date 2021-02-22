@@ -9,13 +9,19 @@ if (isset($_POST['insert'])) {
     $flocation = $_POST['location'];
     $flatitude = $_POST['lat_value'];
     $flogitude = $_POST['lon_value'];
-    $fimage_thumbnail = $_POST['image_thumbnail'];
     $fdescription = $_POST['description'];
+
+    $fimage_thumbnail = $_FILES['image_thumbnail']['name'];
+    $target_path = "images/tourist/".$fimage_thumbnail;
+
+    $file_tmp = $_FILES['image_thumbnail']['tmp_name'];
+
 
 
     $sql = $insertdata->insert($fname, $flocation, $flatitude, $flogitude, $fimage_thumbnail, $fdescription);
 
     if ($sql) {
+        move_uploaded_file($file_tmp, $target_path);
         echo "<script>alert('เพิ่มข้อมูลสำเร็จ!');</script>";
         echo "<script>window.location.href='admin_travel.php'</script>";
     } else {
@@ -42,7 +48,7 @@ if (isset($_POST['insert'])) {
     <hr>
     <h2 class="mt-5" align="center" style="font-weight: bold;">เพิ่มข้อมูลสถานที่ท่องเที่ยว</h2>
     <hr>
-    <form action="" method="post">
+    <form action="" method="post" enctype="multipart/form-data">
         <div class="mb-3">
             <label for="name" class="form-label" style="font-weight: bold">ชื่อสถานที่ท่องเที่ยว :</label>
             <input type="text" class="form-control" name="name" required>

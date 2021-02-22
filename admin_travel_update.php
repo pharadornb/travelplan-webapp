@@ -7,13 +7,17 @@ $updatedata = new DB_con();
 if (isset($_POST['update'])) {
 
     $userid = $_GET['id'];
-    $fname = $_POST['firstname'];
-    $lname = $_POST['lastname'];
-    $email = $_POST['email'];
-    $phonenumber = $_POST['phonenumber'];
-    $address = $_POST['address'];
+    $fname = $_POST['name'];
+    $flocation = $_POST['location'];
+    $flatitude = $_POST['lat_value'];
+    $flogitude = $_POST['lon_value'];
+    $fdescription = $_POST['description'];
 
-    $sql = $updatedata->update($fname, $lname, $email, $phonenumber, $address, $userid);
+    $fimage_thumbnail = $_FILES['image_thumbnail']['name'];
+    $target_path = "images/tourist/".$fimage_thumbnail;
+    $file_tmp = $_FILES['image_thumbnail']['tmp_name'];
+
+    $sql = $updatedata->update($fname, $flocation, $flatitude, $flogitude, $fimage_thumbnail, $fdescription);
     if ($sql) {
         echo "<script>alert('Updated Successfully!');</script>";
         echo "<script>window.location.href='index.php'</script>";
@@ -22,7 +26,6 @@ if (isset($_POST['update'])) {
         echo "<script>window.location.href='update.php'</script>";
     }
 }
-
 
 ?>
 
@@ -48,31 +51,28 @@ if (isset($_POST['update'])) {
     while($row = mysqli_fetch_array($sql)) {
     ?>
 
-    <form action="" method="post">
-        <div class="mb-3">
-            <label for="firstname" class="form-label">First name</label>
-            <input type="text" class="form-control" name="firstname"
-                   value="<?php echo $row['firstname']; ?>" required>
-        </div>
-        <div class="mb-3">
-            <label for="lastname" class="form-label">Last name</label>
-            <input type="text" class="form-control" name="lastname"
-                   value="<?php echo $row['lastname']; ?>" required>
-        </div>
-        <div class="mb-3">
-            <label for="email">Email</label>
-            <input type="email" class="form-control" name="email"
-                   value="<?php echo $row['email']; ?>" required>
-        </div>
-        <div class="mb-3">
-            <label for="phonenumber">Phone Number</label>
-            <input type="text" class="form-control" name="phonenumber"
-                   value="<?php echo $row['phonenumber']; ?>" required>
-        </div>
-        <div class="mb-3">
-            <label for="address">Address</label>
-            <textarea name="address"cols="30" rows="10" class="form-control" required><?php echo $row['address']; ?></textarea>
-        </div>
+    <form action="" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="name" class="form-label" style="font-weight: bold">ชื่อสถานที่ท่องเที่ยว :</label>
+                <input type="text" class="form-control" name="name" value="<?php $row['name']?>" required>
+            </div>
+            <div class="mb-3">
+                <label for="location" class="form-label" style="font-weight: bold">ชื่อตำแหน่งที่ตั้ง(อำเภอ, จังหวัด) :</label>
+                <input type="text" class="form-control" name="location" value="<?php $row['location']?>" required>
+            </div>
+            <div class="mb-3">
+                <label for="image_thumbnail" class="form-label" style="font-weight: bold">รูปภาพประกอบ :</label>
+                <input type="file" class="form-control" name="image_thumbnail" required>
+            </div>
+            <div class="mb-3">
+                <label for="address" class="form-label" style="font-weight: bold">คำอธิบายสถานที่ท่องเที่ยว :</label>
+                <textarea name="description" cols="30" rows="10" class="form-control" value="<?php $row['name']?>" required></textarea>
+            </div>
+
+            <div class="mb-3">
+                <?php include 'admin/map_marks.php'?>
+            </div>
+
         <?php } ?>
         <button type="submit" name="update" class="btn btn-success">Update</button>
     </form>

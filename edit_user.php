@@ -42,7 +42,6 @@
 </div>
 </nav>
 
-
 <body>
 
 <?php 
@@ -75,13 +74,14 @@
        $p = strlen($pass);   //หาความยาวของพาสเวิด
       
    }
+
 ?>
 
-<body>
    <center>
    <table align="center">
-    <div class="text-center">
-        <div class="row"> 
+        
+        <div class="col-sm-4"><?php  echo "<img src='images/userphoto/".$_SESSION["image"]."'alt='' width='350px' height='250px' style='margin-top: 40px;'>"?> </div>
+
 
         <TR><TD> ชื่อผู้ใช้งาน : </TD></br>   
                 <TD><input type="text" name="name" ></TD></TR> 
@@ -110,3 +110,8 @@
 </div>   
 </center>
 </body>
+
+
+       
+
+

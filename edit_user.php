@@ -27,7 +27,7 @@
             <a class="nav-link" href="index_login.php">&nbsp;หน้าแรก</a>
         </li>
         <li class="nav-item ">
-            <a class="nav-link" href="add_travel.php">&nbsp;แพลนของฉัน</a>
+            <a class="nav-link" href="travel_plan.php">&nbsp;แพลนของฉัน</a>
         </li>
         
         <li class="nav-item ">

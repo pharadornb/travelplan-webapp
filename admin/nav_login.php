@@ -12,10 +12,10 @@
                 <a class="nav-link" href="admin.php">&nbsp;หน้าหลัก </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="admin_user.php">&nbsp;ข้อมูลผู้ใช้งาน </a>
-            </li>
-            <li class="nav-item">
                 <a class="nav-link" href="admin_travel.php">&nbsp;จัดการสถานที่ท่องเที่ยว </a>
+            </li>
+            <li class="nav-item mr-2">
+                <a class="nav-link" href="admin_user.php">&nbsp;ข้อมูลผู้ใช้งาน </a>
             </li>
             <li class="nav-item">
                 <?php //echo "<a class='nav-link' href='tourist.php?id=" . $_SESSION['user_id'] . "'> &nbsp;บัญชีผู้ใช้</a>"; ?>

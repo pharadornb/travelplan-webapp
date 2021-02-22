@@ -5,8 +5,8 @@
         <th>ชื่อผู้ใช้งาน</th>
         <th>ชื่อ-สกุล</th>
         <th>อีเมล์</th>
-<!--        <th>จัดการ</th>-->
-<!--        <th>Delete</th>-->
+        <th>จัดการ</th>
+        <th>Delete</th>
         </thead>
         <tbody>
         <?php
@@ -34,8 +34,8 @@
                 <td><?php echo $row['username']; ?></td>
                 <td><?php echo $row['name']; ?></td>
                 <td><?php echo $row['email']; ?></td>
-<!--                <td align="center"><a href="update.php?id=--><?php //echo $row['id']; ?><!--" class="btn btn-primary">จัดการบัญชี</a></td>-->
-<!--                <td align="center"><a href="delete.php?del=--><?php //echo $row['id']; ?><!--" class="btn btn-danger">ลบบัญชี</a></td>-->
+                <td align="center"><a href="manage_user_update.php?id=<?php echo $row['id']; ?>" class="btn btn-primary">จัดการบัญชี</a></td>
+                <td align="center"><a href="manage_user_delete.php?del=<?php echo $row['id']; ?>" class="btn btn-danger">ลบบัญชี</a></td>
             </tr>
 
             <?php
@@ -54,7 +54,7 @@
             $totalpage = ceil($i/$num_per_page);
             //echo $totalpage;
             for($j=1; $j<=$totalpage;$j++){
-                echo "<li class='page-item'><a class='page-link' href='user_data.php?page=".$j."' class='btn btn-success mr-1'>$j</a></li>";
+                echo "<li class='page-item'><a class='page-link' href='admin_user.php?page=".$j."' class='btn btn-success mr-1'>$j</a></li>";
             }
             ?>
         </ul>

@@ -16,18 +16,20 @@
 <body>
 
     <!-- navbar for admin -->
-    <?php include 'php/nav_login.php' ?>
+    <?php include 'admin/nav_login.php' ?>
 
-    <div class="container mt-3 mb-1">
+    <div class="container mt-5">
         <?php include 'php/search.php'?>
     </div>
 
     <!-- card -->
     <div class="container">
-        <h3 class="d-flex justify-content-center font-weight-bold">+ สถิติของระบบ +</h3>
+        <h3 class="d-flex justify-content-center font-weight-bold">สถิติของระบบอัพเดตเรียลไทม์!</h3>
     </div>
 
-    <?php include 'admin/statistics.php' ?>
+    <div class="mb-5 mt-5">
+        <?php include 'admin/statistics.php' ?>
+    </div>
 
     <!-- footer -->
     <?php include 'php/footer.php' ?>

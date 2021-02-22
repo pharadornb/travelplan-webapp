@@ -40,7 +40,7 @@ class DB_con {
     }
 
     public function update($firstname, $lastname, $email, $phonenumber,	$address, $userid) {
-        $result = mysqli_query($this->dbcon, "UPDATE tblusers SET
+        $result = mysqli_query($this->dbcon, "UPDATE tourist_attractions SET
                 firstname = '$firstname',
                 lastname = '$lastname',
                 email = '$email',
@@ -51,8 +51,8 @@ class DB_con {
         return $result;
     }
 
-    public function delete($userid) {
-        $deleterecord = mysqli_query($this->dbcon, "DELETE FROM tblusers WHERE id = '$userid'");
+    public function delete($id) {
+        $deleterecord = mysqli_query($this->dbcon, "DELETE FROM tourist_attractions WHERE id = $id");
         return $deleterecord;
     }
 

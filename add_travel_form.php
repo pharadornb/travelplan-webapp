@@ -163,7 +163,9 @@ $database = "TravelPlan2021";
     </div>
 
 
-   
+    <div class="mt-4">
+        <?php include 'php/footer.php'?>
+    </div>
   
 </body>
 </html>

@@ -36,18 +36,19 @@ class DB_con {
 
 
     public function fetchonerecord($userid) {
-        $result = mysqli_query($this->dbcon, "SELECT * FROM tourist_attractions WHERE id = '$userid'");
+        $result = mysqli_query($this->dbcon, "SELECT * FROM tourist_attractions WHERE id = $userid");
         return $result;
     }
 
-    public function update($firstname, $lastname, $email, $phonenumber,	$address, $userid) {
+    public function update($userid, $fname, $flocation, $flatitude, $flogitude, $fimage_thumbnail, $fdescription) {
         $result = mysqli_query($this->dbcon, "UPDATE tourist_attractions SET
-                firstname = '$firstname',
-                lastname = '$lastname',
-                email = '$email',
-                phonenumber = '$phonenumber',
-                address = '$address'
-                WHERE id = '$userid'
+                name = '$fname',
+                location = '$flocation',
+                latitude = $flatitude,
+                logitude = $flogitude,
+                image_thumbnail = '$fimage_thumbnail'
+                description = '$fdescription'
+                WHERE id = $userid
             ");
         return $result;
     }

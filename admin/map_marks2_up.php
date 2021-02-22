@@ -44,13 +44,13 @@
         <div class="col-12 col-md-4">
             <div class="mb-3">
                 <label for="lat_value" class="form-label" style="font-weight: bold">ละติจูดที่(องศาเหนือ) :</label>
-                <input type="text" class="form-control" name="lat_value" id="lat_value" value="0" >
+                <input type="text" class="form-control" name="lat_value" id="lat_value" value="<?php echo $row['latitude']; ?>" >
             </div>
         </div>
         <div class="col-12 col-md-4">
             <div class="mb-3">
                 <label for="lon_value" class="form-label" style="font-weight: bold">ลองจิจูดที่(องศาเหนือ) :</label>
-                <input type="text" class="form-control" name="lon_value"  id="lon_value" value="0" >
+                <input type="text" class="form-control" name="lon_value"  id="lon_value" value="<?php echo $row['logitude']; ?>" >
             </div>
         </div>
         <div class="col-12 col-md-4">

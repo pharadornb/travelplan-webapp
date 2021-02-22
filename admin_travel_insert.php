@@ -7,8 +7,8 @@ $insertdata = new DB_con();
 if (isset($_POST['insert'])) {
     $fname = $_POST['name'];
     $flocation = $_POST['location'];
-    $flatitude = $_POST['latitude'];
-    $flogitude = $_POST['logitude'];
+    $flatitude = $_POST['lat_value'];
+    $flogitude = $_POST['lon_value'];
     $fimage_thumbnail = $_POST['image_thumbnail'];
     $fdescription = $_POST['description'];
     $fallow = $_POST['allow'];
@@ -44,17 +44,9 @@ if (isset($_POST['insert'])) {
 <div class="container">
     <a href="admin_travel.php" class="btn btn-primary mt-3">กลับหน้าหลัก</a>
     <hr>
-    <h1 class="mt-5" align="center">เพิ่มข้อมูลสถานที่ท่องเที่ยว</h1>
+    <h2 class="mt-5" align="center" style="font-weight: bold;">เพิ่มข้อมูลสถานที่ท่องเที่ยว</h2>
     <hr>
     <form action="" method="post">
-<!--        $fname = $_POST['name'];-->
-<!--        $flocation = $_POST['location'];-->
-<!--        $flatitude = $_POST['latitude'];-->
-<!--        $flogitude = $_POST['logitude'];-->
-<!--        $fimage_thumbnail = $_POST['image_thumbnail'];-->
-<!--        $fdescription = $_POST['description'];-->
-<!--        $fallow = $_POST['allow'];-->
-<!--        $fmode = $_POST['mode'];-->
         <div class="mb-3">
             <label for="name" class="form-label" style="font-weight: bold">ชื่อสถานที่ท่องเที่ยว :</label>
             <input type="text" class="form-control" name="name" required>
@@ -71,15 +63,21 @@ if (isset($_POST['insert'])) {
             <label for="address" class="form-label" style="font-weight: bold">คำอธิบายสถานที่ท่องเที่ยว :</label>
             <textarea name="address"cols="30" rows="10" class="form-control" required></textarea>
         </div>
+
         <div class="mb-3">
-            <?php ?>>
+            <?php include 'admin/map_marks.php'?>
         </div>
-        <button type="submit" name="insert" class="btn btn-success">Insert</button>
+
+        <div class="mb-3" align="center">
+        <button type="submit" name="insert" class="btn btn-success">เพิ่มข้อมูลสถานที่ท่องเที่ยว</button>
+        </div>
     </form>
 </div>
 
 
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+
+<?php include 'php/footer.php' ?>
 </body>
 </html>

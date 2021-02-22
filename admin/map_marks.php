@@ -3,40 +3,63 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Google Map API 3 - 01</title>
+    <?php include 'php/header.php'?>
     <style type="text/css">
-        html { height: 100% }
-        body {
-            height:100%;
-            margin:0;padding:0;
-            font-family:tahoma, "Microsoft Sans Serif", sans-serif, Verdana;
-            font-size:12px;
-        }
+        /*html { height: 100% }*/
+        /*body {*/
+        /*    height:100%;*/
+        /*    margin:0;padding:0;*/
+        /*    font-size:12px;*/
+        /*}*/
         /* css กำหนดความกว้าง ความสูงของแผนที่ */
         #map_canvas {
-            width:550px;
-            height:400px;
-            margin:auto;
+            width:1000px;
+            height:500px;
+            margin: auto;
             /*  margin-top:100px;*/
         }
     </style>
-
-
 </head>
 
 <body>
-<div id="map_canvas"></div>
-<div id="showDD" style="margin:auto;padding-top:5px;width:550px;">
-    <form id="form_get_detailMap" name="form_get_detailMap" method="post" action="">
-        Latitude
-        <input name="lat_value" type="text" id="lat_value" value="0" />  <br />
-        Longitude
-        <input name="lon_value" type="text" id="lon_value" value="0" />  <br />
-        Zoom
-        <input name="zoom_value" type="text" id="zoom_value" value="0" size="5" />
-        <br />
-        <input type="submit" name="button" id="button" value="บันทึก" />
-    </form>
+<div class="mb-1">
+    <label for="location" class="form-label" style="font-weight: bold">แผนที่สำหรับการปักหมดุสถานที่ท่องเที่ยว :</label>
+</div>
+<div class="col-12" id="map_canvas"></div>
+<!--<div id="showDD" style="margin:auto;padding-top:5px;width:550px;">-->
+<!--    <form id="form_get_detailMap" name="form_get_detailMap" method="post" action="">-->
+<!--        Latitude-->
+<!--        <input name="lat_value" type="text" id="lat_value" value="0" />  <br />-->
+<!--        Longitude-->
+<!--        <input name="lon_value" type="text" id="lon_value" value="0" />  <br />-->
+<!--        Zoom-->
+<!--        <input name="zoom_value" type="text" id="zoom_value" value="0" size="5" />-->
+<!--        <br />-->
+<!--        <input type="submit" name="button" id="button" value="บันทึก" />-->
+<!--    </form>-->
+<!--</div>-->
+
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-12 col-md-4">
+            <div class="mb-3">
+                <label for="lat_value" class="form-label" style="font-weight: bold">ละติจูดที่(องศาเหนือ) :</label>
+                <input type="text" class="form-control" name="lat_value" id="lat_value" value="" disabled>
+            </div>
+        </div>
+        <div class="col-12 col-md-4">
+            <div class="mb-3">
+                <label for="lon_value" class="form-label" style="font-weight: bold">ลองจิจูดที่(องศาเหนือ) :</label>
+                <input type="text" class="form-control" name="lon_value"  id="lon_value" value="" disabled>
+            </div>
+        </div>
+        <div class="col-12 col-md-4">
+            <div class="mb-3">
+                <label for="zoom_value" class="form-label" style="font-weight: bold">กำลังการขยาย(เท่า) :</label>
+                <input type="text" class="form-control" name="zoom_value"  id="zoom_value" value="" size="5" disabled>
+            </div>
+        </div>
+    </div>
 </div>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -46,7 +69,7 @@
     function initialize() { // ฟังก์ชันแสดงแผนที่
         GGM=new Object(google.maps); // เก็บตัวแปร google.maps Object ไว้ในตัวแปร GGM
         // กำหนดจุดเริ่มต้นของแผนที่
-        var my_Latlng  = new GGM.LatLng(13.761728449950002,100.6527900695800);
+        var my_Latlng  = new GGM.LatLng(14.918750,102.008057);
         var my_mapTypeId=GGM.MapTypeId.ROADMAP; // กำหนดรูปแบบแผนที่ที่แสดง
         // กำหนด DOM object ที่จะเอาแผนที่ไปแสดง ที่นี้คือ div id=map_canvas
         var my_DivObj=$("#map_canvas")[0];
@@ -94,5 +117,3 @@
         }).appendTo("body");
     });
 </script>
-</body>
-</html>

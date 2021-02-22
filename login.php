@@ -93,7 +93,7 @@
 </head>
 <body>
 
-<?php include 'php/navbar.php' ?>
+<?php include 'php/nav_login_sys.php' ?>
 
 <div class="mt-5" align="center">
     <img src="images/logo/logo-application.png" alt="" width="120px" height="150px">

@@ -21,7 +21,7 @@
     <!-- card -->
     <div id="travel"></div>
     <div class="container mt-5">
-        <h3 class="d-flex justify-content-center font-weight-bold">+ สถานที่ท่องเที่ยวใหม่ +</h3>
+        <h3 class="d-flex justify-content-center font-weight-bold">+ สถานที่ท่องเที่ยวอัพเดตใหม่ +</h3>
     </div>
 
     <div class="container-fluid mt-3 mb-4">

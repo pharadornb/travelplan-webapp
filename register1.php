@@ -111,7 +111,7 @@ if (isset($_POST['register'])) {
 
 <body class="bg-lg">
 
-<?php include 'php/navbar.php' ?>
+<?php include 'php/nav_login_sys.php' ?>
 
 <div class="container">
     <div class="rg-div-1" align="center">

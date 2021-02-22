@@ -1,9 +1,3 @@
-function checkUsernameMatch(){
-    var user = $("#username").val();
-    
-}
-
-
 function checkPasswordMatch() {
     var password = $("#password").val();
     var confirmPassword = $("#confrimpassword").val();
@@ -19,9 +13,8 @@ function previewImage(){
     var file = document.getElementById("image").files;
     if(file.length > 0){
         var fileReader = new FileReader();
-
         fileReader.onload = function(event){
-            document.getElementById("pre").innerHTML = "<br><div><img id='preview'></div>";
+            document.getElementById("pre").innerHTML = "<img id='preview' style='width: 50%;'>";
             document.getElementById("preview").setAttribute("src", event.target.result);
         };
 

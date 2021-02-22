@@ -9,7 +9,7 @@
 </head>
     <meta charset="UTF-8">
     <title>[หน้าแรก]-ระบบวางแผนท่องเที่ยว</title>
-
+  
     <!-- css -->
     <?php include 'php/header.php'?>
 
@@ -97,13 +97,34 @@
 
        <?php
 
-        include 'php/dBver1.php';
 
-        $sql = "SELECT * FROM tourist_attractions ORDER BY id ";
-        //$conn red tag. don't worry php stupid
-        $result = mysqli_query($conn, $sql);
+            $hostname = "mysql-19614-0.cloudclusters.net:19614";
+            $username = "TravelPlan2021";
+            $password = "jYtKQ2Y1VZz1";
+            $database = "TravelPlan2021";
 
-            while($row = mysqli_fetch_array($result)) {
+            try{
+                $conn = new PDO("mysql:host=$hostname;dbname=$database;charset=utf8",$username,$password);
+                $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+            }catch(PDOException $e){
+                echo"Connection faild: ".$e->getMessage();
+                exit;
+            }
+
+
+            
+            //select db
+            $sql = "SELECT*FROM tourist_attractions" ;
+
+            $stmt = $conn ->query($sql);
+            $stmt->execute();
+            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            //print_r($result);
+      
+
+
+            foreach($result as $row) {
             
                // $id = $row['id'];
                // $name = $row['name'];
@@ -118,27 +139,62 @@
                         echo "<div class='card-body'> <center><h5 class='card-title font-weight-bold'>" .$row['name']. "</h5></center>";
                         echo "<h6 class='font-weight-bold'><i class='fas fa-thumbtack'></i>&nbsp;&nbsp;" . $row['location']. "</h6>";
                         echo "<p class='card-text text-desc-truncate'>" . $row['description']. "</p>";
-                        echo "<center><a href='detail.php?id=".$row['id']."'class='btn btn-primary' >เพิ่มเติม</a>&nbsp;&nbsp;&nbsp;<a href='add_travel_form.php?id=".$row['id']."'class='btn btn-primary'>เพิ่มลงแพลนท่องเที่ยว</a></center><br />";
+                        //echo "<center><a href='detail.php?id=".$row['id']."'class='btn btn-primary' >เพิ่มเติม</a>&nbsp;&nbsp;&nbsp;<a href='add_travel_form.php?id=".$row['id']."'class='btn btn-primary'>เพิ่มลงแพลนท่องเที่ยว</a></center><br />";
                      
                        //echo "<button type='button' class='btn btn-primary' data-toggle='modal' data-target='#myModal' onclick='show()'> เพิ่มเติม </button>&nbsp;&nbsp;&nbsp;<a href='add_travel_form.php?id=".$row['id']."'class='btn btn-primary'>เพิ่มลงแพลนท่องเที่ยว</a></center>";
-                        
+                       echo "<button type='button' class='btn btn-primary' data-toggle='modal' data-target='#exampleModal1".$row['id']."'>
+                       เพิ่มเติม
+                       </button>  &nbsp;&nbsp;&nbsp;<a href='add_travel_form.php?id=".$row['id']."'class='btn btn-primary'>เพิ่มลงแพลนท่องเที่ยว</a></center><br />"; 
+
+                       ?>
+                     
+                    <!-- Modal -->
+       <div class="modal fade" id="exampleModal1<?php echo $row['id'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">รายละเอียดสถานที่ท่องเที่ยว</h5>
+       
+      </div>
+      <div class="modal-body">
+            <?php    
+            echo "<div class='text-center mb-4'>" . "<br />";
+            echo "<h2>" . $row['name'] . "</h2>";
+            echo "<p>" . "<b>" . $row['location'] . "<b>" . "</p>" . "<br />";
+
+            echo " <div class='container'>";
+
+            echo "<img src='images/tourist/" . $row['image_thumbnail'] . "'class='img-rounded' alt='Cinque Terre' width='400' height='400'> ";
+            echo "</div>";
+            echo "<br /><br /><br />";
+
+            echo "<div class='container'>";
+            echo "<h4 align = 'justify'>" . $row['description'] . "</h4>";
+            echo "</div>";
+
+            echo "</div>";
+
+          ?>
+      </div>
+      <div class="modal-footer">
+      <button type="submit" class="btn btn-secondary btn-secondary pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> ปิด</button>
+      </div>
+    </div>
+  </div>
+</div> 
                       
-                       echo "</div></div></div>";
+                     <?php  echo "</div></div></div>";
                       
             }
           
         ?>
+     
 
-    </div>
 </div>
 
    
     </div>
-    <script type="text/javascript">
-function detail() {
- 
-}
-</script>
+
 
     <!-- youtube -->
     <div id="media"></div>

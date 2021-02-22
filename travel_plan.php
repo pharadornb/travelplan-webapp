@@ -137,8 +137,10 @@ tr:nth-child(even) {
 
 
 <table> 
-
-    <a href="index_login.php" input type="button" class="btn btn-success" >เพิ่ม</a>
+     
+     <div class = "text-right">
+    <a href="index_login.php" input type="button" class="btn btn-success" >เพิ่มสถานที่ท่องเที่ยว</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br /><br />
+    </div>
   <tr>
     
     <th>ชื่อสถานที่</th>
@@ -156,12 +158,14 @@ tr:nth-child(even) {
 
 <!--เรียกค่าที่อยากแสดง-->
     <tr>
+    <div class = "text-center">
         <th><?php echo $data["name"] ?></th>
         <th><?php echo $data["location"] ?></th>
-        <th><?php echo $data["image_thumbnail"] ?></th>
+        <th><?php  echo "<img src='images/tourist/".$data['image_thumbnail']."'alt='' width='140px' height='100px' style='margin-top: 40px;'>"?></th>
         <th><?php echo $data["date"] ?></th>
         <th><?php echo $data["budget"] ?></th>
         <th><?php echo $data["note"] ?></th>
+    </div>
 <th>
         <a href="add_travel_form.php" input type="button" class="btn btn-primary">แก้ไข</a>
         <button type="button" class="btn btn-danger ">ลบ</a>

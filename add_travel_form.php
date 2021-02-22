@@ -45,7 +45,7 @@
 </nav>
 
 
-<body>
+
 <?php
 $hostname = "mysql-19614-0.cloudclusters.net:19614";
 $username = "TravelPlan2021";

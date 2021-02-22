@@ -5,10 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[บัญชีผู้ใช้]-ระบบวางแผนท่องเที่ยว</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>[แพลนของฉัน]-ระบบวางแผนท่องเที่ยว</title>
+
 
      <!-- css -->
      <?php include 'php/header.php'?>
@@ -72,6 +70,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+ 
   <style>
   .fakeimg {
     height: 200px;
@@ -79,6 +78,15 @@
   }
   </style>
 </head>
+<body>
+
+
+
+
+
+
+
+
 
 <?php
 
@@ -167,32 +175,18 @@ tr:nth-child(even) {
         <th><?php echo $data["note"] ?></th>
     </div>
 <th>
-<button type="button" class="btn btn-info " data-toggle="modal" data-target="#myModal">แก้ไข</button>
-        <button type="button" class="btn btn-danger ">ลบ</a>
+        <a href="edit_travel_form.php?id=<?php echo $data["id"]?>" input type="button" class="btn btn-primary">แก้ไข</a>
+       
+        <button type="button" class="btn btn-danger "  data-toggle="modal" data-target="#myModal">ลบ</button>
 </th>
     </tr>
  <?php } ?>
 
 </table>
-<div class="modal" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p>Modal body text goes here.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Save changes</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
+
+
+
+
 
 <!-- Modal -->
 <div id="myModal" class="modal fade" role="dialog">

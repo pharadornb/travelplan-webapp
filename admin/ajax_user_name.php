@@ -5,7 +5,7 @@
 <!--<p class="card-text">-->
 <!--    " 21/02/2564 22:27"-->
 <!--</p>-->
-<?php include '../php/dBver2.php';?>
+<?php include '../admin/dbconnect.php';?>
 <h1 align="left"><i class="fas fa-user-plus"></i></h1>
 <h4 class="card-title" style="font-weight: bold;">
     คุณ

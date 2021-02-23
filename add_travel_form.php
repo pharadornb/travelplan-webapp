@@ -28,6 +28,9 @@
         <li class="nav-item ">
             <a class="nav-link" href="index_login.php">&nbsp;หน้าแรก</a>
         </li>
+        <li class="nav-item active">
+                <a class="nav-link" href="index_login.php">&nbsp;เพิ่มสถานที่ลงแพลน</a>
+            </li>
         <li class="nav-item ">
             <a class="nav-link" href="travel_plan.php">&nbsp;แพลนของฉัน</a>
         </li>

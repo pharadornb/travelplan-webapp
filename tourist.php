@@ -39,7 +39,7 @@
             <li class="nav-item ">
                 <a class="nav-link" href="index_login.php">&nbsp;หน้าแรก</a>
             </li>
-            <li class="nav-item active">
+            <li class="nav-item ">
                 <a class="nav-link" href="index_login.php">&nbsp;เพิ่มสถานที่ลงแพลน</a>
             </li>
             <li class="nav-item ">

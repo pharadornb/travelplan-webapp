@@ -32,7 +32,7 @@ if (isset($_POST['insert'])) {
 
 ?>
 
-<?php session_start();?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,7 +42,7 @@ if (isset($_POST['insert'])) {
     <?php include 'php/header.php' ?>
 </head>
 <body>
-<?php if($_SESSION['user_id'] == 1){?>
+
 <div class="container">
     <a href="admin_travel.php" class="btn btn-primary mt-3">กลับหน้าหลัก</a>
     <hr>
@@ -75,13 +75,6 @@ if (isset($_POST['insert'])) {
         </div>
     </form>
 </div>
-<?php }else{ header("Location: error.php"); } ?>
-
-<script type="text/javascript">
-    $("#logout").click(function() {
-        <?php session_destroy(); ?>
-    });
-</script>
 
 
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

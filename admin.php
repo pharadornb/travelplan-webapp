@@ -1,6 +1,4 @@
-<?php
-    session_start();
-?>
+<?php session_start(); ?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -15,7 +13,6 @@
 </head>
 <body>
 
-<?php if($_SESSION['user_id'] == 1){?>
     <!-- navbar for admin -->
     <?php include 'admin/nav_login.php' ?>
 
@@ -82,15 +79,8 @@
         <?php include 'php/footer.php'?>
     </div>
 
-    <script type="text/javascript">
-        $("#logout").click(function() {
-            <?php session_destroy(); ?>
-        });
-    </script>
-
     <!-- script -->
     <?php include 'php/script.php'?>
-<?php }else{ header("Location: error.php"); } ?>
 
 </body>
 </html>

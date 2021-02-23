@@ -115,7 +115,7 @@ if($image == null)
                                 </div>
                                 <div class="row">
                                     <div class="col-12 mt-2 mb-2">
-                                        <h6><b>อีเมล์นักท่องเที่ยว : </b><?php echo $email ?></h6>
+                                        <h6><b>อีเมลล์นักท่องเที่ยว : </b><?php echo $email ?></h6>
                                     </div>
                                 </div>
                                 <div class="row">

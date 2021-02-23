@@ -25,12 +25,12 @@ class DB_con {
     }
 
     public function fetchdata2() {
-        $result = mysqli_query($this->dbcon, "SELECT * FROM users ORDER BY id DESC");
+        $result = mysqli_query($this->dbcon, "SELECT * FROM users WHERE user_type_id = 2 ORDER BY id DESC");
         return $result;
     }
 
     public function fetchdata($start_from, $num_per_page) {
-        $result = mysqli_query($this->dbcon, "SELECT * FROM users ORDER BY id DESC LIMIT $start_from, $num_per_page");
+        $result = mysqli_query($this->dbcon, "SELECT * FROM users WHERE user_type_id = 2 ORDER BY id DESC LIMIT $start_from, $num_per_page");
         return $result;
     }
 

@@ -149,8 +149,11 @@ if (isset($_POST['update'])) {
         </div>
         <div class="mb-3">
             <label for="image_thumbnail" class="form-label" style="font-weight: bold">รูปภาพประกอบ :</label>
-            <input type="file" class="form-control" name="image_thumbnail">
+            <input type="file" class="form-control" id="image_thumbnail" name="image_thumbnail" accept="image/png, image/jpeg" onChange="previewsImages();">
             <input type="hidden" class="form-control" name="image_thumbnail2" value="<?php echo $row['image_thumbnail'];?>">
+            <div id="pre">
+                <img id="prev" src="images/tourist/<?php echo $row['image_thumbnail'];?>" alt="" style='width: 50%;'>
+            </div>
         </div>
         <div class="mb-3">
             <label for="address" class="form-label" style="font-weight: bold">คำอธิบายสถานที่ท่องเที่ยว :</label>
@@ -192,7 +195,19 @@ if (isset($_POST['update'])) {
     </form>
 </div>
 
+<script>
+    function previewsImages(){
+        var file = document.getElementById("image_thumbnail").files;
+        if(file.length > 0){
+            var fileReader = new FileReader();
+            fileReader.onload = function(event){
+                document.getElementById("prev").setAttribute("src", event.target.result);
+            };
 
+            fileReader.readAsDataURL(file[0]);
+        }
+    }
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>

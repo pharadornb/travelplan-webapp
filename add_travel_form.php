@@ -39,12 +39,9 @@
             <li class="nav-item ist-group-item-action list-group-item-danger mr-1 mb-1">
                 <a class="nav-link" href="index.php" id="logout"><i class="fas fa-sign-out-alt"></i>&nbsp;ออกจากระบบ</a>
             </li>
-    
     </ul>
 </div>
 </nav>
-
-
 
 <?php
 $hostname = "mysql-19614-0.cloudclusters.net:19614";
@@ -69,104 +66,96 @@ $database = "TravelPlan2021";
        $_SESSION["name"]  = $row["name"];
        $_SESSION["location"]  = $row["location"];
        $_SESSION["id"] = $row["id"];
-     
-    
-      
    }
+
 ?>
-<br /><br />
- <center>
-    <div class="col-sm-8" >
-            <div class="card text-center">
-    
+    <center>
+        <div class="container-fluid">
+        <div class="col-sm-8">
+            <div class="card text-center mt-5">
                 <div class="card-header">
-                    <h3>เพิ่มลงแพลนท่องเที่ยว</h3>
+                    <h3><b>เพิ่มลงแพลนท่องเที่ยว</b></h3>
                  </div>
                 <div class="card-body">
-                <div class="row">
-                <div class="col-sm-5"><?php  echo "<img src='images/tourist/".$_SESSION["image"]."'alt='' width='350px' height='250px' style='margin-top: 40px;'>"?> </div>
-                
-                <div class="col-sm-7">
-                <form method="post" action="add_travel.php">  
-                <br />
-                <div class="text-center">
-                <div class="row">  
-                   <div class="col-sm-4">        
-                    <th>ชื่อสถานที่ : </th>
+                    <div class="row" align="center">
+                        <div class="col-lg-6 mt-3" ><?php  echo "<img src='images/tourist/".$_SESSION["image"]."'alt='' width='80%' class='img-responsive' >"?> </div>
+                            <div class="col-lg-6 ">
+                                <form method="post" action="add_travel.php">
+
+                                    <div class="row">
+                                        <div class="col-12 mt-3" align="left">
+                                            <label for="name" class="form-label" style="font-weight: bold">ชื่อสถานที่ :</label>
+                                        </div>
+                                        <div class="col-12">
+                                            <input type="text" name="name" class="form-control" value ="<?php echo $_SESSION["name"];?>" readonly>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-12 mt-3" align="left">
+                                            <label for="name" class="form-label" style="font-weight: bold">ตำแหน่งที่ตั้ง :</label>
+                                        </div>
+                                        <div class="col-12">
+                                            <input type="text" name="name" class="form-control" value ="<?php echo $_SESSION["location"];?>" readonly>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-12 mt-3" align="left">
+                                            <label for="name" class="form-label" style="font-weight: bold">วันที่เดินทาง : </label>
+                                        </div>
+                                        <div class="col-12">
+                                            <input type="date" name="day"  class="form-control" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-12 mt-3" align="left">
+                                            <label for="name" class="form-label" style="font-weight: bold">งบประมาณการเดินทาง : </label>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text"><i class="fas fa-money-bill-alt"></i></span>
+                                                </div>
+                                                <input type="number" name="budget"  class="form-control" required>
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text">บาท</span>
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-12 mt-3" align="left">
+                                            <label for="name" class="form-label" style="font-weight: bold">บันทึกเพิ่มเติม : </label>
+                                        </div>
+                                        <div class="col-12" align="center">
+                                            <textarea  name="note" rows="5" cols="500" class="form-control" required></textarea>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-sm-4">       
-                    <td><input type="text" name="name" value ="<?php echo $_SESSION["name"];?>"></td> 
-                    </div>  
-                </div>  
-                <br />
-                <div class="row">  
-                    <div class="col-sm-4">        
-                            <th>ตำแหน่งที่ตั้ง : </th>
-                    </div> 
-                    <div class="col-sm-4">       
-                    <td><input type="text" name="location" value ="<?php echo $_SESSION["location"];?>"></td>
-                    </div> 
-                </div>  
-                <br />
-                <div class="row">  
-                    <div class="col-sm-4">        
-                            <th>ชื่อรูปภาพ : </th>
-                    </div> 
-                    <div class="col-sm-4">       
-                    <td><input type="text" name="image" value ="<?php echo $_SESSION["image"];?>"/></td>
-                    </div>  
                 </div>
-                <br />
-                <div class="row">  
-                    <div class="col-sm-4">        
-                            <th>วันที่เดินทาง : </th>
-                    </div> 
-                    <div class="col-sm-4">       
-                    <td><input type="date" name="day"  ></td>
-                    </div> 
-                </div>
-                <br />
-                <div class="row">  
-                    <div class="col-sm-4">        
-                            <th>งบประมาณการเดินทาง : </th>
-                    </div> 
-                    <div class="col-sm-4">       
-                    <td><input type="text" name="budget" ></td>
-                    </div>  
-                </div>   
-                <br />
-                <div class="row">  
-                    <div class="col-sm-4">        
-                            <th>NOTE : </th>
-                    </div> 
-                    <div class="col-sm-4">       
-                    <td><textarea  name="note" ></textarea></td>
-                    </div>  
-                </div>                       
-                </div>           
-                </div>
-                        
-                       
-                </div>
-                </div>
-                </div>
+        </div>
                 
                 <div class="card-footer text-muted"><br />
                 <input type="submit" name="submit" value="บันทึก"  class="btn btn-primary"> 
                 
                 <a href="index_login.php" input type="reset" class="btn btn-danger">ยกเลิก</a>
-                </form>
-                <br />
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-
-    <div class="mt-4">
-        <?php include 'php/footer.php'?>
-    </div>
-  
+        </center>
+        <?php include 'php/footer.php'; include 'php/script.php'; ?>
 </body>
 </html>
 

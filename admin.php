@@ -18,12 +18,12 @@
     <!-- navbar for admin -->
     <?php include 'admin/nav_login.php' ?>
 
-    <div class="container mt-5">
-        <?php include 'php/search.php'?>
-    </div>
+<!--    <div class="container mt-5">-->
+<!--        --><?php //include 'php/search.php'?>
+<!--    </div>-->
 
     <!-- card -->
-    <div class="container">
+    <div class="container mt-5">
         <h3 class="d-flex justify-content-center font-weight-bold">สถิติของระบบอัพเดตเรียลไทม์!</h3>
     </div>
 
@@ -31,11 +31,58 @@
         <?php include 'admin/statistics.php' ?>
     </div>
 
+    <!-- card -->
+    <div id="travel"></div>
+    <div class="container mt-5">
+        <h3 class="d-flex justify-content-center font-weight-bold">+ สถานที่ท่องเที่ยวอัพเดตใหม่ +</h3>
+    </div>
+
+    <div class="container-fluid mt-3 mb-4">
+        <?php include 'php/card.php'?>
+    </div>
+
+    <div class="container-fluid mt-3 mb-4">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+                <?php
+                $sql2 = "SELECT * FROM tourist_attractions WHERE allow = 'on' ORDER BY created_at DESC";
+                $result = mysqli_query($conn, $sql2);
+                $i=0;
+                while($row = mysqli_fetch_array($result)) {
+                    $i++;
+                }
+                $totalpage = ceil($i/6);
+                for($j=1; $j<=$totalpage;$j++){
+                    echo "<li class='page-item'><a class='page-link' href='index.php?page=".$j."' class='btn btn-success mr-1'>$j</a></li>";
+                }
+                ?>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- youtube -->
+    <div id="media"></div>
+    <div class="container-fluid mt-4">
+        <?php include 'php/youtude.php'?>
+    </div>
+
+    <!-- contact -->
+    <div id="contact"></div>
+    <div class="container-fluid mt-5" >
+        <h3 class="font-weight-bold d-flex justify-content-center">+ ติดต่อเรา +</h3>
+    </div>
+
+    <div class="container-fluid mt-5" >
+        <?php include 'php/dev.php'?>
+    </div>
+
     <!-- footer -->
-    <?php include 'php/footer.php' ?>
+    <div class="mt-4">
+        <?php include 'php/footer.php'?>
+    </div>
 
     <!-- script -->
-    <?php include 'php/script.php' ?>
+    <?php include 'php/script.php'?>
 
 </body>
 </html>

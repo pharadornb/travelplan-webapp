@@ -84,6 +84,7 @@
 <div class="container mt-2">
     <?php include 'php/search.php' ?>
 </div>
+
 <div class="container-fluid mt-1">
     <!-- card -->
 
@@ -111,9 +112,18 @@
                 exit;
             }
 
+            if(isset($_GET['page']))
+            {
+                $page = $_GET['page'];
+            }else{
+                $page = 1;
+            }
+            $num_per_page = 6;
+            $start_from = ($page-1)*6;
+
 
             //select db
-            $sql = "SELECT * FROM tourist_attractions WHERE allow = 'on' ORDER BY created_at DESC";
+            $sql = "SELECT * FROM tourist_attractions WHERE allow = 'on' ORDER BY created_at DESC LIMIT $start_from, $num_per_page";
 
             $stmt = $conn->query($sql);
             $stmt->execute();
@@ -130,19 +140,17 @@
                 // $description = $row['description'];
                 // $images = $row['image_thumbnail'];
 
-
                 echo "<div class='col-12 col-lg-4 col-md-6 mt-3'>";
                 echo "<div class='card' style='width: 100%'>";
                 echo "<img class='card-img-top img-fluid' src='images/tourist/" . $row['image_thumbnail'] . "'/>";
-                echo "<div class='card-body'> <center><h5 class='card-title font-weight-bold'>" . $row['name'] . "</h5></center>";
+                echo "<div class='card-body'><center><h5 class='card-title font-weight-bold'>" . $row['name'] . "</h5></center>";
                 echo "<h6 class='font-weight-bold'><i class='fas fa-thumbtack'></i>&nbsp;&nbsp;" . $row['location'] . "</h6>";
                 echo "<p class='card-text text-desc-truncate'>" . $row['description'] . "</p>";
                 //echo "<center><a href='detail.php?id=".$row['id']."'class='btn btn-primary' >เพิ่มเติม</a>&nbsp;&nbsp;&nbsp;<a href='add_travel_form.php?id=".$row['id']."'class='btn btn-primary'>เพิ่มลงแพลนท่องเที่ยว</a></center><br />";
 
                 //echo "<button type='button' class='btn btn-primary' data-toggle='modal' data-target='#myModal' onclick='show()'> เพิ่มเติม </button>&nbsp;&nbsp;&nbsp;<a href='add_travel_form.php?id=".$row['id']."'class='btn btn-primary'>เพิ่มลงแพลนท่องเที่ยว</a></center>";
-                echo "<button type='button' class='btn btn-primary' data-toggle='modal' data-target='#exampleModal1" . $row['id'] . "'>
-                       เพิ่มเติม
-                       </button>  &nbsp;&nbsp;&nbsp;<a href='add_travel_form.php?id=" . $row['id'] . "'class='btn btn-success'>เพิ่มลงแพลนท่องเที่ยว</a></center><br />";
+                echo "<button type='button' class='btn btn-primary' data-toggle='modal' data-target='#exampleModal1" . $row['id'] . "'> เพิ่มเติม </button>  &nbsp;&nbsp;&nbsp;
+                <a href='add_travel_form.php?id=" . $row['id'] . "'class='btn btn-success'>เพิ่มลงแพลนท่องเที่ยว</a></center>";
 
                 ?>
 
@@ -188,6 +196,30 @@
 
         </div>
     </div>
+</div>
+
+<div class="container-fluid mt-3 mb-4">
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+            <?php
+            $sql2 = "SELECT * FROM tourist_attractions WHERE allow = 'on' ORDER BY created_at DESC";
+
+            $stmt = $conn->query($sql2);
+            $stmt->execute();
+            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            //print_r($result);
+            $i=0;
+            foreach ($result as $row) {
+                $i++;
+            }
+            $totalpage = ceil($i/6);
+            for($j=1; $j<=$totalpage;$j++){
+                echo "<li class='page-item'><a class='page-link' href='index_login.php?page=".$j."' class='btn btn-success mr-1'>$j</a></li>";
+            }
+            ?>
+        </ul>
+    </nav>
 </div>
 
 

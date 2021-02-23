@@ -19,6 +19,17 @@
     <?php include 'php/carousel.php'?>
 
     <!-- card -->
+<!--    <div id="travel"></div>-->
+<!--    <div class="container mt-5">-->
+<!--        <h3 class="d-flex justify-content-center font-weight-bold"> + เลือกที่ใช่สำหรับคุณ + </h3>-->
+<!--    </div>-->
+<!---->
+<!--    -->
+<!--    <div class="container mt-2">-->
+<!--        --><?php //include 'php/search.php' ?>
+<!--    </div>-->
+
+    <!-- card -->
     <div id="travel"></div>
     <div class="container mt-5">
         <h3 class="d-flex justify-content-center font-weight-bold">+ สถานที่ท่องเที่ยวอัพเดตใหม่ +</h3>

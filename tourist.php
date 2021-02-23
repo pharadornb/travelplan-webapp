@@ -96,15 +96,15 @@ if($image == null)
 ?>
 
 <center>
-    <div class="col-lg-8 mb-4 mt-4">
+    <div class="col-lg-8 mb-4 mt-4"><br /><br />
         <div class="card text-center">
             <div class="card-header">
                 <h3><b>บัญชีผู้ใช้</b></h3>
             </div>
             <div class="card-body">
                 <div class="row">
-                    <div class="col-lg-4"><?php echo "<img src='images/member/" . $image . "'alt='' class='img-responsive' width='50%'>" ?> </div>
-                    <div class="col-lg-8 mt-5">
+                <div class="col-lg-4"><?php echo "<img src='images/member/" . $image . "'alt='' class='img-responsive' width='75%'>" ?> </div>                  
+                  <div class="col-lg-8 mt-5">
                             <div class="container" align="left">
                                 <div class="row">
                                     <div class="col-12 mt-2 mb-2">
@@ -212,8 +212,7 @@ if($image == null)
                 </div>
             </div>
         </div>
-    </div>
-
+    </div><br />
     <div class="mt-4">
         <?php include 'php/footer.php' ?>
     </div>

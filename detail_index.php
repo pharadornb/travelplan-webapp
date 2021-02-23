@@ -38,7 +38,7 @@
 
             echo " <div class='container'>";
 
-            echo "<img  src='images/tourist/" . $row['image_thumbnail'] . "''width='80%'> ";
+            echo "<img  src='images/tourist/" . $row['image_thumbnail'] . "' width='80%' class='img-responsive' > ";
             echo "</div>";
             echo "<br /><br /><br />";
 

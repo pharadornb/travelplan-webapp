@@ -11,7 +11,6 @@
 </head>
 <body>
 
-<?php if($_SESSION['user_id'] == 1){?>
 <?php include 'admin/nav_login.php' ?>
 
 <div class="container mt-4 mb-4">
@@ -25,12 +24,5 @@
 <?php include 'php/footer.php' ?>
 <?php include 'php/script.php' ?>
 
-    <script type="text/javascript">
-        $("#logout").click(function() {
-            <?php session_destroy(); ?>
-        });
-    </script>
-
-<?php }else{ header("Location: error.php"); } ?>
 </body>
 </html>

@@ -1,6 +1,5 @@
 <?php
-include 'php/dbconnect.php';
-
+include 'dbconnect.php';
 //Connect dB
 $conn = new mysqli($hostname, $username, $password, $database);
 $conn->query("SET NAMES UTF8");

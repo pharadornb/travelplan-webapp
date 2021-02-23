@@ -7,6 +7,7 @@
 <script src="javascript/script.js"></script>
 
 <script type="text/javascript">
+
     //card hover jquery
     $(document).ready(function () {
         console.log("document is ready");

@@ -39,6 +39,9 @@
             <li class="nav-item ">
                 <a class="nav-link" href="index_login.php">&nbsp;หน้าแรก</a>
             </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="index_login.php">&nbsp;เพิ่มสถานที่ลงแพลน</a>
+            </li>
             <li class="nav-item ">
                 <a class="nav-link" href="travel_plan.php">&nbsp;แพลนของฉัน</a>
             </li>
@@ -84,6 +87,8 @@ $birth = $row["birthday"];
 $pass = $row["password"];
 $p = strlen($pass);   //หาความยาวของพาสเวิด
 
+if($image == null)
+
 
 // echo "<img src='images/userphoto/".$image."'>";
 
@@ -98,7 +103,7 @@ $p = strlen($pass);   //หาความยาวของพาสเวิ�
             </div>
             <div class="card-body">
                 <div class="row">
-                    <div class="col-lg-4"><?php echo "<img src='images/userphoto/" . $image . "'alt='' class='img-responsive'>" ?> </div>
+                    <div class="col-lg-4"><?php echo "<img src='images/member/" . $image . "'alt='' class='img-responsive' width='50%'>" ?> </div>
                     <div class="col-lg-8 mt-5">
                             <div class="container" align="left">
                                 <div class="row">

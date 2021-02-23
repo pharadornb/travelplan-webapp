@@ -33,37 +33,6 @@
     }
 </style>
 
-
-
-<!-- navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light ">
-<a href="index_login.php"><img src="images/logo/logo-application.png" width="35px"></a>&nbsp;&nbsp;
-<a class="navbar-brand" href="index_login.php">ระบบวางแผนท่องเที่ยว(Travel Planing)</a>
-<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-</button>
-
-<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-        <li class="nav-item ">
-            <a class="nav-link" href="index_login.php">&nbsp;หน้าแรก</a>
-        </li>
-        <li class="nav-item active">
-            <a class="nav-link" href="travel_plan.php">&nbsp;แพลนของฉัน</a>
-        </li>
-        
-        <li class="nav-item ">
-            <?php echo "<a class='nav-link' href='tourist.php?id=".$_SESSION['user_id']."'> &nbsp;บัญชีผู้ใช้</a>"; ?>
-            
-            </li>
-            <li class="nav-item ist-group-item-action list-group-item-danger mr-1 mb-1">
-                <a class="nav-link" href="index.php" id="logout"><i class="fas fa-sign-out-alt"></i>&nbsp;ออกจากระบบ</a>
-            </li>
-    
-    </ul>
-</div>
-</nav>
-
 <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -80,11 +49,43 @@
 <body>
 
 
+<!-- navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light ">
+    <a href="index_login.php"><img src="images/logo/logo-application.png" width="35px"></a>&nbsp;&nbsp;
+    <a class="navbar-brand" href="index_login.php">ระบบวางแผนท่องเที่ยว(Travel Planing)</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            <li class="nav-item ">
+                <a class="nav-link" href="index_login.php">&nbsp;หน้าแรก</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="index_login.php">&nbsp;เพิ่มสถานที่ลงแพลน</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="travel_plan.php">&nbsp;แพลนของฉัน</a>
+            </li>
+
+<!--            <a href="index_login.php" input type="button" class="btn btn-success mt-3 mb-3 ml-2" >เพิ่มสถานที่ท่องเที่ยว</a>-->
+
+            <li class="nav-item ">
+                <?php echo "<a class='nav-link' href='tourist.php?id=".$_SESSION['user_id']."'> &nbsp;บัญชีผู้ใช้</a>"; ?>
+
+            </li>
+            <li class="nav-item ist-group-item-action list-group-item-danger mr-1 mb-1">
+                <a class="nav-link" href="index.php" id="logout"><i class="fas fa-sign-out-alt"></i>&nbsp;ออกจากระบบ</a>
+            </li>
+
+        </ul>
+    </div>
+</nav>
 
 
 
-
-
+<!--$_SESSION['user_id']-->
 
 
 <?php
@@ -105,7 +106,7 @@ try{
 
  
 //select db
-$sql = "SELECT*FROM myplan" ;
+$sql = "SELECT * FROM myplan WHERE id = " . $_SESSION['user_id'] ;
 
 $stmt = $conn ->query($sql);
 $stmt->execute();
@@ -123,7 +124,7 @@ $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 <center>
 <br />
-    <h3>แพลนของฉัน</h3>
+    <h3><b>แพลนของฉัน</b></h3>
 <br />    
  </center>
 
@@ -147,11 +148,7 @@ tr:nth-child(even) {
 </style>
 
 
-<table> 
-     
-     <div class = "text-right">
-    <a href="index_login.php" input type="button" class="btn btn-success" >เพิ่มสถานที่ท่องเที่ยว</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br /><br />
-    </div>
+<table class="container table">
   <tr>
     
     <th>ชื่อสถานที่</th>
@@ -165,6 +162,7 @@ tr:nth-child(even) {
   </tr>
   
   <tr>  <!--เรียกค่าวนลูป-->
+
   
   <?php foreach($result as $val) {?>
 
@@ -191,7 +189,7 @@ tr:nth-child(even) {
     &nbsp;&nbsp;
      
      </th>
-     
+
     </tr>
 
   <!-- Modal -->
@@ -222,14 +220,6 @@ tr:nth-child(even) {
               <label for="note"><span class="glyphicon glyphicon-user"></span>NOTE :</label>
               <input type="text" class="form-control" name="note" id="note" value="<?php echo $val["note"]?>">
             </div>
-
-
-            
-
-
-
-           
-           
 
 
             <button type="submit" class="btn btn-primary btn-primary btn-block"><span class="glyphicon glyphicon-off"></span>แก้ไข</button>
@@ -269,7 +259,7 @@ tr:nth-child(even) {
     </div>
   </div>
 </div>
-     
+
 
 </table>
    

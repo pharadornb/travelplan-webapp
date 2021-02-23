@@ -94,8 +94,8 @@
    if ($conn->connect_error) {
        die('Could not connect: ' . $conn->connect_error);
    }
-   $id = $_GET['id'];
-
+    
+    $id=$_GET["id"];
    $sql = "SELECT * FROM users WHERE id = '$id'";
    $result = mysqli_query($conn, $sql);
   
@@ -108,7 +108,7 @@
        $pass  = $row["password"];
        $p = strlen($pass);   //หาความยาวของพาสเวิด
       
-   }
+ 
     // echo "<img src='images/userphoto/".$image."'>";
 
     
@@ -182,16 +182,90 @@
                 </div>
 
                 <div class="card-footer text-muted">
-                <a href="edit_user.php" class="btn btn-primary">แก้ไขข้อมูล</a>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal<?php echo $row['id'] ?>">
+                 แก้ไขข้อมูล
+                 </button>
                 </div>
-            </div>
-        </div>
-    </div>
+                 <!-- Modal -->
+                        <div class="modal fade" id="exampleModal<?php echo $id ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
 
-</center>
-    <div class="mt-4">
+              <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 style="color:red;"><span class="glyphicon glyphicon-lock"></span>แก้ไขข้อมูล</h4> &nbsp;&nbsp;&nbsp;&nbsp;
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form role="form" action="edit_user.php?id=<?php echo $row["id"]?>" method="POST">
+
+
+
+            <div class="form-group">
+              <label for="name"><span class="glyphicon glyphicon-user"></span>ชื่อผู้ใช้งาน :</label>
+              <input type="text" class="form-control" name="name" id="name" value="<?php echo $name?>">
+            </div>
+
+            <div class="form-group">
+              <label for="email"><span class="glyphicon glyphicon-user"></span>อีเมลล์ :</label>
+              <input type="email" class="form-control" name="email" id="email" value="<?php echo $email?>">
+            </div>
+
+
+            <div class="form-group">
+              <label for="birth"><span class="glyphicon glyphicon-user"></span>วันเกิด :</label>
+              <input type="date" class="form-control" name="birth" id="birth" value="<?php echo $birth?>">
+            </div>
+
+            <div class="form-group">
+              <label for="username"><span class="glyphicon glyphicon-user"></span>Username :</label>
+              <input type="text" class="form-control" name="username" id="username" value="<?php echo $username?>">
+            </div>
+
+            <div class="form-group">
+              <label for="birth"><span class="glyphicon glyphicon-user"></span>Password :</label>
+              <input type="password" class="form-control" name="password" id="password" value="<?php echo $pass?>">
+              <input type="checkbox" onclick="myFunction()">แสดงรหัสผ่าน
+
+
+            <script>
+            function myFunction() {
+            var x = document.getElementById("password");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+            }
+            </script>
+            </div>
+
+
+            
+
+
+
+           
+           
+
+
+            <button type="submit" class="btn btn-primary btn-primary btn-block"><span class="glyphicon glyphicon-off"></span>แก้ไข</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+
+          <button type="submit" class="btn btn-default btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> ยกเลิก</button>
+         
+         <?php } ?>
+         
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+              
+<div class="mt-4">
         <?php include 'php/footer.php'?>
     </div>
-    
 </body>
 </html>

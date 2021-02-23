@@ -244,19 +244,19 @@ tr:nth-child(even) {
     </div>
   </div>
 </div>
-<?php } ?>
+
 
    <!-- Modal -->
    <div class="modal fade" id="exampleModal1<?php echo $val['ID'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">ลบข้อมูล</h5>
        
       </div>
       <div class="modal-body">
                 
-          Are you sure to delete  " <?php echo $val["ID"]?>"  ?
+          คุณต้องการลบข้อมูลแพลนท่องเที่ยวสถานที่ชื่อ  " <?php echo $val["name"]?>" หรือไม่ ?
 
 
       </div>
@@ -265,6 +265,7 @@ tr:nth-child(even) {
       <?php echo '<a href="delete_travel.php?id=' . $val['ID'] .'" input type="button" class="btn btn-danger" onclick="return c('.$val['ID'].')">ลบข้อมูล</a></td>'; ?>
         
       </div>
+      <?php } ?>
     </div>
   </div>
 </div>
@@ -273,7 +274,9 @@ tr:nth-child(even) {
 </table>
    
 
-
+<div class="mt-4">
+        <?php include 'php/footer.php'?>
+    </div>
     
 </body>
 </html>

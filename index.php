@@ -121,7 +121,7 @@
                 <!-- Modal content-->
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4 style="color:red;"><span class="glyphicon glyphicon-lock"></span>เข้าสู่ระบบ</h4> &nbsp;&nbsp;&nbsp;&nbsp;
+                        <h4 style="color:red;"><span class="glyphicon glyphicon-lock"></span>ระบบวางแผนท่องเที่ยว</h4> &nbsp;&nbsp;&nbsp;&nbsp;
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
                     <div class="modal-body">
@@ -132,7 +132,7 @@
 
                     <form action="login.php" method="POST" style="max-width: 300px; margin: auto;">
                         <div class="form-group">
-                            <h4 class="d-flex justify-content-center font-weight-bold mt-4"> + เข้าสู่ระบบวางแผนท่องเที่ยว + </h4>
+                            <h4 class="d-flex justify-content-center font-weight-bold mt-4">  + เข้าสู่ระบบ + </h4>
                             <input type="text" class="form-control mt-4" name="username" id="username" placeholder="ชื่อผู้ใช้"
                                 maxlength="15" required>
                             <input type="password" class="form-control mt-2" name="password" id="password" placeholder="รหัสผ่าน"

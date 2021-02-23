@@ -31,7 +31,7 @@ if ($conn->connect_error){
      $email = $_POST["email"];
      $birth = $_POST["birth"];
      $username = $_POST["username"];
-     $password = $_POST["password"];
+     $password = md5($_POST["password"]);
     
      $id = $_GET['id'];
  

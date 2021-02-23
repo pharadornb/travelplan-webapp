@@ -71,11 +71,12 @@
             echo "</div>";
 
             echo "</div>";
-        }
-
-        $conn->close();
-
     ?>
+
+   <div class="container mt-5 mb-3" >
+       <h4 class="d-flex-center">+ แผนที่สถานที่ท่องเที่ยว +</h4>
+       <?php include 'php/map_view.php'; ?>
+   </div>
 
 
   <!-- The Modal -->
@@ -107,7 +108,7 @@
 
 
 
-    <?php include 'php/footer.php';
+    <?php $conn->close(); } include 'php/footer.php';
     include 'php/script.php';  ?>
 </body>
 </html>

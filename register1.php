@@ -8,6 +8,7 @@ if (isset($_POST['register'])) {
     $birthday = $_POST['birthday'];
     $username = $_POST['username'];
     $password = md5($_POST['password']);
+    $confpassword = md5($_POST['confrimpassword']);
     $email = $_POST['email'];
 
     if (isset($_FILES['image'])) {
@@ -23,76 +24,91 @@ if (isset($_POST['register'])) {
     }
 
 
-    if ($upload == 1) {
-        $sql = "INSERT INTO users (name, email, username, password, image_thumbnail, birthday, user_type_id)
-        VALUES ('$fullname','$email','$username','$password','$image_name','$birthday',2)";
-
-        if (mysqli_query($conn, $sql)) {
-
-            echo "<script>";
-            echo "setTimeout(function(){
-                      swal({
-                          title:'สมัครสมาชิกสำเร็จ!!',
-                          text:'ยินดีต้อนรับเข้าสู่ระบบวางแผนการท่องเที่ยว.. โปรดเข้าสู่ระบบ',
-                          type:'success'
-                      },function(){
-                          window.location = 'index.php';
-                      }) ; 
-                    },50) ;";
-
-            echo "</script>";
-
+    if($password == $confpassword){
+        if ($upload == 1) {
+            $sql = "INSERT INTO users (name, email, username, password, image_thumbnail, birthday, user_type_id)
+            VALUES ('$fullname','$email','$username','$password','$image_name','$birthday',2)";
+    
+            if (mysqli_query($conn, $sql)) {
+    
+                echo "<script>";
+                echo "setTimeout(function(){
+                          swal({
+                              title:'สมัครสมาชิกสำเร็จ!!',
+                              text:'ยินดีต้อนรับเข้าสู่ระบบวางแผนการท่องเที่ยว.. โปรดเข้าสู่ระบบ',
+                              type:'success'
+                          },function(){
+                              window.location = 'index.php';
+                          }) ; 
+                        },50) ;";
+    
+                echo "</script>";
+    
+            } else {
+    
+                echo "<script>";
+                echo "setTimeout(function(){
+                          swal({
+                              title:'สมัครสมาชิกไม่สำเร็จ',
+                              text:'โปรดกรอกข้อมูลใหม่! แล้วลองอีกครั้ง!',
+                              type:'error'
+                          },function(){
+                              //window.location = 'register1.php';
+                          }) ; 
+                        },50) ;";
+    
+                echo "</script>";
+    
+            }
         } else {
-
-            echo "<script>";
-            echo "setTimeout(function(){
-                      swal({
-                          title:'สมัครสมาชิกไม่สำเร็จ',
-                          text:'โปรดกรอกข้อมูลใหม่! แล้วลองอีกครั้ง!',
-                          type:'error'
-                      },function(){
-                          //window.location = 'register1.php';
-                      }) ; 
-                    },50) ;";
-
-            echo "</script>";
-
+            $sql = "INSERT INTO users (name, email, username, password, image_thumbnail, birthday, user_type_id)
+            VALUES ('$fullname','$email','$username','$password','$image_name','$birthday',2)";
+    
+            if (mysqli_query($conn, $sql)) {
+                move_uploaded_file($image_tmp, $target_file);
+                echo "<script>";
+                echo "setTimeout(function(){
+                          swal({
+                              title:'สมัครสมาชิกสำเร็จ!!',
+                              text:'ยินดีต้อนรับเข้าสู่ระบบวางแผนการท่องเที่ยว.. โปรดเข้าสู่ระบบ',
+                              type:'success'
+                          },function(){
+                              window.location = 'index.php';
+                          }) ; 
+                        },50) ;";
+    
+                echo "</script>";
+    
+            } else {
+    
+                echo "<script>";
+                echo "setTimeout(function(){
+                          swal({
+                              title:'สมัครสมาชิกไม่สำเร็จ',
+                              text:'โปรดกรอกข้อมูลใหม่! แล้วลองอีกครั้ง!',
+                              type:'error'
+                          },function(){
+                              //window.location = 'register1.php';
+                          }) ; 
+                        },50) ;";
+    
+                echo "</script>";
+    
+            }
         }
-    } else {
-        $sql = "INSERT INTO users (name, email, username, password, image_thumbnail, birthday, user_type_id)
-        VALUES ('$fullname','$email','$username','$password','$image_name','$birthday',2)";
-
-        if (mysqli_query($conn, $sql)) {
-            move_uploaded_file($image_tmp, $target_file);
-            echo "<script>";
-            echo "setTimeout(function(){
-                      swal({
-                          title:'สมัครสมาชิกสำเร็จ!!',
-                          text:'ยินดีต้อนรับเข้าสู่ระบบวางแผนการท่องเที่ยว.. โปรดเข้าสู่ระบบ',
-                          type:'success'
-                      },function(){
-                          window.location = 'index.php';
-                      }) ; 
-                    },50) ;";
-
-            echo "</script>";
-
-        } else {
-
-            echo "<script>";
-            echo "setTimeout(function(){
-                      swal({
-                          title:'สมัครสมาชิกไม่สำเร็จ',
-                          text:'โปรดกรอกข้อมูลใหม่! แล้วลองอีกครั้ง!',
-                          type:'error'
-                      },function(){
-                          //window.location = 'register1.php';
-                      }) ; 
-                    },50) ;";
-
-            echo "</script>";
-
-        }
+    }else{
+        echo "<script>";
+                echo "setTimeout(function(){
+                          swal({
+                              title:'สมัครสมาชิกไม่สำเร็จ',
+                              text:'โปรดกรอกข้อมูลใหม่! แล้วลองอีกครั้ง!',
+                              type:'error'
+                          },function(){
+                              //window.location = 'register1.php';
+                          }) ; 
+                        },50) ;";
+    
+                echo "</script>";
     }
 
 

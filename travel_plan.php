@@ -148,19 +148,20 @@ tr:nth-child(even) {
 </style>
 
 
-<table class="container table">
+<table class="container table" width="860px">
+  
   <tr>
-    
+  
     <th>ชื่อสถานที่</th>
     <th>ตำแหน่งที่ตั้ง</th>
     <th>ชื่อรูปภาพ</th>
     <th>วันที่เดินทาง</th>
     <th>งบประมาณการเดินทาง</th>
-    <th>note</th>
+    <th>บันทึกเพิ่มเติม</th>
     <th>จัดการข้อมูล</th>
   
   </tr>
-  
+ 
   <tr>  <!--เรียกค่าวนลูป-->
 
   
@@ -170,7 +171,7 @@ tr:nth-child(even) {
  <th><?php echo $val["name"]?></th>
  <th><?php echo $val["location"]?></th>
  <th><?php  echo "<img src='images/tourist/".$val['image_thumbnail']."'alt='' width='140px' height='100px' style='margin-top: 40px;'>";?></th>
- <th><?php echo $val["date"]?></th>
+ <th><?php echo $val["date"]?> &nbsp;</th> 
  <th><?php echo $val["budget"]?></th>
  <th><?php echo $val["note"]?></th>
  </div>
@@ -178,11 +179,11 @@ tr:nth-child(even) {
 
   
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal<?php echo $val['ID']?>">
-      แก้ไขข้อมูล
+      แก้ไข
      </button>   
     
      <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal1<?php echo $val['ID']?>">
-     ลบข้อมูล
+     ลบ
      </button>   
     
 

@@ -68,7 +68,7 @@
 
             </li>
             <li class="nav-item ist-group-item-action list-group-item-danger mr-1 mb-1">
-                <a class="nav-link" id="logout"><i class="fas fa-sign-out-alt"></i>&nbsp;ออกจากระบบ</a>
+                <a class="nav-link"  href="index.php" id="logout" ><i class="fas fa-sign-out-alt"></i>&nbsp;ออกจากระบบ</a>
             </li>
 
         </ul>

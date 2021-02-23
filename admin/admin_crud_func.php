@@ -40,14 +40,16 @@ class DB_con {
         return $result;
     }
 
-    public function update($userid, $fname, $flocation, $flatitude, $flogitude, $fimage_thumbnail, $fdescription) {
+    public function update($userid, $fname, $flocation, $flatitude, $flogitude, $fimage_thumbnail, $fdescription, $mode, $allow) {
         $result = mysqli_query($this->dbcon, "UPDATE tourist_attractions SET
                 name = '$fname',
                 location = '$flocation',
                 latitude = $flatitude,
                 logitude = $flogitude,
                 image_thumbnail = '$fimage_thumbnail',
-                description = '$fdescription'
+                description = '$fdescription',
+                mode = '$mode',
+                allow = '$allow'
                 WHERE id = $userid
             ");
         return $result;

@@ -1,7 +1,7 @@
 <?php
 
-include 'php/header.php';
 include("php/dBver2.php");
+include ("php/header.php");
 
 if (isset($_POST['register'])) {
     $fullname = $_POST['fullname'];
@@ -99,6 +99,7 @@ if (isset($_POST['register'])) {
     $conn->close();
 }
 ?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -107,11 +108,6 @@ if (isset($_POST['register'])) {
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>[สมัครสมาชิก]-ระบบวางแผนท่องเที่ยว</title>
-      
-      <!-- css -->
-      <?php include 'php/header.php'?>
-
-   
 </head>
 
 <body class="bg-lg">
@@ -175,7 +171,7 @@ if (isset($_POST['register'])) {
 </div>
 <!--script cdn-->
 <script src="javascript/scriptregister.js"></script>
-<script src="javascript/script.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<?php include 'php/script.php' ?>
 </body>
 </html>

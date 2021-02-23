@@ -35,9 +35,10 @@ $image =$_SESSION["image"];
 $date = $_POST["day"];
 $budget = $_POST["budget"];
 $note = $_POST["note"];
+$id = $_SESSION['user_id'];
 
-$sql = "INSERT INTO  myplan (name,location,image_thumbnail,date,budget,note)
-VALUES ('$name','$location','$image','$date','$budget','$note')" ;
+$sql = "INSERT INTO  myplan (name,location,image_thumbnail,date,budget,note, users_id)
+VALUES ('$name','$location','$image','$date','$budget','$note', $id)" ;
 
 $rs=$conn->query($sql);
 

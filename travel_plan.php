@@ -106,7 +106,7 @@ try{
 
  
 //select db
-$sql = "SELECT * FROM myplan WHERE id = " . $_SESSION['user_id'] ;
+$sql = "SELECT * FROM myplan WHERE users_id = " . $_SESSION['user_id'] ;
 
 $stmt = $conn ->query($sql);
 $stmt->execute();

@@ -71,7 +71,7 @@ if (isset($_POST['register'])) {
                           text:'ยินดีต้อนรับเข้าสู่ระบบวางแผนการท่องเที่ยว.. โปรดเข้าสู่ระบบ',
                           type:'success'
                       },function(){
-                          window.location = 'login.php';
+                          window.location = 'index.php';
                       }) ; 
                     },50) ;";
 

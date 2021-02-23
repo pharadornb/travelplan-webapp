@@ -89,7 +89,7 @@
             <?php session_destroy(); ?>
         });
     </script>
-<?php }else{ header('index.php');} ?>
+<?php }else{ header("Location: index.php"); } ?>
 
 </body>
 </html>

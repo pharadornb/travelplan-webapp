@@ -145,7 +145,7 @@ tr:nth-child(even) {
 </style>
 
 
-<table class="container table" width="860px">
+<table class="container table" width="960px">
   
   <tr>
   
@@ -176,11 +176,11 @@ tr:nth-child(even) {
 
   
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal<?php echo $val['ID']?>">
-      แก้ไข
+    &nbsp; แก้ไข &nbsp;
      </button>   
-    
+    <br /> <br />
      <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal1<?php echo $val['ID']?>">
-     ลบ
+     ลบข้อมูล
      </button>   
     
 

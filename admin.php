@@ -82,14 +82,15 @@
         <?php include 'php/footer.php'?>
     </div>
 
-    <!-- script -->
-    <?php include 'php/script.php'?>
-    <script>
-        $( "#logout" ).click(function() {
+    <script type="text/javascript">
+        $("#logout").click(function() {
             <?php session_destroy(); ?>
         });
     </script>
-<?php }else{ header("Location: index.php"); } ?>
+
+    <!-- script -->
+    <?php include 'php/script.php'?>
+<?php }else{ header("Location: error.php"); } ?>
 
 </body>
 </html>

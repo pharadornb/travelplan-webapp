@@ -3,8 +3,6 @@
 <html lang="en">
 <head>
     <head>
-
-
     </head>
     <meta charset="UTF-8">
     <title>[หน้าแรก]-ระบบวางแผนท่องเที่ยว</title>
@@ -70,7 +68,7 @@
 
             </li>
             <li class="nav-item ist-group-item-action list-group-item-danger mr-1 mb-1">
-                <a class="nav-link" href="index.php" id="logout"><i class="fas fa-sign-out-alt"></i>&nbsp;ออกจากระบบ</a>
+                <a class="nav-link" id="logout"><i class="fas fa-sign-out-alt"></i>&nbsp;ออกจากระบบ</a>
             </li>
 
         </ul>
@@ -241,12 +239,6 @@
         <?php include 'php/footer.php' ?>
     </div>
 
-<!--    <script src="javascript/script.js"></script>-->
-<!--    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>-->
-<!--    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>-->
-<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>-->
-<!--    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>-->
-
     <!-- script -->
     <?php include 'php/script.php' ?>
 
@@ -263,6 +255,7 @@
             );
         });
     </script>
+
 
 </body>
 </html>

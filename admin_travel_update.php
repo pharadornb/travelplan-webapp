@@ -12,7 +12,8 @@ if (isset($_POST['update'])) {
     $flogitude = $_POST['lon_value'];
     $fdescription = $_POST['description'];
    // echo "image_thumbnail = " . $image_thumbnail;
-  
+   //$fimage_thumbnail = $_FILES['image_thumbnail']['name'];
+
     if(isset($_POST['mode'])){
         $mode = "public";
         $allow="on";
@@ -21,36 +22,36 @@ if (isset($_POST['update'])) {
         $allow="off";
     }
 
-    if(isset($_FILES['image_thumbnail'])){
-        $fimage_thumbnail = $_FILES['image_thumbnail']['name'];
-        $target_path = "images/tourist/".$fimage_thumbnail;
-        $file_tmp = $_FILES['image_thumbnail']['tmp_name'];
-
-        $sql = $updatedata->update($userid, $fname, $flocation, $flatitude, $flogitude, $fimage_thumbnail, $fdescription, $mode, $allow);
-        if ($sql) {
-            move_uploaded_file($file_tmp, $target_path);
-            echo "<script>alert('Updated Successfully!');</script>";
-            echo "<script>window.location.href='admin_travel.php'</script>";
-        } else {
-            echo "<script>alert('Something went wrong! Please try again!');</script>";
-            echo "<script>window.location.href='admin_travel_update.php?id=$userid'</script>";
+        if($_FILES['image_thumbnail']['name'] != ''){
+            $fimage_thumbnail = $_FILES['image_thumbnail']['name'];
+            $target_path = "images/tourist/".$fimage_thumbnail;
+            $file_tmp = $_FILES['image_thumbnail']['tmp_name'];
+            //$image_thumbnail = $_POST['image_thumbnail2'];
+            
+            $sql = $updatedata->update($userid, $fname, $flocation, $flatitude, $flogitude, $fimage_thumbnail, $fdescription, $mode, $allow);
+            if ($sql) {
+                move_uploaded_file($file_tmp, $target_path);
+                echo "<script>alert('Updated Successfully!');</script>";
+                echo "<script>window.location.href='admin_travel.php'</script>";
+            } else {
+                echo "<script>alert('Something went wrong! Please try again!');</script>";
+                echo "<script>window.location.href='admin_travel_update.php?id=$userid'</script>";
+            } 
+        }else{
+            $image_thumbnail = $_POST['image_thumbnail2'];
+            $sql = $updatedata->update($userid, $fname, $flocation, $flatitude, $flogitude, $image_thumbnail, $fdescription, $mode, $allow);
+            if ($sql) {
+                echo "<script>alert('Updated Successfully!');</script>";
+                echo "<script>window.location.href='admin_travel.php'</script>";
+            } else {
+                echo "<script>alert('Something went wrong! Please try again!');</script>";
+                echo "<script>window.location.href='admin_travel_update.php?id=$userid'</script>";
+            }
         }
-    }else{
-        $image_thumbnail = $_POST['image_thumbnail2'];
-        $sql = $updatedata->update($userid, $fname, $flocation, $flatitude, $flogitude, $fimage_thumbnail, $fdescription);
-        if ($sql) {
-            echo "<script>alert('Updated Successfully!');</script>";
-            echo "<script>window.location.href='admin_travel.php'</script>";
-        } else {
-            echo "<script>alert('Something went wrong! Please try again!');</script>";
-            echo "<script>window.location.href='admin_travel_update.php?id=$userid'</script>";
-        }
-    }
 
     //echo "$userid $fname $flocation $flatitude $flogitude $fdescription $fimage_thumbnail";
 
-
-}
+    }
 
 ?>
 
@@ -122,7 +123,6 @@ if (isset($_POST['update'])) {
         border-radius: 50%;
         }
     </style>
-}
 </head>
 <body>
 <div class="container">

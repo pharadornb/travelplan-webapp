@@ -1,13 +1,18 @@
-function checkPasswordMatch() {
-    var password = $("#password").val();
-    var confirmPassword = $("#confrimpassword").val();
 
-    if (password != confirmPassword){
-        document.getElementById('message').innerHTML = "<br><div class='nf'>รหัสผ่านไม่ตรงกัน</div>";
+
+function Check()
+{  var pass=document.getElementById("pass").value;
+   var repass=document.getElementById("repass").value;
+   if(pass==repass)
+    {
+        document.getElementById("message").innerHTML = "รหัสผ่านตรงกัน";
     }else{
-        document.getElementById('message').innerHTML = "<br><div class='nft'>รหัสผ่านถูกต้อง</div>";
+        document.getElementById("message").innerHTML = "รหัสผ่านไม่ตรงกัน";
     }
 }
+
+   
+
 
 function previewImage(){
     var file = document.getElementById("image").files;

@@ -36,7 +36,7 @@ if (isset($_POST['register'])) {
                           text:'ยินดีต้อนรับเข้าสู่ระบบวางแผนการท่องเที่ยว.. โปรดเข้าสู่ระบบ',
                           type:'success'
                       },function(){
-                          window.location = 'login.php';
+                          window.location = 'index.php';
                       }) ; 
                     },50) ;";
 
@@ -143,11 +143,11 @@ if (isset($_POST['register'])) {
             <div class="row">
                 <div class="mb-3 col-12 col-md-6">
                     <label for="name" class="form-label" style="font-weight: bold;">รหัสผ่าน(Password) :</label>
-                    <input type="password" name="password" id="password" class="form-control" pattern="(?=.*\d)(?=.*[A-Za-zก-๏]).{8,}" title="ต้องมีตัวอักษรผสมด้วยและมี 8 ตัวขึ้นไป" required>
+                    <input type="password" name="password" id="pass" class="form-control" pattern="(?=.*\d)(?=.*[A-Za-zก-๏]).{8,}" title="ต้องมีตัวอักษรผสมด้วยและมี 8 ตัวขึ้นไป" required>
                 </div>
                 <div class="mb-3 col-12 col-md-6">
                     <label for="name" class="form-label" style="font-weight: bold;">ยืนยันรหัสผ่าน(Re-password) :</label>
-                    <input type="password" name="confrimpassword" id="confrimpassword"  class="form-control" pattern="(?=.*\d)(?=.*[A-Za-zก-๏]).{8,}" title="ต้องมีตัวอักษรผสมด้วยและมี 8 ตัวขึ้นไป" onChange="checkPasswordMatch();" required>
+                    <input type="password" name="confrimpassword" id="repass"  class="form-control" pattern="(?=.*\d)(?=.*[A-Za-zก-๏]).{8,}" title="ต้องมีตัวอักษรผสมด้วยและมี 8 ตัวขึ้นไป" onchange="Check()" required>
                 </div>
             </div>
             <div class="row">

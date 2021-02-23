@@ -1,4 +1,4 @@
-<?php include '../php/dBver2.php';?>
+<?php include '../admin/dbconnect.php';?>
 <h1 align="left"><i class="fas fa-route"></i></h1>
 <h4 class="card-title" style="font-weight: bold;">
     <?php

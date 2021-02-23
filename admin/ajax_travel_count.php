@@ -1,7 +1,7 @@
 <!--<h4 class="card-title">-->
 <!--    45 แห่ง-->
 <!--</h4>-->
-<?php include '../php/dBver2.php';?>
+<?php include '../admin/dbconnect.php';?>
 <h1 align="left"><i class="fas fa-archway"></i></h1>
 <h4 class="card-title" style="font-weight: bold;">
     <?php

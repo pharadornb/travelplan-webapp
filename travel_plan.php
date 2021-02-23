@@ -90,10 +90,7 @@
 
 <?php
 
-$hostname = "mysql-19614-0.cloudclusters.net:19614";
-$username = "TravelPlan2021";
-$password = "jYtKQ2Y1VZz1";
-$database = "TravelPlan2021";
+include 'php/dbconnect.php';
 
 try{
     $conn = new PDO("mysql:host=$hostname;dbname=$database;charset=utf8",$username,$password);

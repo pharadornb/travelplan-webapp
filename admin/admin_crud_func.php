@@ -1,10 +1,7 @@
 <?php
 
 
-define('DB_SERVER', 'mysql-19614-0.cloudclusters.net:19614');
-define('DB_USER', 'TravelPlan2021');
-define('DB_PASS', 'jYtKQ2Y1VZz1');
-define('DB_NAME', 'TravelPlan2021');
+include 'php/dbconnect_object.php';
 
 class DB_con {
 

@@ -46,7 +46,7 @@ class DB_con {
                 location = '$flocation',
                 latitude = $flatitude,
                 logitude = $flogitude,
-                image_thumbnail = '$fimage_thumbnail'
+                image_thumbnail = '$fimage_thumbnail',
                 description = '$fdescription'
                 WHERE id = $userid
             ");

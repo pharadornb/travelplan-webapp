@@ -15,6 +15,7 @@
 </head>
 <body>
 
+<?php if($_SESSION['user_id'] == 1){?>
     <!-- navbar for admin -->
     <?php include 'admin/nav_login.php' ?>
 
@@ -83,6 +84,12 @@
 
     <!-- script -->
     <?php include 'php/script.php'?>
+    <script>
+        $( "#logout" ).click(function() {
+            <?php session_destroy(); ?>
+        });
+    </script>
+<?php }else{ header("Location: index.php"); } ?>
 
 </body>
 </html>

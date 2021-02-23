@@ -13,6 +13,7 @@
     $password = "";
     $database = "TravelPlan2021";
 */
+
     //Connect dB
     $conn = new mysqli($hostname, $username, $password, $database);
     $conn->query("SET NAMES UTF8");

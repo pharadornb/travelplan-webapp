@@ -1,2 +1,2 @@
 # TravelPlan2563
-IT_SUT-2021
+Project this about of subject 214328 Script Language Programming, Information Technology, Suranaree University Of Technology, Nakhonrachasima , 30000 , Thailand

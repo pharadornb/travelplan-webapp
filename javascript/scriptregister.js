@@ -3,7 +3,7 @@ function Check()
    var repass=document.getElementById("repass").value;
    if(pass==repass)
     {
-        document.getElementById("message").innerHTML = "รหัสผ่านตรงกัน";
+        document.getElementById("message").innerHTML = "รหัสผ่านถูกต้อง";
     }else{
         document.getElementById("message").innerHTML = "รหัสผ่านไม่ตรงกัน";
     }

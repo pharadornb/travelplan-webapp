@@ -172,7 +172,7 @@ if (isset($_POST['register'])) {
                     <input type="file" name="image" id="image" accept="image/png, image/jpeg" class="form-control" onChange="previewImage();" title="กรุณาเพิ่มรูปภาพของท่าน!!" required>
                 </div>
                 <div class="mb-3 col-12 col-md-6">
-                    <p style="color: #009432; font-weight: bold;"  id='message'></p>
+                    <p id='message'></p>
                     <label for="image" id="pre"></label>
                 </div>
             </div>

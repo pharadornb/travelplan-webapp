@@ -1,5 +1,3 @@
-
-
 function Check()
 {  var pass=document.getElementById("pass").value;
    var repass=document.getElementById("repass").value;

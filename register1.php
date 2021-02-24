@@ -163,7 +163,7 @@ if (isset($_POST['register'])) {
                 </div>
                 <div class="mb-3 col-12 col-md-6">
                     <label for="name" class="form-label" style="font-weight: bold;">ยืนยันรหัสผ่าน(Re-password) :</label>
-                    <input type="password" name="confrimpassword" id="repass"  class="form-control" pattern="(?=.*\d)(?=.*[A-Za-zก-๏]).{8,}" title="ต้องมีตัวอักษรผสมด้วยและมี 8 ตัวขึ้นไป" onchange="Check()" required>
+                    <input type="password" name="confrimpassword" id="repass"  class="form-control" pattern="(?=.*\d)(?=.*[A-Za-zก-๏]).{8,}" title="ต้องมีตัวอักษรผสมด้วยและมี 8 ตัวขึ้นไป" onchange="Check();" required>
                 </div>
             </div>
             <div class="row">

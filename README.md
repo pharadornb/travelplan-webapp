@@ -2,7 +2,7 @@
 Project this about of subject 214328 Script Language Programming, Information Technology, Suranaree University Of Technology, Nakhonrachasima , 30000 , Thailand
 # Developer:
 Lecturer : Assoc.Dr. Jitimon Angskun<br/>
-Dev by : <a href="https://www.facebook.com/PharadornB/">Mr.Pharadorn Boonruam </a><br/>
+Dev by : <a href="https://www.facebook.com/PharadornB/">Mr.Pharadorn Boonruam </a><br/>, Mr.Chidchansa, Miss.Waraphan and Miss.Natcha
 # Demo Project
 http://pharadorn.lnw.mn/TravelPlan/index.php
 
